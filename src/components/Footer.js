@@ -1,0 +1,70 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { AiFillFacebook } from 'react-icons/ai';
+import { FaTwitter } from 'react-icons/fa';
+import { BsPinterest } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
+import { BsYoutube } from 'react-icons/bs';
+import payment from '../assets/images/payment-icon_1.png';
+import style from '../styles/Footer.module.css';
+const Footer = () => {
+  return (
+    <div className={style.container}>
+        <div className={style.link_container}>
+            <div className={style.links}>
+                <h4>NAVIGATE</h4>
+                <Link to={'#'}>About Us</Link>
+                <Link to={'#'}>Shipping & Returns</Link>
+                <Link to={'#'}>Contact Us</Link>
+            </div>
+            <div className={style.links}>
+                <h4>CATEGORIES</h4>
+                <Link to={'#'}>Clothing</Link>
+                <Link to={'#'}>Shoes</Link>
+                <Link to={'#'}>Jewelry</Link>
+                <Link to={'#'}>Home & Living</Link>
+            </div>
+            <div className={style.links}>
+                <h4>INFO</h4>
+                <Link to={'#'}>Africrafted</Link>
+                <Link to={'#'}>P.O.BOX 1234</Link>
+                <Link to={'#'}>Lusaka, Zambia</Link>
+                <Link to={'#'}><b>Call Us +260 777730003</b></Link>
+            </div>
+            <div className={style.links_icons}>
+                <h4>CONNECT WITH US</h4>
+                <Link to={'#'}><AiFillFacebook size={30} /></Link>
+                <Link to={'#'}><FaTwitter size={28} /></Link>
+                <Link to={'#'}><BsPinterest size={28} /></Link>
+                <Link to={'#'}><BsInstagram size={28} /></Link>
+                <Link to={'#'}><BsYoutube size={30} /></Link>
+            </div>
+            <div className={style.links_form}>
+                <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                <p>Get the latest updates on new products and upcoming sales</p>
+                <form>
+                    <label htmlFor="email"></label>
+                    <input type="text" placeholder='Your email address' id="email"/>
+                    <input type="submit" value={"Subscribe"} />
+                </form>
+                
+            </div>
+        </div>
+        
+        <div className={style.copyright_container}>
+            <div>
+                <p>{'\u00a9'}2022 Africrafted</p>
+            </div>
+            <div>
+                <Link to={'#'}>Terms Of Use</Link>
+                <Link to={'#'}>Privacy Policy</Link>
+            </div>
+            <div className={style.payment_logo}>
+                <img src={payment} alt="payment methods" />
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Footer

@@ -1,0 +1,154 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.form_container {
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0px;
+}
+
+.form_container form {
+    flex: 0.4;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.form_container label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form_container input[type=text], .form_container input[type=number] {
+    width: 95%;
+    padding: 14px 12px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+}
+
+.additional_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.additional_info input[type=text], .additional_info input[type=number] {
+    margin-right: 10px !important;
+    width: 85% !important;
+}
+
+.form_container input[type=submit] {
+    padding: 13px;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 20px;
+    background-color: #000;
+    cursor: pointer;
+    width: 40%;
+}
+
+.order_summary {
+    background-color: #fff;
+    flex: 0.3;
+    border-radius: 3px;
+    height: 460px;
+}
+
+.order_summary_header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.order_summary_header h2 {
+    font-size: 15px;
+    color: #222;
+}
+
+.order_summary_header a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.order_summary_cart {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px;
+    display: flex;
+}
+
+.cart_img img {
+    width: 120px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.cart_cont p {
+    font-size: 17px;
+}
+
+.product_name {
+    font-size: 15px;
+    color: #333;
+}
+
+.price {
+    font-size: 17px;
+    color: #000;
+    font-weight: 700;
+}
+
+.qty {
+    font-size: 15px;
+    color: #333;
+}
+
+.sub_total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.sub_total p {
+    font-size: 17px;
+    color: #333;
+    line-height: 0.5px;
+}
+
+.sub_total_price {
+    font-weight: 600;
+    color: #000;
+}
+
+.total {
+    border-top: 1px solid #5555;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.total p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
