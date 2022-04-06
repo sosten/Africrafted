@@ -6,6 +6,8 @@ import AllProducts from './components/AllProducts';
 import Login from './components/Login';
 import Register from './components/Register';
 import Shipping from './components/Shipping';
+import PressOrder from './components/PressOrder';
+import Order from './components/Order';
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +27,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/shipping' element={<Shipping />} />
+          <Route path='/press_order' element={<PressOrder />} />
+          <Route path='/order' element={<Order />} />
         </Routes>
       </Router>
     </>

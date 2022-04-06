@@ -12,7 +12,7 @@ const BunnerForCategories = () => {
   return (
     <>
       <div className={style.bunner_wrapper}>
-          <div className={style.banner}></div>
+        <div className={style.banner}></div>
       </div>
       <div className={style.container}>
         <div className={style.card_container}>
