@@ -12,7 +12,7 @@ const Product = () => {
         <div className={style.container}>
             {data.product.map((product)=> (
             <div key={product._id} className={style.card_wrapper}>
-                <Link to={`/product/${product._id}`}>
+                <Link to={`/productId/${product._id}`}>
                     <div className={style.card}>
                         <img src={product.image} alt={product.name} />
                         <div className={style.card_content}>

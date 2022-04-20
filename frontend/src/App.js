@@ -6,7 +6,7 @@ import AllProducts from './components/AllProducts';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import Shipping from './components/Shipping';
-import PressOrder from './components/PressOrder';
+import PlaceOrder from './components/PlaceOrder';
 import Order from './components/Order';
 import {
   BrowserRouter as Router,
@@ -30,7 +30,7 @@ function App() {
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />
           <Route path='/shipping' element={<Shipping />} />
-          <Route path='/press_order' element={<PressOrder />} />
+          <Route path='/press_order' element={<PlaceOrder />} />
           <Route path='/order' element={<Order />} />
         </Routes>
       </Router>

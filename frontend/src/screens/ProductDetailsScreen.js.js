@@ -1,28 +1,30 @@
 import style from '../styles/ProductDetail.module.css';
-// import decor_1 from '../assets/images/decor_1.webp';
+import decor_1 from '../assets/images/decor_1.webp';
 import { AiFillStar } from 'react-icons/ai';
 import { BsCheck2 } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
 import Product from '../components/Product';
-import data from '../data/data';
+// import data from '../data/data';
+import { useParams } from 'react-router-dom';
 
-const ProductDetailsScreen = ({ match }) => {
-  const product = data.product.find(i=>i._id === match.params.id);
-  if(!product){
-    return (<div>Product not found</div>);
-  }
+const ProductDetailsScreen = () => {
+
+    const params = useParams();
+    const {id} = params;
+  
   return (
     <div className={style.container}>
         <div className={style.product_wrapper}>
+            <h1>{id}</h1>
             <div className={style.img_cover}>
-                <img src={product.image} alt={product.name} />
+                <img src={decor_1} alt="wall" />
             </div>
             <div className={style.heart}>
                 <BsHeart size={24} />
             </div>
             <div className={style.product_description}>
                 <div className={style.artist}>            
-                    <h2>{product.product_name}</h2>
+                    <h2>Wall Decor</h2>
                     <p>969 | sales <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> </p>
                 </div>
                 <p className={style.description}>Portrait painting custom from photo hand painted oil paints canvas child family portrait wedding commission painting</p>

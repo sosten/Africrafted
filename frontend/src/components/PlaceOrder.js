@@ -6,7 +6,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { GrDeliver } from 'react-icons/gr';
 import decor from '../assets/images/decor_1.webp';
 
-const PressOrder = () => {
+const PlaceOrder = () => {
   return (
     <div className={style.container}>
         <div className={style.header}>
@@ -81,11 +81,11 @@ const PressOrder = () => {
                     <p>K143</p>
                 </div>
                 <hr />
-                <Link to={'/order'}>Press Order</Link>
+                <Link to={'/order'}>Pleace Order</Link>
             </div>
         </div>
     </div>
   )
 }
 
-export default PressOrder
+export default PlaceOrder;

@@ -7,7 +7,7 @@ const userRoute = express.Router();
 userRoute.post('/user',async(req, res)=>{
     const saltPasword = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(req.body.password, saltPasword)
-    
+
     const user = new UserModel({
         firstName: await req.body.firstName,
         lastName: await req.body.lastName,
@@ -25,8 +25,20 @@ userRoute.post('/user',async(req, res)=>{
     })
 })
 
-userRoute.get('/user/:id', (req, res) => {
-    UserModel.findOne(user => user.id === req.params.id)
+userRoute.get('/all_users', (req, res) => {
+    UserModel.find()
+    .then(data => {
+        res.json(data)
+    })
+
+    .catch(() => {
+        res.status(404);
+        res.json({message: "You carrently have no users"})
+    })
+})
+
+userRoute.get('/user/:id', async(req, res) => {
+    UserModel.findById(req.params.id)
     .then(data => {
         res.json(data)
     })
