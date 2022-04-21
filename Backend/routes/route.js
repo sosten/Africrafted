@@ -45,8 +45,40 @@ userRoute.get('/user/:id', async(req, res) => {
 
     .catch(err => {
         console.log(err)
-        res.json({message: 'user not found'})
+        res.json({message:'user not found'})
     })
+})
+
+
+// UPDATE USER
+
+userRoute.put('/edit_user/:id', (req, res)=>{
+  const user = UserModel.findByIdAndUpdate(req.params.id)
+    .then(data => {
+      res.json(data)
+  })
+})
+
+// USER SIGN IN
+
+userRoute.post('/sign_in', async(req, res)=>{
+    const user = await UserModel.findOne({email: req.body.email});
+    if(user){
+        if(bcrypt.compareSync(req.body.password, user.password)) {
+            res.send(
+                {
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    password: user.password,
+                    isAdmin: userRoute.isAdmin
+                }
+
+            );
+            return;
+
+        }
+    }
 })
 
 export default userRoute;

@@ -26,6 +26,11 @@ const reviewsSchema = mongoose.Schema({
 })
 
 const productShema = mongoose.Schema({
+    artist_name: {
+        type: String,
+        require: true
+    },
+
     name: {
         type: String,
         require: true
@@ -62,10 +67,15 @@ const productShema = mongoose.Schema({
     },
 
     countInstock: {
-        type: Numder,
+        type: Number,
         require: true,
         default: 0
     },
+    
+    date: {
+        type: Date,
+        default: new Date()
+    }
         
 })
 
