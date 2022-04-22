@@ -3,11 +3,47 @@ import decor_1 from '../assets/images/decor_1.webp';
 import { AiFillStar } from 'react-icons/ai';
 import { BsCheck2 } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
-import Product from '../components/Product';
+// import Product from '../components/Product';
 // import data from '../data/data';
 import { useParams } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
+import axios from 'axios';
 
 const ProductDetailsScreen = () => {
+
+    const reducer = async (state, action) => {
+        switch(action.type){
+            case 'FETCH_REQUEST':
+                return {...state, loading: true}
+            case 'FETCH_SUCCESS':
+                return {...state, loading: false, error: false, product: action.payload}
+            case 'FETCH_FAIL':
+                return {...state, loading: false, error: action.payload}
+            default:
+                return state
+
+        }
+    }
+
+    const[{loading, error, product}, dispatch] = useReducer(reducer, {
+        loading: true, error: '', product: []
+    });
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            dispatch({type: 'FETCH_REQUEST', loading: true})
+            try{
+                const result = await axios.get(`/api/product${id}`);
+                dispatch({type: 'FETCH_SUCCESS', loading: false, payload: result.data})
+            }
+            
+            catch(error){
+                dispatch({type: 'FETCH_FAIL', loading: false, payload: error.message })
+            }
+        }
+
+        fetchData()
+    })
 
     const params = useParams();
     const {id} = params;
@@ -38,7 +74,7 @@ const ProductDetailsScreen = () => {
             <div className={style.similar_header}>
                 <h2>Similar products</h2>
             </div>  
-            <Product />
+            {/* <Product /> */}
         </div>
         
     </div>

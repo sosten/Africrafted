@@ -1,54 +1,59 @@
 const data = {
-    product: [
+    products: [
         {
             _id: 1,
-            artist_name: 'ArtonlineGallery',
-            product_name: 'beads',
+            artistName: 'ArtonlineGallery',
+            productName: 'beads',
             image: '/images/carved_7.jpg',
             category: 'neckleses',
-            rating: 4.5,
-            num_reviews: 10,
-            price: 100
+            rating: 1.5,
+            numReviews: 133,
+            price: 100,
+            countInStock: 24
         },
         {
             _id: 2,
-            artist_name: 'John Banda',
-            product_name: ' A girl with a smile',
-            image: '../../assets/images/oil_art_1.jpg',
+            artistName: 'John Banda',
+            productName: ' A girl with a smile',
+            image: '/images/oil_art_1.jpg',
             category: 'painting',
             rating: 4.5,
-            num_reviews: 10,
-            price: 100
+            numReviews: 110,
+            price: 500,
+            countInStock: 24
         },
         {
             _id: 3,
-            artist_name: 'Anna Media',
-            product_name: 'celebration',
-            image: '../assets/images/fari_favicon.png',
+            artistName: 'Anna Media',
+            productName: 'celebration',
+            image: '/images/oil_art_2.jpg',
             category: 'painting',
-            rating: 4.5,
-            num_reviews: 10,
-            price: 100
+            rating: 1.5,
+            numReviews: 30,
+            price: 163,
+            countInStock: 0
         },
         {
             _id: 4,
-            artist_name: 'ZedmediaArt',
-            product_name: 'Fruit Bowl',
-            image: '../assets/images/decor_1.webp',
+            artistName: 'ZedmediaArt',
+            productName: 'Wall Dedcor',
+            image: '/images/decor_1.webp',
             category: 'Craving',
-            rating: 3.5,
-            num_reviews: 10,
-            price: 220
+            rating: 2.5,
+            numReviews: 2453,
+            price: 220,
+            countInStock: 14
         },
         {
             _id: 5,
-            artist_name: 'Annah White',
-            product_name: 'Hand Bag',
-            image: '../assets/images/decor_1.webp',
+            artistName: 'Annah White',
+            productName: 'Hand Bag',
+            image: '/images/bag_1.webp',
             category: 'bags_&_purses',
-            rating: 4.0,
-            num_reviews: 17,
-            price: 137
+            rating: 1.5,
+            numReviews: 17,
+            price: 137,
+            countInStock: 21
         },
     ]
 }

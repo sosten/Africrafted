@@ -3,3 +3,9 @@
     width: 100%;
     margin: auto;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

@@ -8,7 +8,7 @@ import Product from '../components/Product';
 import data from '../data/data';
 
 const ProductDetail = (props) => {
-    const product = data.product.find((item)=>item._id === props.match.params.id);
+    const product = data.products.find((item)=>item._id === props.match.params.id);
     if(!product){
         return (<div>Product not found</div>);
     }
@@ -23,7 +23,7 @@ const ProductDetail = (props) => {
             </div>
             <div className={style.product_description}>
                 <div className={style.artist}>            
-                    <h2>{product.product_name}</h2>
+                    <h2>{product.productName}</h2>
                     <p>969 | sales <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> <AiFillStar color='#444' /> </p>
                 </div>
                 <p className={style.description}>Portrait painting custom from photo hand painted oil paints canvas child family portrait wedding commission painting</p>
