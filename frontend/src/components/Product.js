@@ -9,7 +9,7 @@ const Product = (props) => {
   return (
     <div className={style.container}>
         <div className={style.card_wrapper}>
-            <Link to={`/productId/${product._id}`}>
+            <Link to={`/productId/${product.slug}`}>
                 <div className={style.card}>
                     <img src={product.image} alt={product.name} />
                     <div className={style.card_content}>

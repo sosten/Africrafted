@@ -1,7 +1,30 @@
 import express from "express";
 import ProductModel from '../models/ProductModel.js';
+import data from '../data/data.js'
 
 const productRoute = express.Router();
+
+productRoute.get('/products', async(req, res) => {
+    res.send(data.products);
+})
+
+productRoute.get('/product/:slug', async(req, res)=>{
+    const product = data.products.find((x)=>x.slug === req.params.slug);
+    if(product){
+        res.send(product)
+    }else{
+        res.status(404).send({message: 'Product not found'})
+    }
+})
+
+productRoute.get('/products/:id', (req, res)=>{
+    const product = data.products.find((x)=>x._id === req.params.id);
+    if(product){
+        res.send(product)
+    }else{
+        res.status(404).send({message: 'Product not found'})
+    }
+})
 
 productRoute.post('/product', (req, res) => {
     const product = new ProductModel({

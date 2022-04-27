@@ -4,20 +4,20 @@ import logger from "use-reducer-logger";
 import Product from "../components/Product";
 // import data from '../data/data';
 
-const HomeScreen = () => {
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "FETCH_REQUEST":
-        return { ...state, loading: true };
-      case "FETCH_SUCCESS":
-        return { ...state, loading: false, products: action.payload };
-      case "FETCH_FAIL":
-        return { ...state, loading: false, error: action.payload };
-      default:
-        return state;
-    }
-  };
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "FETCH_REQUEST":
+      return { ...state, loading: true };
+    case "FETCH_SUCCESS":
+      return { ...state, loading: false, products: action.payload };
+    case "FETCH_FAIL":
+      return { ...state, loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
 
+const HomeScreen = () => {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,

@@ -1,7 +1,5 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import ShoppingCart from './components/ShoppingCart';
-// import ProductDetail from './components/ProductDetail';
 import AllProducts from './components/AllProducts';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -15,6 +13,7 @@ import {
 } from "react-router-dom";
 import HomeScreen from './screens/HomeScreen';
 import ProductDetailsScreen from './screens/ProductDetailsScreen.js';
+import CartScreen from './screens/CartScreen';
 
 function App() {
   return (
@@ -24,8 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path= '/home_screen' element={<HomeScreen />} />
-          <Route path="/productId/:id" element={<ProductDetailsScreen/>}/>
-          <Route path='/shopping_cart' element={<ShoppingCart />} />
+          <Route path="/productId/:slug" element={<ProductDetailsScreen/>}/>
+          <Route path='/shopping_cart' element={<CartScreen />} />
           <Route path='/all_products' element={<AllProducts />}/>
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />

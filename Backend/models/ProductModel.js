@@ -26,7 +26,7 @@ const reviewsSchema = mongoose.Schema({
 })
 
 const productShema = mongoose.Schema({
-    artist_name: {
+    artistName: {
         type: String,
         require: true
     },

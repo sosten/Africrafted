@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import afri_logo from '../assets/images/afri_logo.png';
+import { Store } from '../Store';
 import style from '../styles/navbar.module.css';
 
 const Navbar = () => {
+
+  const {state} = useContext(Store);
+  const {cart} = state;
   return (
     <>
       <div className={style.navbar_wrapper}>
@@ -69,6 +73,9 @@ const Navbar = () => {
                         C215.908,222.853,210.347,228.415,203.512,228.415z"/>
                       </g>
                     </svg>
+                    {cart.cartItems.length > 0 && (
+                      <span>{cart.cartItems.reduce((a, c)=> a + c.quantity, 0)}</span>
+                    )}
                 </Link>
               </div>
             </div>
