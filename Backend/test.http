@@ -1,6 +1,3 @@
-POST   http://localhost:5000/api/sign_in
+GET    http://localhost:5000/api/seed
 content-type: application/json
 
-{
-    "passoword" : "$2b$10$0JT1dK0ewGF0NC/gmxNfHe.BV78PvfLGhmZeB.sLzJqZbEVY0xRiq"
-}

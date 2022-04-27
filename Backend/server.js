@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import userRoute from './routes/route.js';
 import productRoute from './routes/productRoute.js';
+import seedRouter from './routes/seedRouter.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use('/api', seedRouter);
 app.use('/api', userRoute);
 app.use('/api', productRoute);
 

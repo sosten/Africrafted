@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
+import axios from "axios";
 import { AiFillTag, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCopyrightLine } from "react-icons/ri";
 import style from "../styles/ShoppingCart.module.css";
@@ -12,10 +13,29 @@ import paypal from "../assets/images/paypal.png";
 import { Store } from "../Store";
 
 const CartScreen = () => {
+  const navigate = useNavigate()
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
+
+  const updateCartHandler = async(item, quantity) => {
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if(data.countInStock < quantity){
+      window.alert('Sorry: this product is out of stock');
+      return;
+    }
+    ctxDispatch({type: 'CART_ADD_ITEM', payload: {...item, quantity}});
+  }
+
+  const removeCartItemHandler = (item) => {
+    ctxDispatch({type: 'CART_REMOVE_ITEM', payload: item})
+  }
+
+  const checkoutHandler = () => {
+    navigate('/login?redirect=/shipping');
+  }
+
   return (
     <>
       <div className={style.container}>
@@ -28,13 +48,12 @@ const CartScreen = () => {
           </div>
         ) : (
           <div>
+            <h1>{cartItems.length} item(s) in your cart</h1>
+            <div className={style.decision}>
+              <Link to="/home_screen">Keep Shopping</Link>
+            </div>
             {cartItems.map((item) => (
               <div key={item._id}>
-                <h1>{item.length} item in your cart</h1>
-
-                <div className={style.decision}>
-                  <Link to="/home_screen">Keep Shopping</Link>
-                </div>
                 <div className={style.product_container}>
                   <div className={style.product_details}>
                     <div className={style.art_and_artist}>
@@ -51,70 +70,20 @@ const CartScreen = () => {
                         <p>{item.description}</p>
                         <span>Size: 10 x 14 in / 25 x 35 cm</span>
                         <div className={style.remove_or_save}>
-                          <p>Remove</p>
+                          <button onClick={()=>removeCartItemHandler(item)}>Remove</button>
                           <p>Save for later</p>
                         </div>
                       </div>
-                      <div className={style.qty_amount}>
+                      <div className={style.qty_amount}> 
                         <span>Qty:</span>
-                        <button disabled={item.quantity === 1}>
+                        <button disabled={item.quantity === 1} onClick={()=>updateCartHandler(item, item.quantity - 1)}>
                           <AiOutlineMinus />
                         </button>
                         {item.quantity}
-                        <button disabled={item.quantity === item.countInStock}>
+                        <button disabled={item.quantity === item.countInStock} onClick={()=>updateCartHandler(item, item.quantity + 1)}>
                           <AiOutlinePlus />
                         </button>
                         <p className={style.price}>${item.price}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={style.product_subtotal}>
-                    <div className={style.subtotal_header}>
-                      <h2>How you'll pay</h2>
-                    </div>
-                    <div className={style.payment_methods}>
-                      <img src={airtel} alt="Airtel Mobile Money" />
-                      <img src={mtn} alt="MTN Mobile Money" />
-                      <img src={visa} alt="Visa card" />
-                      <img src={mastercard} alt="Visa card" />
-                      <img src={paypal} alt="Paypal" />
-                    </div>
-                    <div className={style.row}>
-                      <p>
-                        Subtotal (
-                        {cartItems.reduce((a, c) => a + c.quantity, 0)} item)
-                      </p>
-                      <p>
-                        $
-                        {cartItems.reduce(
-                          (a, c) => a + c.price * c.quantity,
-                          0
-                        )}
-                      </p>
-                    </div>
-                    {/* <div className={style.row}>
-                  <p>Shipping</p>
-                  <p>K10.00</p>
-                </div> */}
-                    {/* <div className={style.row_total}>
-                  <p>Total(1 item)</p>
-                  <p>K3453.99</p>
-                </div> */}
-                    <div className={style.checkout_section}>
-                      <button>Proceed to checkout</button>
-                      <div className={style.checkout_cont}>
-                        <p className={style.coupon}>
-                          {" "}
-                          <AiFillTag color="#ee7e22" /> Apply Africraft coupon
-                          code
-                        </p>
-                        <p className={style.tax}>
-                          Local Taxes included (where applicable)
-                        </p>
-                        <p className={style.dute}>
-                          * Additional duties and taxes may apply
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -123,6 +92,50 @@ const CartScreen = () => {
             ))}
           </div>
         )}
+
+        <div className={style.product_subtotal}>
+          <div className={style.subtotal_header}>
+            <h2>How you'll pay</h2>
+          </div>
+          <div className={style.payment_methods}>
+            <img src={airtel} alt="Airtel Mobile Money" />
+            <img src={mtn} alt="MTN Mobile Money" />
+            <img src={visa} alt="Visa card" />
+            <img src={mastercard} alt="Visa card" />
+            <img src={paypal} alt="Paypal" />
+          </div>
+          <div className={style.row}>
+            <p>
+              Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)} item)
+            </p>
+            <p>${cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}</p>
+          </div>
+          {/* <div className={style.row}>
+                      <p>Shipping</p>
+                      <p>K10.00</p>
+                    </div>
+                    <div className={style.row_total}>
+                      <p>Total(1 item)</p>
+                      <p>K3453.99</p>
+                    </div> */}
+          <div className={style.checkout_section}>
+            <button disabled={cartItems.length === 0} onClick={checkoutHandler}>
+              Proceed to checkout
+            </button>
+            <div className={style.checkout_cont}>
+              <p className={style.coupon}>
+                {" "}
+                <AiFillTag color="#ee7e22" /> Apply Africraft coupon code
+              </p>
+              <p className={style.tax}>
+                Local Taxes included (where applicable)
+              </p>
+              <p className={style.dute}>
+                * Additional duties and taxes may apply
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={style.footer}>
         <div className={style.footer_navbar}>

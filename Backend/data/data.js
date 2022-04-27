@@ -1,7 +1,7 @@
 const data = {
     products: [
         {
-            _id: '1',
+            // _id: '1',
             slug: 'product_1',
             artistName: 'ArtonlineGallery',
             productName: 'beads',
@@ -11,10 +11,10 @@ const data = {
             rating: 1.5,
             numReviews: 133,
             price: 100.99,
-            countInStock: 24
+            countInStock: 4
         },
         {
-            _id: '2',
+            // _id: '2',
             artistName: 'John Banda',
             slug: 'product_2',
             productName: ' A girl with a smile',
@@ -27,7 +27,7 @@ const data = {
             countInStock: 24
         },
         {
-            _id: '3',
+            // _id: '3',
             artistName: 'Anna Media',
             slug: 'product_3',
             productName: 'celebration',
@@ -40,7 +40,7 @@ const data = {
             countInStock: 0
         },
         {
-            _id: '4',
+            // _id: '4',
             artistName: 'ZedmediaArt',
             slug: 'product_4',
             productName: 'Wall Dedcor',
@@ -53,7 +53,7 @@ const data = {
             countInStock: 14
         },
         {
-            _id: '5',
+            // _id: '5',
             artistName: 'Annah White',
             slug: 'product_5',
             productName: 'Hand Bag',

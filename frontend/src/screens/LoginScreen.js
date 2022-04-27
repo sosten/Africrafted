@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import style from '../styles/Login.module.css';
 import { HiOutlineUser } from 'react-icons/hi';
 
 const LoginScreen = () => {
+    const { search } = useLocation();
+    const redirectInUrl = new URLSearchParams(search).get('redirect');
+    const redirect = redirectInUrl ? redirectInUrl : '/';
   return (
     <>
         <div className={style.containter}>
@@ -17,7 +20,7 @@ const LoginScreen = () => {
                     </div>
                     <form>
                         <label htmlFor="email">Email address <span>*</span></label>
-                        <input type="text" placeholder='Email address' id='email' />
+                        <input type="email" placeholder='Email address' id='email' />
                         <label htmlFor="pwd">Password</label>
                         <input type="password" placeholder='Password' id='pwd' />
                         <div className={style.stay_signed}>
@@ -27,7 +30,7 @@ const LoginScreen = () => {
                         <input type="submit" value="Sign in" />
                         <div className={style.account}>
                             <Link to="#">Forgot your password?</Link>
-                            <Link to="/register">Don't have an account? Sign up</Link>
+                            <Link to={`/register?redirect=${redirect}`}>Don't have an account? Sign up</Link>
                         </div>
                             <div className={style.comment}>
                             <p>By sigining in you agree to Africraft <Link to={'#'}>Terms of Use</Link> and <Link to={'#'}>Privacy policy</Link></p>
