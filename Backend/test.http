@@ -1,3 +1,7 @@
-GET    http://localhost:5000/api/seed
+POST    http://localhost:5000/api/signin
 content-type: application/json
 
+{   
+    "email" : "williamchalala@gmail.com" ,
+    "password" : "12345678"
+}

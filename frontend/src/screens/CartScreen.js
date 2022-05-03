@@ -47,53 +47,11 @@ const CartScreen = () => {
             </div>
           </div>
         ) : (
-          <div>
+          <div className={style.test_flex}>
             <h1>{cartItems.length} item(s) in your cart</h1>
             <div className={style.decision}>
               <Link to="/home_screen">Keep Shopping</Link>
-            </div>
-            {cartItems.map((item) => (
-              <div key={item._id}>
-                <div className={style.product_container}>
-                  <div className={style.product_details}>
-                    <div className={style.art_and_artist}>
-                      <div className={style.artist}>
-                        <img src={artist} alt="Artist" />
-                        <p>{item.artistName}</p>
-                      </div>
-                      <div className={style.img_container}>
-                        <img src={item.image} alt={item.productName} />
-                      </div>
-                    </div>
-                    <div className={style.description_container}>
-                      <div className={style.description}>
-                        <p>{item.description}</p>
-                        <span>Size: 10 x 14 in / 25 x 35 cm</span>
-                        <div className={style.remove_or_save}>
-                          <button onClick={()=>removeCartItemHandler(item)}>Remove</button>
-                          <p>Save for later</p>
-                        </div>
-                      </div>
-                      <div className={style.qty_amount}> 
-                        <span>Qty:</span>
-                        <button disabled={item.quantity === 1} onClick={()=>updateCartHandler(item, item.quantity - 1)}>
-                          <AiOutlineMinus />
-                        </button>
-                        {item.quantity}
-                        <button disabled={item.quantity === item.countInStock} onClick={()=>updateCartHandler(item, item.quantity + 1)}>
-                          <AiOutlinePlus />
-                        </button>
-                        <p className={style.price}>${item.price}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className={style.product_subtotal}>
+<div className={style.product_subtotal}>
           <div className={style.subtotal_header}>
             <h2>How you'll pay</h2>
           </div>
@@ -136,6 +94,51 @@ const CartScreen = () => {
             </div>
           </div>
         </div>
+            </div>
+            {cartItems.map((item) => (
+              <div key={item._id}>
+                <div className={style.product_container}>
+                  <div className={style.product_details}>
+                    <div className={style.art_and_artist}>
+                      <div className={style.artist}>
+                        <img src={artist} alt="Artist" />
+                        <p>{item.artistName}</p>
+                      </div>
+                      <div className={style.img_container}>
+                        <img src={item.image} alt={item.productName} />
+                      </div>
+                    </div>
+                    <div className={style.description_container}>
+                      <div className={style.description}>
+                        <p>{item.description}</p>
+                        <span>Size: 10 x 14 in / 25 x 35 cm</span>
+                        <div className={style.remove_or_save}>
+                          <button onClick={()=>removeCartItemHandler(item)}>Remove</button>
+                          {/* <p>Save for later</p> */}
+                        </div>
+                      </div>
+                      <div className={style.qty_amount}> 
+                        <span>Qty:</span>
+                        <button disabled={item.quantity === 1} onClick={()=>updateCartHandler(item, item.quantity - 1)}>
+                          <AiOutlineMinus size={16} color={"#000"} />
+                        </button>
+                        <span>{item.quantity}</span> 
+                        <button disabled={item.quantity === item.countInStock} onClick={()=>updateCartHandler(item, item.quantity + 1)}>
+                          <AiOutlinePlus size={16} color={"#000"} />
+                        </button>
+                        <p className={style.price}>${item.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+      
+
+          </div>
+        )}
+
+        
       </div>
       <div className={style.footer}>
         <div className={style.footer_navbar}>

@@ -1,18 +1,22 @@
 import express  from "express";
 import bcrypt from "bcrypt";
-import UserModel from "../models/UserModel.js";
+// import UserModel from "../models/UserModel.js";
+import User from "../models/UserModel.js";
+import { generateToken } from "../utils.js";
 
-const userRoute = express.Router();
+const userRouter = express.Router();
 
-userRoute.post('/user',async(req, res)=>{
+// CREATE USER
+userRouter.post('/user',async(req, res)=>{
     const saltPasword = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(req.body.password, saltPasword)
 
-    const user = new UserModel({
+    const user = new User({
         firstName: await req.body.firstName,
         lastName: await req.body.lastName,
         email: await req.body.email,
-        password: securePassword
+        password: securePassword,
+        isAdmin: await req.body.isAdmin
     })
     user.save()
     .then(data => {
@@ -25,8 +29,9 @@ userRoute.post('/user',async(req, res)=>{
     })
 })
 
-userRoute.get('/all_users', (req, res) => {
-    UserModel.find()
+// GET ALL USERS
+userRouter.get('/all_users', (req, res) => {
+    User.find()
     .then(data => {
         res.json(data)
     })
@@ -37,8 +42,9 @@ userRoute.get('/all_users', (req, res) => {
     })
 })
 
-userRoute.get('/user/:id', async(req, res) => {
-    UserModel.findById(req.params.id)
+// GET SINGLE USER
+userRouter.get('/user/:id', async(req, res) => {
+    User.findById(req.params.id)
     .then(data => {
         res.json(data)
     })
@@ -51,34 +57,33 @@ userRoute.get('/user/:id', async(req, res) => {
 
 
 // UPDATE USER
+userRouter.put('/edit_user/:id', (req, res)=>{
+  const user = User.findByIdAndUpdate(req.params.id)
 
-userRoute.put('/edit_user/:id', (req, res)=>{
-  const user = UserModel.findByIdAndUpdate(req.params.id)
     .then(data => {
       res.json(data)
   })
 })
 
 // USER SIGN IN
-
-userRoute.post('/sign_in', async(req, res)=>{
-    const user = await UserModel.findOne({email: req.body.email});
+userRouter.post('/signin', async(req, res)=>{
+    const user = await User.findOne({email: req.body.email});
     if(user){
         if(bcrypt.compareSync(req.body.password, user.password)) {
             res.send(
                 {
                     _id: user._id,
-                    name: user.name,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
                     email: user.email,
-                    password: user.password,
-                    isAdmin: userRoute.isAdmin
+                    isAdmin: user.isAdmin,
+                    token: generateToken(user)
                 }
-
             );
             return;
-
         }
     }
+    res.status(401).send({message: "Invalied email or password"})
 })
 
-export default userRoute;
+export default userRouter;
