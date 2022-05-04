@@ -61,7 +61,7 @@ productRouter.post('/product', (req, res) => {
         category: req.body.category,
         rating: req.body.rating,
         numReviews: req.body.numReviews,
-        countInStock: req.body.countInStock,
+        countInStock: req.body.countInStock
    
     })
     product.save()

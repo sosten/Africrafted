@@ -1,7 +1,16 @@
-POST    http://localhost:5000/api/signin
+POST    http://localhost:5000/api/product
 content-type: application/json
 
 {   
-    "email" : "williamchalala@gmail.com" ,
-    "password" : "12345678"
+    "artistName" : "Artifact Media" ,
+    "slug": "product_4",
+    "productName" : "art",
+    "description" : "this is a product",
+    "image" : "/images/oil_art_2.jpg",
+    "category" : "painting",
+    "rating" : "4.5",
+    "numReviews" : "199",
+    "price": "200",
+    "countInStock" : "4"
+
 }

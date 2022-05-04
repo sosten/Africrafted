@@ -7,27 +7,38 @@ import { generateToken } from "../utils.js";
 const userRouter = express.Router();
 
 // CREATE USER
-userRouter.post('/user',async(req, res)=>{
+userRouter.post('/users', async(req, res)=>{
     const saltPasword = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(req.body.password, saltPasword)
 
-    const user = new User({
+    const newUser = new User({
         firstName: await req.body.firstName,
         lastName: await req.body.lastName,
         email: await req.body.email,
         password: securePassword,
         isAdmin: await req.body.isAdmin
-    })
-    user.save()
-    .then(data => {
-        res.json(data);
-        console.log(data)
-    })
-    .catch(err => {
-        res.json(err);
-        console.log(err)
-    })
-})
+    });
+    const user = await newUser.save();
+    res.send(
+        {
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user)
+        }
+    );
+
+    //     .then(data => {
+    //         res.json(data);
+    //         console.log(data)
+    //     })
+    //     .catch(err => {
+    //         res.json(err);
+    //         console.log(err)
+    // })
+});
 
 // GET ALL USERS
 userRouter.get('/all_users', (req, res) => {

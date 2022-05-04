@@ -60,7 +60,7 @@
     margin-bottom: 5px;
 }
 
-.form_cont input[type=text], .form_cont input[type=password] {
+.form_cont input[type=email], .form_cont input[type=password] {
     width: 92%;
     border: 1px solid #b1a5a5;
     border-radius: 5px;
