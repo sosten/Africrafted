@@ -12,7 +12,7 @@ const RegisterScreen = () => {
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
-  const [LastName, setLastName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -21,18 +21,18 @@ const RegisterScreen = () => {
   const { userInfo } = state;
 
   const handleSubmit = async (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     if (password !== confirmPassword) {
       alert("Password did not match");
       return;
     }
 
     try {
-      const { data } = await Axios.post('/api/users', {
+      const { data } = await Axios.post('/api/user', {
         firstName,
-        LastName,
+        lastName,
         email,
-        password,
+        password
       });
 
       console.log(data);

@@ -3,8 +3,7 @@ import Home from './components/Home';
 import AllProducts from './components/AllProducts';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-import Shipping from './components/Shipping';
-import PlaceOrder from './components/PlaceOrder';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import Order from './components/Order';
 import {
   BrowserRouter as Router,
@@ -14,6 +13,8 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import ProductDetailsScreen from './screens/ProductDetailsScreen.js';
 import CartScreen from './screens/CartScreen';
+import ShippingScreen from './screens/ShippingScreen';
+import PaymentScreen from './screens/PaymentScreen';
 
 function App() {
   return (
@@ -28,8 +29,9 @@ function App() {
           <Route path='/all_products' element={<AllProducts />}/>
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />
-          <Route path='/shipping' element={<Shipping />} />
-          <Route path='/press_order' element={<PlaceOrder />} />
+          <Route path='/shipping' element={<ShippingScreen />} />
+          <Route path='/payment' element={<PaymentScreen />} />
+          <Route path='/placeorder' element={<PlaceOrderScreen />} />
           <Route path='/order' element={<Order />} />
         </Routes>
       </Router>
