@@ -34,9 +34,9 @@ const ProductDetail = (props) => {
             </div>
         </div>
         <div className={style.row}>
-            <div className={style.similar_header}>
+            {/* <div className={style.similar_header}>
                 <h2>Similar products</h2>
-            </div>  
+            </div>   */}
             <Product />
         </div>
         

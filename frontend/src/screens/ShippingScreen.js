@@ -138,7 +138,6 @@ const ShippingScreen = () => {
                 id="phone"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                required
               />
             </div>
           </div>
