@@ -112,6 +112,14 @@ useEffect(() => {
               </div>
               <div>
                 <h3>Order Summary</h3>
+                {
+                  <div>
+                    <p>Item(s) Price ${order.itemsPrice.toFixed(2)}</p>
+                    <p>Shipping {order.shippingPrice.toFixed(2)}</p>
+                    <p>Tax {order.taxPrice.toFixed(2)}</p>
+                    <p>Total {order.totalPrice.toFixed(2)}</p>
+                  </div>
+                }
               </div>
             </div>
           </div>
