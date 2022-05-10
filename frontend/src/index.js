@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Store';
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
+    <PayPalScriptProvider deferLoading={true}>
       <App />
+    </PayPalScriptProvider>
+      
     </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')

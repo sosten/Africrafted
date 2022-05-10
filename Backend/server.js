@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors());
 app.get('/api/keys/paypal', (req, res) => {
     res.send(process.env.PAYPAL_CLIENT_ID || 'sb')
-})
+});
 app.use('/api', seedRouter);
 app.use('/api', userRouter);
 app.use('/api', productRouter);
@@ -32,4 +32,4 @@ app.use((err, res, req, next)=>{
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`server is runnging on port ${PORT}`));
+app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
