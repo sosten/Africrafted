@@ -47,7 +47,7 @@ const Navbar = () => {
                 Hi, {userInfo.firstName}
                 <ul>
                   <li><Link to="/profile">Profile</Link></li>
-                  <li><Link to="/order">Order History</Link></li>
+                  <li><Link to="/order_history">Order History</Link></li>
                   <li onClick={handleSignOut}><Link to="#">Sign Out</Link></li>
                 </ul>
               </div>):(
