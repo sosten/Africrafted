@@ -25,7 +25,7 @@ orderRouter.post('/order', isAuth, expressAsyncHandler(async (req, res) => {
 
 orderRouter.get('/order/mine', isAuth, expressAsyncHandler(async(req, res)=>{
     const order = await Order.find({user: req.user._id})
-    res.send(order)
+    res.send(order);
 }))
 
 // GET SINGLE ORDER 

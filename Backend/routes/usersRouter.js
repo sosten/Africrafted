@@ -3,7 +3,7 @@ import expressAsyncHandler from 'express-async-handler';
 import bcrypt from "bcrypt";
 // import UserModel from "../models/UserModel.js";
 import User from "../models/UserModel.js";
-import { generateToken } from "../utils.js";
+import { generateToken, isAuth } from "../utils.js";
 
 const userRouter = express.Router();
 
@@ -96,6 +96,33 @@ userRouter.post('/signin', expressAsyncHandler(async(req, res)=>{
         }
     }
     res.status(401).send({message: "Invalied email or password"})
-}))
+}));
+
+// UPDATE _USER_PROFILE 
+
+userRouter.put('/profile', isAuth, expressAsyncHandler(async(req, res)=>{
+    const user = await User.findById(req.user._id);
+    if(user){
+        user.firstName = req.body.firstName || user.firstName;
+        user.lastName = req.body.lastName || user.lastName;
+        user.email = req.body.email || user.email;
+        if(req.body.password){
+            user.password = bcrypt.hashSync(req.body.password, 10) || user.password;
+        }
+    
+        const updateProfile = await user.save();
+        res.send({
+            _id: updateProfile._id,
+            firstName: updateProfile.firstName,
+            lastName: updateProfile.lastName,
+            email: updateProfile.email,
+            password: updateProfile.password,
+            isAdmin: updateProfile.isAdmin,
+            token: generateToken(updateProfile)
+        });
+    }else {
+        res.status(404).send({message: 'User not found'});
+    }
+}));
 
 export default userRouter;

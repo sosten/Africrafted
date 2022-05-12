@@ -21,8 +21,8 @@ const OrderHistoryScreen = () => {
 
     const [{loading, error, order}, dispatch] = useReducer(reducer,
         {
+            loading: true,
             error: '',
-            loading: false
         });
 
 const { state }  = useContext(Store);
