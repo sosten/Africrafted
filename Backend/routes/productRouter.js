@@ -2,6 +2,7 @@ import express from "express";
 // import ProductModel from '../models/ProductModel.js';
 // import data from '../data/data.js'
 import Product from "../models/ProductModel.js";
+import expressAsyncHandler from 'express-async-handler';
 
 const productRouter = express.Router();
 
@@ -12,7 +13,7 @@ const productRouter = express.Router();
 productRouter.get('/products', async(req, res)=>{
     const products = await Product.find();
     res.send(products);
-})
+});
 
 // productRouter.get('/product/:slug', async(req, res)=>{
 //     const product = data.products.find((x)=>x.slug === req.params.slug);
@@ -28,9 +29,14 @@ productRouter.get('/product/:slug', async(req, res)=>{
     if(product){
         res.send(product)
     }else{
-        res.status(404).send({message: 'Product not found'})
+        res.status(404).send({message: 'Product not found'});
     }
-})
+});
+
+productRouter.get('/products/categories', expressAsyncHandler(async(req, res)=>{
+    const categories = await Product.find().distinct('category');
+    res.send(categories);
+}));
 
 // productRouter.get('/products/:id', (req, res)=>{
 //     const product = data.products.find((x)=>x._id === req.params.id);
@@ -48,7 +54,7 @@ productRouter.get('/products/:id', async(req, res)=>{
     }else{
         res.status(404).send({message: 'Product not found'})
     }
-})
+});
 
 productRouter.post('/product', (req, res) => {
     const product = new Product({

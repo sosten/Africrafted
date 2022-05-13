@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import afri_logo from '../assets/images/afri_logo.png';
 import { Store } from '../Store';
@@ -16,6 +17,20 @@ const Navbar = () => {
     localStorage.removeItem('paymentMethod');
     window.location.href='/login';
   }
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+      const fetchCategory = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/categories`);
+        setCategories(data);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchCategory();
+  }, []);
 
   return (
     <div className={style.navbar_wrapper}>
@@ -99,6 +114,11 @@ const Navbar = () => {
             </div>
           </div>
           <div className={style.categories_navbar}>
+            {categories.map((category)=>(
+              <div key={category}>
+                <Link to={`search?category=${category}`}>{category}</Link>
+              </div>
+            ))}
             <Link to={'#'}>Jewerly & Accessories</Link>
             <Link to={'#'}>Clothing & Shoes</Link>
             <Link to={'#'}>Home & Living</Link>
