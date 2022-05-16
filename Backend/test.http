@@ -2,15 +2,15 @@ POST    http://localhost:5000/api/product
 content-type: application/json
 
 {   
-    "artistName" : "Artifact Media" ,
-    "slug": "product_4",
-    "productName" : "art",
-    "description" : "this is a product",
-    "image" : "/images/oil_art_2.jpg",
-    "category" : "painting",
-    "rating" : "4.5",
-    "numReviews" : "199",
-    "price": "200",
-    "countInStock" : "4"
+    "artistName" : "J and R media" ,
+    "slug": "product_6",
+    "productName" : "King",
+    "description" : "Another Final Test for count in stock for the product 2",
+    "image" : "/images/oil_art_1.jpg",
+    "category" : "home and living",
+    "rating" : "1.5",
+    "numReviews" : "30",
+    "price": "120",
+    "countInStock" : "10"
 
 }

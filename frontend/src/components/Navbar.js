@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import afri_logo from '../assets/images/afri_logo.png';
 import { Store } from '../Store';
 import style from '../styles/navbar.module.css';
+import SearchBox from './SearchBox';
 
 const Navbar = () => {
 
@@ -39,12 +40,13 @@ const Navbar = () => {
           <div className={style.afri_logo}>
             <Link to={'/'}><img src={afri_logo} alt="Africraft" className={style.img} /></Link>
           </div>
-          <div className={style.form_container}> 
-            <form>
+          <div className={style.form_container}>
+            <SearchBox /> 
+            {/* <form>
               <label htmlFor="search"></label>
               <input type="text" placeholder='Search for anything' id='search' />
-            </form>
-            <div className={style.svg_search_icon_container}>
+            </form> */}
+            {/* <div className={style.svg_search_icon_container}>
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 viewBox="0 0 487.95 487.95" className={style.svg_search_icon}>
                 <g>
@@ -55,7 +57,7 @@ const Navbar = () => {
                   </g>
                 </g>
               </svg>
-            </div>
+            </div> */}
           </div>
           <div className={style.sign_in}>
             {userInfo ? (

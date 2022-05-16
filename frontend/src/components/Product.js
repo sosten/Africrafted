@@ -42,10 +42,9 @@ const Product = (props) => {
                 </div>
             </Link>
             {product.countInStock === 0 ? (<button disabled>Out of stock</button>) : (<button onClick={()=> addToCartHandler(product)}>Add to cart</button>)}
-            
         </div>
     </div> 
-  )
+  );
 }
 
-export default Product
+export default Product;

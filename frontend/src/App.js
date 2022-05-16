@@ -17,6 +17,7 @@ import PaymentScreen from './screens/PaymentScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import SearchScreen from './screens/SearchScreen';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path= '/home_screen' element={<HomeScreen />} />
           <Route path="/product/:slug" element={<ProductDetailsScreen/>}/>
           <Route path='/shopping_cart' element={<CartScreen />} />
+          <Route path='/search' element={<SearchScreen />} />
           <Route path='/all_products' element={<AllProducts />}/>
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />

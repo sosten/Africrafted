@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useReducer, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Rating from '../components/Rating';
+import Product from '../components/Product';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -59,7 +60,7 @@ export const ratings = [
 ]
 
 const SearchScreen = () => {
-    const navigation = useNavigate();
+    const navigate = useNavigate();
     const { search } = useLocation();
     const sp = new URLSearchParams(search); //search?category=beads
     const category = sp.get('category') || 'all';
@@ -77,7 +78,6 @@ const SearchScreen = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            
             try {
                  const { data } = axios.get(
                     `/api/products/search?page=${page}&query=${query}&category=${category}$price=${price}&rating=${rating}&order=${order}`
@@ -156,11 +156,53 @@ const SearchScreen = () => {
                         </Link>
                     </li>
                 </ul>
-                
             </div>
         </div>
+        {loading ? (<div>Loading...</div>) : error ? (<div>{error}</div>) : (
+            <div>
+                <div>
+                    {countProducts === 0 ? "No" : countProducts} Result
+                    {query !== 'all' && ':' + query}
+                    {category !== 'all' && ':' + category}
+                    {price !== 'all' && ': Price' + price}
+                    {rating !== 'all' && ': Rating' + rating + '& up'}
+                    {query !== 'all' || category !== 'all' || price !== 'all' || rating !== 'all' ? (
+                        <button onClick={()=> navigate('/search')}>
+                            X
+                        </button>
+                    ) : null}
+                </div>
+                <div>
+                    Sort By 
+                    <select value={order} onChange={(e) => navigate(getFilterUrl({order: e.target.value}))}>
+                        <option value="newest">Newest Arrival</option>
+                        <option value="lowest">Price: Low to High</option>
+                        <option value="highest">Price: High to Low </option>
+                        <option value="toprated">Avg Customer Reviews</option>
+                    </select>
+                </div>
+                <div>
+                    {products.length === 0 && (<div>Products Not Found</div>)}
+                </div>
+                <div>
+                    {products.map((product) => (
+                        <div key={product._id}>
+                            <Product product={product}></Product>
+                        </div>
+                    ))}
+                </div>
+                <div>
+                    {[...Array(pages).keys()].map((x)=> (
+                        <Link key={x + 1} to={getFilterUrl({page: x + 1})}>
+                            <button className={Number(page) === x + 1 ? 'text-bold' : ''}>{x + 1}</button>
+                        </Link>
+                    ) )};
+                </div>
+            </div>
+        )}
+
     </div>
   )
 }
 
-export default SearchScreen
+export default SearchScreen;
