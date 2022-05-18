@@ -10,16 +10,10 @@
 }
 
 .row {
-    /* background-color: #5555; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-/* .afri_logo {
-    background-color: #fff;
-    flex: 0.2;
-} */
 
 .img {
     width: 170px;
@@ -39,50 +33,66 @@
     padding: 6px 2px;
 }
 
-/* .form_container form {
-    flex: 0.9;
+.sign_in {
+    position: relative;
 }
-
-.form_container input[type=text] {
-    width: 100%;
-    font-size: 15px;
-    color: #7777;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    padding: 2px 10px;
-} */
-
-/* .sign_in {
-    background-color: #fff;
-    flex: 0.1;
-} */
 
 .sign_in a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: #444;
+    color: #000;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
 }
 
-/* .svg_heart_icon_container {
-    background-color: #fff;
-    flex: 0.1;
-} */
-
-.svg_heart_icon {
-    fill: #444;
-    width: 20px;
+.sign_in p {
+    font-size: 16px;
+    font-weight: 500;
 }
 
-/* .svg_shopping_cart_icon_container {
-    background-color: #fff;
-    flex: 0.1;
-} */
+.user_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-.svg_shopping_cart_icon {
-    fill: #444;
-    width: 20px;
+.user_name span {
+    display: inline-block;
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+.user_profile {
+    display: none;
+    position: absolute;
+    width: 200px;
+    left: -40px;
+    top: 40px;
+}
+
+.sign_in:hover .user_profile {
+    display: block;
+    z-index: 1;
+}
+
+.sign_in:hover span {
+    transform: rotateX(180deg);
+    transition: all 0.4s ease-out;
+}
+
+.user_profile li {
+    list-style-type: none;
+    background-color: #ee7e22;
+    border-radius: 2px;
+    border-bottom: 1px solid #eee;
+}
+
+.user_profile li:hover {
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
 }
 
 .categories_navbar {
@@ -94,7 +104,7 @@
 
 .categories_navbar a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #444;
 }

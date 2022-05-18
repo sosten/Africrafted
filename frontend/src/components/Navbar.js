@@ -6,7 +6,7 @@ import { Store } from '../Store';
 import style from '../styles/Navbar.module.css';
 import { FiHeart } from 'react-icons/fi';
 import { GiShoppingCart } from 'react-icons/gi';
-import { FaAngleDown } from 'react-icons/fa';
+import { GrDown} from 'react-icons/gr';
 import SearchBox from './SearchBox';
 
 const Navbar = () => {
@@ -50,8 +50,8 @@ const Navbar = () => {
           <div className={style.sign_in}>
             {userInfo ? (
               <div>
-                Hi, {userInfo.firstName} <span><FaAngleDown /></span>
-                <ul>
+               <p className={style.user_name}>Hi, {userInfo.firstName} <span><GrDown color='#000' size={18}/></span></p>
+                <ul className={style.user_profile}>
                   <li><Link to="/profile">Profile</Link></li>
                   <li><Link to="/order_history">Order History</Link></li>
                   <li onClick={handleSignOut}><Link to="#">Sign Out</Link></li>

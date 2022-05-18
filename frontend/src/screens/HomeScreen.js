@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import Product from "../components/Product";
+import LoadingSpinner from "../components/LoadingSpinner";
 // import data from '../data/data';
 
 const reducer = (state, action) => {
@@ -53,7 +54,7 @@ const HomeScreen = () => {
         Shop Art and Cravings here
       </h1>
       {loading ? (
-        <div>Loading...</div>
+        <LoadingSpinner />
       ) : error ? (
         <div>{error}</div>
       ) : (

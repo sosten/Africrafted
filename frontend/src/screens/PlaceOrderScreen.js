@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useReducer } from 'react';
 import Axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
+import LoadingSpinner from '../components/LoadingSpinner';
+import style from '../styles/PlaceOrderScreen.module.css';
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -71,37 +73,48 @@ const PlaceOrderScreen = () => {
   }, [cart, navigate]);
 
   return (
-    <div>
-      <div style={{textAlign:"center"}}><h1>Preview Order</h1></div>
-      <div>
-        <h2>Shipping Address</h2>
+    <div className={style.container}>
+      <div className={style.header}>
+        <h1>Preview Order</h1>
+      </div>
+      <div className={style.row}>
+        <div className={style.col}>
         <div>
+          <h2>Shipping Address</h2>
           <p><b>Address:</b> {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.country}</p>
           <Link to="/shipping">Edit</Link>
           <hr />
         </div>
-        <h2>Payment Method</h2>
+        
         <div>
-          <p>{cart.paymentMethod}</p>
+          <h2>Payment</h2>
+          <p><b>Method:</b> {cart.paymentMethod}</p>
           <Link to="/payment">Edit</Link>
           <hr />
         </div>
-        <div>
-          <h2>Item</h2>
+          
           <div>
+            <h2>Items</h2>
             {cart.cartItems.map((item)=>(
               <div key={item.id}>
-                <p><img src={item.image} alt={item.productName} /></p>
-                <p>Name: {item.productName}</p>
-                <p>Qty: {item.quantity}</p>
-                <p>Price: ${item.price}</p>
-                <Link to={`/product/${item.slug}`}>Edit</Link>
+                <div className={style.item_container}>
+                  <div>
+                    <img src={item.image} alt={item.productName} />
+                  </div>
+                  <div>
+                    <p>Name: {item.productName}</p>
+                    <p>Qty: {item.quantity}</p>
+                    <p>Price: ${item.price}</p>
+                    <Link to={`/product/${item.slug}`}>Edit</Link>
+                  </div>
+                </div>
                 <hr />
               </div>
             ))}
           </div>
-          <h2>Order Summary</h2>
-          <div>
+          </div>
+          <div className={style.col}>
+            <h2>Order Summary</h2>
             <p>Item(s) price : ${cart.itemsPrice.toFixed(2)}</p>
             <p>Shipping : ${cart.shippingPrice.toFixed(2)}</p>
             <p>Tax : ${cart.taxPrice.toFixed(2)}</p>
@@ -110,12 +123,12 @@ const PlaceOrderScreen = () => {
             <br />
             <button type='button' disabled={cart.cartItems.length === 0} onClick={placeOrderHandler}>Place Order</button>
             <br />
-          </div>
+          
           {loading && (
-            <div>Loading...</div>
+            <LoadingSpinner />
           )}
-          <br />
         </div>
+
       </div>
     </div>
   )

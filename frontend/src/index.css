@@ -9,6 +9,7 @@ body {
   /* background-image: url('./assets/images/paper.jpg');
   background-size: 100%; */
   /* background-repeat: repeat; */
+  overflow-x: hidden;
 }
 
 code {

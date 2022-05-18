@@ -1,0 +1,65 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+}
+
+.form_container h1 {
+    font-size: 22px;
+    color: #111;
+    font-weight: 500;
+}
+
+.form_container label {
+    display: block;
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
+}
+
+.form_container form {
+    background-color: #fff;
+    max-width: 350px;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+
+.form_container input[type=text], .form_container input[type=email], .form_container input[type=password] {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #222;
+}
+
+.form_container input[type=text]:focus, .form_container input[type=email]:focus, .form_container input[type=password]:focus {
+    border-bottom: 1px solid #ddd;
+    border-radius: 2px;
+    width: 100%;
+    outline: unset !important;
+    background-color: #eee;
+}
+
+.form_container input[type=submit] {
+    background-color: brown;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #5555;
+    border-radius: 2px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}

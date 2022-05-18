@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useReducer } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import { Store } from '../Store';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -111,7 +112,7 @@ useEffect(() => {
 
   return (
     <div>
-      {loading ? (<div>Loading...</div>):
+      {loading ? (<LoadingSpinner />):
       error ? (<div>{error}</div>):(
         <div>
           <h1>Order ID: {orderId}</h1>
@@ -193,7 +194,7 @@ useEffect(() => {
                         </div>
                         )
                       }
-                      {loadingPay && (<div>Loading...</div>)}
+                      {loadingPay && (<LoadingSpinner />)}
                     </div>
                   )
                 }

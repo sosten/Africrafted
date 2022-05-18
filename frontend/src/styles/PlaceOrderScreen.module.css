@@ -1,0 +1,58 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+}
+
+.header {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.col p {
+    font-size: 15px;
+    color: #111;
+}
+
+.col img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    border-radius: 2px;
+}
+
+.col button {
+    background-color: brown;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #5555;
+    border-radius: 2px;
+    padding: 10px 15px;
+}
+
+.item_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_container p {
+    line-height: 0.5 !important;
+}
