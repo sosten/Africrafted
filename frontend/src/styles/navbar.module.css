@@ -30,7 +30,7 @@
 .form_container {
     background-color: #e2e2e263;
     display: flex;
-    flex: 0.8;
+    flex: 0.9;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -39,7 +39,7 @@
     padding: 6px 2px;
 }
 
-.form_container form {
+/* .form_container form {
     flex: 0.9;
 }
 
@@ -51,17 +51,7 @@
     border: none;
     background-color: transparent;
     padding: 2px 10px;
-}
-
-.svg_search_icon_container {
-    padding-right: 10px;
-    padding-top: 4px;
-}
-
-.svg_search_icon {
-    fill: #555;
-    width: 20px;
-}
+} */
 
 /* .sign_in {
     background-color: #fff;

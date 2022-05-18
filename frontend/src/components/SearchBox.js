@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
+import style from '../styles/SearchBox.module.css';
 
 const SearchBox = () => {
 
@@ -13,16 +14,22 @@ const SearchBox = () => {
     }
 
   return (
-    <div>
+    <div className={style.container}>
         <form onSubmit={submitHandler}>
-            <label htmlFor="q"></label>
-            <input type="text" name='q' id='q' onChange={(e)=>setQuery(e.target.value)} placeholder='Search products'
-                aria-label='Search products'
-                aria-describedby='button-search'
-            />
-            <button type='submit' id='button-search'>
-                <FiSearch />
-            </button>
+            <div className={style.form_content}>
+                <div className={style.form_label}>
+                    <label htmlFor="q"></label>
+                    <input type="text" name='q' id='q' onChange={(e)=>setQuery(e.target.value)} placeholder='Search products'
+                        aria-label='Search products'
+                        aria-describedby='button-search'
+                    />
+                </div>
+                <div className={style.form_btn}>
+                    <button type='submit' id='button-search'>
+                        <FiSearch color='#000' size={20} />
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
   )

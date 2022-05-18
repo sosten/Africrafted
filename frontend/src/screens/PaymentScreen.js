@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
+import style from '../styles/PaymentScreen.module.css';
 
 
 const PaymentScreen = () => {
@@ -24,18 +25,23 @@ const PaymentScreen = () => {
   }, [shippingAddress, navigate])
   
   return (
-    <div>
-        <div className="header">
-          <h1>Payment Method</h1>
-        </div>
+    <div className={style.form_container}>
+      <div className={style.form_flex}>
+        
         <div className="form_container">
           <form onSubmit={handleSubmit}>
-            <label htmlFor="Paypal">Paypal</label>
+            <div className="header">
+          <h1>Payment Method</h1>
+        </div>
             <input type="radio" id="Paypal" value={"Paypal"} checked ={paymentMethodName === 'Paypal'} onChange={(e) => setPaymentMethodName(e.target.value)} />
-            <label htmlFor="Stripe">Stripe</label>
+            <label htmlFor="Paypal">Paypal</label>
+            <br />
             <input type="radio" id="Stripe" value={"Stripe"} checked = {paymentMethodName === 'Stripe'} onChange={(e) => setPaymentMethodName(e.target.value)} />
+            <label htmlFor="Stripe">Stripe</label>
+            <br />
             <input type="submit" value="Continue" />
           </form>
+        </div>
         </div>
     </div>
   )

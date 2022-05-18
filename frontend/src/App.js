@@ -18,6 +18,9 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import SearchScreen from './screens/SearchScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+import DashboardScreen from './screens/DashboardScreen';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   return (
@@ -33,12 +36,27 @@ function App() {
           <Route path='/all_products' element={<AllProducts />}/>
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />
-          <Route path='/profile' element={<ProfileScreen />} />
+          <Route path='/profile' 
+            element={
+              <ProtectedRoute>
+                <ProfileScreen />
+              </ProtectedRoute>} />
           <Route path='/shipping' element={<ShippingScreen />} />
           <Route path='/payment' element={<PaymentScreen />} />
           <Route path='/placeorder' element={<PlaceOrderScreen />} />
-          <Route path='/order/:id' element={<OrderScreen />} />
-          <Route path='/order_history' element={<OrderHistoryScreen />} />
+          <Route path='/order/:id' 
+            element={
+            <ProtectedRoute>
+              <OrderScreen />
+            </ProtectedRoute>} />
+          <Route path='/order_history' 
+            element={
+              <ProtectedRoute>
+                <OrderHistoryScreen />
+              </ProtectedRoute>} />
+
+              {/* Admin Routes */}
+              <Route  path='/admin/dashboard' element={<AdminRoute><DashboardScreen /></AdminRoute>} />
         </Routes>
       </Router>
     </>

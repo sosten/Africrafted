@@ -1,0 +1,56 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.form_flex {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+    height: 400px;
+}
+
+.form_flex form {
+    background-color: #eee;
+    box-shadow: 1px 1px 5px 10px #eee inset;
+    padding: 10px 0px 40px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form_flex h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.form_flex input[type=submit] {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: brown;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: 1px solid #5555;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form_flex input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+.form_flex label {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.form_flex input[type=radio] {
+    transform: scale(1.4);
+    margin-bottom: 20px;
+    margin-right: 10px;
+}

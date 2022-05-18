@@ -21,9 +21,11 @@
 
 .img_cover img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 3px;
     height: auto;
+    max-width: 600px;
+    width: 100%;
 }
 
 .product_description {
