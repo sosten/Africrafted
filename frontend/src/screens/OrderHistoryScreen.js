@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner';
 import { Store } from '../Store';
 
 const reducer = (state, action) => {
@@ -47,35 +48,40 @@ const { userInfo } = state;
 
   return (
     <div>
-        {loading ? (<div>Loading...</div>) : error ? (<div>{error}</div>) : (
-            <div>
-                <h1>Order History</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>DATE</th>
-                            <th>TOTAL</th>
-                            <th>PAID</th>
-                            <th>DELIVERED</th>
-                            <th>ACTIONS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            order.map((order)=>(
-                                <tr key={order._id}>
-                                    <td>{order._id}</td>
-                                    <td>{order.createdAt.substring(0, 10)}</td>
-                                    <td>{order.totalPrice.toFixed(2)}</td>
-                                    <td>{order.isPaid ? order.isPaid.substring(0, 10) : 'No'}</td>
-                                    <td>{order.deliveredAt ? order.deliveredAt.substring(0, 10) : 'No'}</td>
-                                    <button onClick={()=> navigate(`/order/${order._id}`)}>Detail</button>
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
+        {loading ? (<LoadingSpinner />) : error ? (<div>{error}</div>) : (
+            <div className='container'>
+                <div className='header'>
+                    <h1>Order History</h1>
+                </div>
+                <div className='table-responsive'>
+                    <table className='table table-sm table-hover table-light caption-top'>
+                    <caption>List of your Orders</caption>
+                        <thead className='table-light'>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">DATE</th>
+                                <th scope="col">TOTAL</th>
+                                <th scope="col">PAID</th>
+                                <th scope="col">DELIVERED</th>
+                                <th scope="col">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                order.map((order)=>(
+                                    <tr key={order._id}>
+                                        <td>{order._id}</td>
+                                        <td>{order.createdAt.substring(0, 10)}</td>
+                                        <td>{order.totalPrice.toFixed(2)}</td>
+                                        <td>{order.isPaid ? order.isPaid.substring(0, 10) : 'No'}</td>
+                                        <td>{order.deliveredAt ? order.deliveredAt.substring(0, 10) : 'No'}</td>
+                                        <button onClick={()=> navigate(`/order/${order._id}`)} className={'btn btn-outline-secondary'}>View Detail</button>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )}
     </div>

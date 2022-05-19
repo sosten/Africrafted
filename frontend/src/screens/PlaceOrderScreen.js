@@ -19,7 +19,6 @@ const reducer = (state, action) => {
 }
 
 const PlaceOrderScreen = () => {
-
   const [{loading}, dispatch] = useReducer(reducer, {
     loading: false,
   });
@@ -113,17 +112,30 @@ const PlaceOrderScreen = () => {
             ))}
           </div>
           </div>
-          <div className={style.col}>
-            <h2>Order Summary</h2>
-            <p>Item(s) price : ${cart.itemsPrice.toFixed(2)}</p>
-            <p>Shipping : ${cart.shippingPrice.toFixed(2)}</p>
-            <p>Tax : ${cart.taxPrice.toFixed(2)}</p>
+          <div className={style.order_summary}>
+            <div className={style.order_header}>
+              <h2>Order Summary</h2>
+            </div>
+            <div className={style.order_cont}>
+              <p>Item(s) price :</p>
+              <p> ${cart.itemsPrice.toFixed(2)}</p>
+            </div>
+            <div className={style.order_cont}>
+              <p>Shipping :</p>
+              <p> ${cart.shippingPrice.toFixed(2)}</p>
+            </div>
+            <div className={style.order_cont}>
+              <p>Tax :</p>
+              <p> ${cart.taxPrice.toFixed(2)}</p>
+            </div>
             <hr />
-            <p><strong>Total Price</strong> : <strong>${cart.totalPrice.toFixed(2)}</strong></p>
+            <div className={style.order_cont}>
+              <p><strong>Total Price</strong> :</p>
+              <p> <strong>${cart.totalPrice.toFixed(2)}</strong></p>
+            </div>
             <br />
             <button type='button' disabled={cart.cartItems.length === 0} onClick={placeOrderHandler}>Place Order</button>
             <br />
-          
           {loading && (
             <LoadingSpinner />
           )}

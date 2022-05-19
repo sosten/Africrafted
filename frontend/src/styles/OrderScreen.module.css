@@ -1,0 +1,23 @@
+.order_header {
+    padding: 30px 0;
+}
+
+.order_header h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+}
+
+.order_details {
+    padding: 15px;
+    border: 1px solid #b5b591;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.item_img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 2px;
+}

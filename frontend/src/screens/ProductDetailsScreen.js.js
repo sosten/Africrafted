@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Store } from "../Store";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -70,7 +71,7 @@ const ProductDetailsScreen = () => {
   return (
     <div className={style.container}>
       {loading ? (
-        <div>loading...</div>
+        <LoadingSpinner />
       ) : error ? (
         <div>{error}</div>
       ) : (
