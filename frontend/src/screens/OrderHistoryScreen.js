@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Store } from '../Store';
+import style from '../styles/OrderHistoryScreen.module.css';
 
 const reducer = (state, action) => {
     switch(action.type) {
@@ -47,14 +48,14 @@ const { userInfo } = state;
     }, [userInfo]);
 
   return (
-    <div>
+    <div className={style.order_container}>
         {loading ? (<LoadingSpinner />) : error ? (<div>{error}</div>) : (
             <div className='container'>
-                <div className='header'>
+                <div className={style.header}>
                     <h1>Order History</h1>
                 </div>
                 <div className='table-responsive'>
-                    <table className='table table-sm table-hover table-light caption-top'>
+                    <table className='table table-sm table-hover table-light'>
                     <caption>List of your Orders</caption>
                         <thead className='table-light'>
                             <tr>
@@ -75,7 +76,7 @@ const { userInfo } = state;
                                         <td>{order.totalPrice.toFixed(2)}</td>
                                         <td>{order.isPaid ? order.isPaid.substring(0, 10) : 'No'}</td>
                                         <td>{order.deliveredAt ? order.deliveredAt.substring(0, 10) : 'No'}</td>
-                                        <button onClick={()=> navigate(`/order/${order._id}`)} className={'btn btn-outline-secondary'}>View Detail</button>
+                                        <button onClick={()=> navigate(`/order/${order._id}`)} className={style.order_btn}>View Detail</button>
                                     </tr>
                                 ))
                             }

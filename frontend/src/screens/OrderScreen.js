@@ -126,7 +126,6 @@ const OrderScreen = () => {
           <div className={style.order_header}>
             <h1>Order ID: {orderId}</h1>
           </div>
-          <hr />
           <div className="col-8">
             <div className={style.order_details}>
               <h3>Shipping</h3>
@@ -191,7 +190,6 @@ const OrderScreen = () => {
                           <Link to={`/product/${item.slug}`}>Edit</Link>
                         </div>
                       </div>
-
                       <hr />
                     </div>
                   ))}
@@ -200,20 +198,34 @@ const OrderScreen = () => {
             </div>
           </div>
           <div className="col-4">
-            <h3>Order Summary</h3>
             {
-              <div>
-                <p>Item(s) Price ${order.itemsPrice.toFixed(2)}</p>
-                <p>Shipping {order.shippingPrice.toFixed(2)}</p>
-                <p>Tax {order.taxPrice.toFixed(2)}</p>
-                <p>Total {order.totalPrice.toFixed(2)}</p>
+              <div className={style.order_summary}>
+                <div className={style.order_summary_header}>
+                 <h3>Order Summary</h3>
+              </div>
+              <div className={style.order_summary_row}>
+                <p>Item(s) Price</p>
+                <p>${order.itemsPrice.toFixed(2)}</p>
+              </div>
+              <div className={style.order_summary_row}>
+                <p>Shipping</p>
+                <p>${order.shippingPrice.toFixed(2)}</p>
+              </div>
+              <div className={style.order_summary_row}>
+                <p>Tax</p>
+                <p>${order.taxPrice.toFixed(2)}</p>
+              </div>
+              <div className={style.order_summary_total}>
+                <p><b>Total</b></p>
+                <p><b>${order.totalPrice.toFixed(2)}</b></p>
+              </div>
               </div>
             }
 
             {!order.isPaid && (
               <div>
                 {isPending ? (
-                  <div>Loading...</div>
+                  <LoadingSpinner />
                 ) : (
                   <div>
                     <PayPalButtons

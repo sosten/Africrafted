@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className={style.sign_in}>
             {userInfo ? (
               <div>
-               <p className={style.user_name}>Hi, {userInfo.firstName} <span><GrDown color='#000' size={18}/></span></p>
+               <Link to={'/profile'} className={style.user_name}>Hi, {userInfo.firstName} <span><GrDown color='#000' size={15}/></span></Link>
                 <ul className={style.user_profile}>
                   <li><Link to="/profile">Profile</Link></li>
                   <li><Link to="/order_history">Order History</Link></li>
@@ -77,25 +77,25 @@ const Navbar = () => {
             <Link to='/shopping_cart'>
                   <GiShoppingCart size={25} color={'#222'}/>
                   {cart.cartItems.length > 0 && (
-                    <span>{cart.cartItems.reduce((a, c)=> a + c.quantity, 0)}</span>
+                    <p>{cart.cartItems.reduce((a, c)=> a + c.quantity, 0)}</p>
                   )}
               </Link>
             </div>
           </div>
           <div className={style.categories_navbar}>
-            {categories.map((category)=>(
+            {/* {categories.map((category)=>(
               <div key={category}>
                 <Link to={`search?category=${category}`}>{category}</Link>
               </div>
-            ))}
-            {/* <Link to={'#'}>Jewerly & Accessories</Link>
+            ))} */}
+            <Link to={'#'}>Jewerly & Accessories</Link>
             <Link to={'#'}>Clothing & Shoes</Link>
             <Link to={'#'}>Home & Living</Link>
             <Link to={'#'}>Wedding & Party</Link>
             <Link to={'#'}>Toys & Entertainment</Link>
             <Link to={'#'}>Art & Collectibles</Link>
             <Link to={'#'}>Craft Supplies & Tools</Link>
-            <Link to={'#'}>Vintage</Link> */}
+            <Link to={'#'}>Vintage</Link>
           </div>
         </div>
     </div>

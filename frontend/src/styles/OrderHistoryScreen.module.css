@@ -1,0 +1,26 @@
+.header{
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+}
+
+.order_container {
+    background-color: #5555;
+}
+
+.order_container table {
+    padding: 100px !important;
+}
+
+.order_btn {
+        border: 1px solid #5555;
+        padding: 12px 30px;
+        background-color: rgb(87, 160, 219) !important;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+}

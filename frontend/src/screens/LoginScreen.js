@@ -49,15 +49,15 @@ const LoginScreen = () => {
         <div className={style.form_container}>
             <div className={style.form_cont}>
                 <div className={style.form_header}>
-                    <p className={style.user_icon}>
+                    <div className={style.user_icon}>
                         <HiOutlineUser size={24} />
-                    </p>
+                    </div>
                     <h1>Sign in</h1>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="email">Email address <span>*</span></label>
                     <input type="email" placeholder='Email address' id='email' required onChange={(e)=>setEmail(e.target.value)}/>
-                    <label htmlFor="pwd">Password</label>
+                    <label htmlFor="pwd">Password <span>*</span></label>
                     <input type="password" placeholder='Password' id='pwd' required onChange={(e) => setPassword(e.target.value)} />
                     <div className={style.stay_signed}>
                         <input type="checkbox" name="" id="sign" />

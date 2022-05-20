@@ -61,7 +61,7 @@
 
 .user_name span {
     display: inline-block;
-    padding-top: 5px;
+    padding-top: 0px;
     margin-left: 10px;
 }
 
@@ -76,6 +76,7 @@
 .sign_in:hover .user_profile {
     display: block;
     z-index: 1;
+    
 }
 
 .sign_in:hover span {
@@ -83,15 +84,19 @@
     transition: all 0.4s ease-out;
 }
 
+.user_profile a {
+    color: #eee !important;
+}
+
 .user_profile li {
     list-style-type: none;
     background-color: #ee7e22;
-    border-radius: 2px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #9f3131;
 }
 
 .user_profile li:hover {
-    opacity: 0.7;
+    background-color: #e7c5a8;
+    color: #fff;
     transition: all 0.2s ease-in-out;
 }
 
@@ -107,4 +112,25 @@
     font-size: 16px;
     font-weight: 500;
     color: #444;
+}
+
+.svg_shopping_cart_icon_container {
+    position: relative;
+}
+
+.svg_shopping_cart_icon_container a {
+    text-decoration: none !important;
+}
+
+.svg_shopping_cart_icon_container p {
+    background-color: #9f3131;
+    display: inline;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    left: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
 }

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AiFillTag, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCopyrightLine } from "react-icons/ri";
-import style from "../styles/ShoppingCart.module.css";
+import style from "../styles/CartScreen.module.css";
 import artist from "../assets/images/img.jfif";
 import airtel from "../assets/images/airtel-mobile-money.png";
 import mtn from "../assets/images/mtn.png";
@@ -41,14 +41,17 @@ const CartScreen = () => {
       <div className={style.container}>
         {cartItems.length === 0 ? (
           <div className={style.header}>
-            <div>
-              <h1>Your cart is empty</h1>
+            <div className={style.header_cont}>
+              <h1>OOps !</h1>
+              <h2>Your cart is empty</h2>
               <Link to={"/home_screen"}>Continue Shopping</Link>
             </div>
           </div>
         ) : (
           <div className={style.test_flex}>
-            <h1>{cartItems.length} item(s) in your cart</h1>
+            <div className={style.header}>
+              <h1>{cartItems.length} item(s) in your cart</h1>
+            </div>
             <div className={style.decision}>
               <Link to="/home_screen">Keep Shopping</Link>
               <div className={style.product_subtotal}>

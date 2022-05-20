@@ -34,6 +34,7 @@
     outline: transparent;
     border: none;
     background-color: transparent;
-    padding-right: 20px;
+    padding-right: 15px;
+    padding-bottom: 6px;
     cursor: pointer;
 }
