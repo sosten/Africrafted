@@ -1,0 +1,14 @@
+.dashboard {
+    background-color: #5555;
+    display: flex;
+}
+
+.side_navbar {
+    background-color: yellow;
+}
+
+.top_navbar {
+    background-color: aquamarine;
+    flex: 1;
+    margin-left: 20px;
+}
