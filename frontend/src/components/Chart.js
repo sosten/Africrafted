@@ -15,7 +15,7 @@ const Chart = () => {
             <div className={style.circular}>
                 <CircularProgressbar value={70} text={'70%'} strokeWidth={3} />
             </div>
-            <div className="sales">
+            <div className={style.sales}>
                 <p className={style.total_sales}> Total sales made today</p>
                 <p className={style.amount}>$123</p>
                 <p className={style.prev}>Previous transaction processing. Last transaction not included</p>

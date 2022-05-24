@@ -34,5 +34,25 @@
     height: 150px;
     margin: auto;
     text-align: center;
-    padding-bottom: 30px;
+}
+
+.sales {
+    text-align: center;
+    padding: 20px;
+}
+
+.total_sales {
+    color: grey;
+    font-size: 15px;
+}
+
+.amount {
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.prev {
+    font-size: 15px;
+    color: grey;
 }
