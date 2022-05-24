@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BsGlobe } from 'react-icons/bs';
 import { BsSearch } from 'react-icons/bs';
 import { BsMoon } from 'react-icons/bs';
-import { AiOutlineBell } from 'react-icons/ai';
+import { BsBell } from 'react-icons/bs';
 import { BsChatLeft } from 'react-icons/bs';
 import style from '../styles/AdminNavbar.module.css';
 
@@ -22,8 +22,9 @@ const AdminNavbar = () => {
             <ul>
                 <li><Link to='#'><BsGlobe className={style.icon}/> English</Link></li>
                 <li><Link to='#'><BsMoon className={style.icon}/></Link></li>
-                <li><Link to='#'><AiOutlineBell className={style.icon}/></Link></li>
-                <li><Link to='#'><BsChatLeft className={style.icon}/></Link></li>
+                <li className={style.counter_wrapper}><Link to='#'><BsBell className={style.icon}/><span className={style.counter}>1</span></Link></li>
+                <li className={style.counter_wrapper}><Link to='#'><BsChatLeft className={style.icon}/><span className={style.counter}>2</span></Link></li>
+                <li className={style.avator}><img src="/images/art_5.jpg" alt="Avator" /></li>
             </ul>
         </div>
     </div>

@@ -1,14 +1,27 @@
 .dashboard {
-    background-color: #5555;
     display: flex;
-}
-
-.side_navbar {
-    background-color: yellow;
+    background-color: #fff;
 }
 
 .top_navbar {
-    background-color: aquamarine;
     flex: 1;
     margin-left: 20px;
+}
+
+.widget {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.revenue_wrapper {
+    display: flex;
+}
+
+.revenue {
+    flex: 2;
+}
+
+.total {
+    flex: 5;
 }
