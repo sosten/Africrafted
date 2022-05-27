@@ -4,18 +4,20 @@ export const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
-    { field: 'email', headerName: 'Email', width: 130 },
+    { field: 'email', headerName: 'Email', width: 200 },
     {
       field: 'fullName',
       headerName: 'Full name',
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
-      width: 160,
+      width: 200,
       renderCell: (params) =>{
+        return(
           <div className={style.user_image}>
               <img src={params.row.img} alt="avator" />
               <p>{params.row.firstName} {params.row.lastName}</p>
           </div>
+        )   
       }
         
     },

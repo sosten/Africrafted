@@ -22,6 +22,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import List from './screens/List';
 import AdminRoute from './components/AdminRoute';
+import AdminSingleScreen from './screens/AdminSingleScreen';
+import AdminAddUser from './screens/AdminAddUser';
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
               {/* Admin Routes */}
               <Route  path='/admin/dashboard' element={<DashboardScreen />} />
               <Route path='/admin/list' element={<List />}/>
+              <Route path='/admin/:adminId' element={<AdminSingleScreen />}/>
+              <Route path='/admin/add_user' element={<AdminAddUser />}/>
         </Routes>
       </Router>
     </>

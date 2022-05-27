@@ -16,3 +16,15 @@
     margin-top: 40px;
     margin-right: 20px;
 }
+
+.user_image {
+    display: flex;
+    align-items: center;
+}
+
+.user_image img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
