@@ -56,3 +56,20 @@
     font-size: 15px;
     color: grey;
 }
+
+.bottom {
+    padding: 0 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom p {
+    font-size: 15px;
+    color: #555;
+}
+
+.bottom_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

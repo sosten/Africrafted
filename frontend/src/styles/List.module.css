@@ -1,0 +1,18 @@
+.list_container {
+    background-color: #fff;
+    display: flex;
+}
+
+.list_left {
+    margin-right: 20px;
+}
+
+.list_right {
+    flex: 8;
+    width: 100%;
+}
+
+.data_table {
+    margin-top: 40px;
+    margin-right: 20px;
+}

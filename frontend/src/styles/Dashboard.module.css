@@ -16,12 +16,20 @@
 
 .revenue_wrapper {
     display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .revenue {
-    flex: 2;
+    flex: 3;
 }
 
-.total {
-    flex: 5;
+.area_chart {
+    flex: 4;
+}
+
+.transaction_table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }

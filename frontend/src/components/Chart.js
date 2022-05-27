@@ -20,8 +20,19 @@ const Chart = () => {
                 <p className={style.amount}>$123</p>
                 <p className={style.prev}>Previous transaction processing. Last transaction not included</p>
             </div>
-            <div className="target">
-                <p>target</p>
+            <div className={style.bottom}>
+                <div className={style.bottom_content}>
+                    <p className={style.target}>Target</p>
+                    <p className={style.bottom_amount}>$123,7k</p>
+                </div>
+                <div className={style.bottom_content}>
+                    <p>Last Week</p>
+                    <p className={style.bottom_amount}>$123,7k</p>
+                </div>
+                <div className={style.bottom_content}>
+                    <p>Last Month</p>
+                    <p className={style.bottom_amount}>$123,7k</p>
+                </div>  
             </div>
         </div>
     </div>

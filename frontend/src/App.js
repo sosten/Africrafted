@@ -20,6 +20,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import SearchScreen from './screens/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
+import List from './screens/List';
 import AdminRoute from './components/AdminRoute';
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
 
               {/* Admin Routes */}
               <Route  path='/admin/dashboard' element={<DashboardScreen />} />
+              <Route path='/admin/list' element={<List />}/>
         </Routes>
       </Router>
     </>

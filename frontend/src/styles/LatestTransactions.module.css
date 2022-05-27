@@ -1,0 +1,39 @@
+.table_container {
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+}
+
+.table_container b {
+    color: #444;
+}
+
+.title {
+    color: grey;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.product_wrapper img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.status {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}

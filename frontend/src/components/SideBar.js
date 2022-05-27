@@ -21,9 +21,9 @@ const SideBar = () => {
             <hr />
             <ul>
                 <p className={style.title}>MAIN</p>
-                <li><RiDashboardFill className={style.icon} /> <Link to='#'>Dashboard</Link></li>
+                <li><RiDashboardFill className={style.icon} /> <Link to='/admin/dashboard'>Dashboard</Link></li>
                 <p className={style.title}>LISTS</p>
-                <li><BsPeople className={style.icon} /> <Link to='#'>Users</Link></li>
+                <li><BsPeople className={style.icon} /> <Link to='/admin/list'>Users</Link></li>
                 <li><BsShop className={style.icon} /> <Link to='#'>Products</Link></li>
                 <li><BsCreditCard className={style.icon} /> <Link to='#'>Orders</Link></li>
                 <li><BsTruck className={style.icon} /> <Link to='#'>Delivery</Link></li>

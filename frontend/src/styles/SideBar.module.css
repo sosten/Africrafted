@@ -1,7 +1,7 @@
 .side_bar_container {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     padding: 10px;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     flex: 1;
     border-right: 1px solid rgba(233, 223, 223, 0.315);
 }
@@ -19,6 +19,7 @@
 .side_bar_container li {
     list-style-type: none;
     display: flex;
+    width: 100%;
     align-items: center;
     cursor: pointer;
     margin-bottom: 5px; 
