@@ -24,6 +24,7 @@ import List from './screens/List';
 import AdminRoute from './components/AdminRoute';
 import AdminSingleScreen from './screens/AdminSingleScreen';
 import AdminAddUser from './screens/AdminAddUser';
+import AdminAddProduct from './screens/AdminAddProduct';
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
               <Route path='/admin/list' element={<List />}/>
               <Route path='/admin/:adminId' element={<AdminSingleScreen />}/>
               <Route path='/admin/add_user' element={<AdminAddUser />}/>
+              <Route path='/admin/add_product' element={<AdminAddProduct />}/>
         </Routes>
       </Router>
     </>

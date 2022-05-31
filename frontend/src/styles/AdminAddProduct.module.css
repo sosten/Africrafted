@@ -62,7 +62,7 @@
     margin-bottom: 4px;
 }
 
-.form_container input[type=text], .form_container input[type=email], .form_container input[type=password] {
+.form_container input[type=text], .form_container input[type=number], .form_container textarea {
     width: 94%;
     border-radius: 3px;
     border: 1px solid #8888;

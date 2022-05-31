@@ -14,11 +14,11 @@ import style from '../styles/SideBar.module.css';
 
 const SideBar = () => {
   return (
-    <div>
         <div className={style.side_bar_container}>
-            {/* <img src="../assets/images/afri_logo.png" alt="Africrafted" /> */}
-            <h1 className='logo'>Africrafted</h1>
-            <hr />
+          <div className={style.logo}>
+            <img src="/images/afri_logo.png" alt="Africrafted" />
+          </div>
+
             <ul>
                 <p className={style.title}>MAIN</p>
                 <li><RiDashboardFill className={style.icon} /> <Link to='/admin/dashboard'>Dashboard</Link></li>
@@ -35,8 +35,7 @@ const SideBar = () => {
                 <li><BsBoxArrowInRight className={style.icon}/><Link to='#'>Logout</Link></li>
             </ul>
         </div>
-    </div>
   )
 }
 
-export default SideBar
+export default SideBar;

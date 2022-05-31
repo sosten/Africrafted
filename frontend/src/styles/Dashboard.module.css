@@ -3,9 +3,13 @@
     background-color: #fff;
 }
 
+.side_bar {
+    flex: 2;
+}
+
 .top_navbar {
-    flex: 1;
-    margin-left: 20px;
+    flex: 10;
+    width: 100%;
 }
 
 .widget {
@@ -32,4 +36,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.container {
+    padding: 10px;
 }

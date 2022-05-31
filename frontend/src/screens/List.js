@@ -8,12 +8,12 @@ const List = () => {
   return (
     <div className={style.list_container}>
         <div className={style.list_left}>
-            <SideBar />
+          <SideBar />
         </div>
         <div className={style.list_right}>
             <AdminNavbar />
             <div className={style.data_table}>
-                <DataTable />
+              <DataTable />
             </div>
             
         </div>

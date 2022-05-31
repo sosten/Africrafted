@@ -15,6 +15,7 @@ const DashboardScreen = () => {
       </div>
       <div className={style.top_navbar}>
         <AdminNavbar />
+        <div className={style.container}>
         <div className={style.widget}>
           <Widget type="user" />
           <Widget type="order" />
@@ -31,6 +32,7 @@ const DashboardScreen = () => {
         </div>
         <div className={style.transaction_table}>
           <LatestTransactions />
+        </div>
         </div>
       </div>
     </div>

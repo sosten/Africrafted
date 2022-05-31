@@ -1,11 +1,9 @@
 .navbar_container {
-    /* background-color: whitesmoke; */
     display: flex;
     align-items: center;
     height: 30px;
     padding: 10px;
     border-bottom: 1px solid rgba(0,0,0,0.09678);
-    margin-left: -20px;
 }
 
 .search {
