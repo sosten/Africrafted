@@ -71,7 +71,6 @@ const Navbar = () => {
                 <li onClick={handleSignOut}><Link to="#">Sign Out</Link></li>
               </ul>
             )}
-            
           </div>
           <div className={style.svg_heart_icon_container}>
             <FiHeart color='#222' size={20}/>

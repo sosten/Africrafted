@@ -6,8 +6,14 @@ import { BsMoon } from 'react-icons/bs';
 import { BsBell } from 'react-icons/bs';
 import { BsChatLeft } from 'react-icons/bs';
 import style from '../styles/AdminNavbar.module.css';
+import { useContext } from 'react';
+import { Store } from '../Store';
 
 const AdminNavbar = () => {
+    const { state } = useContext(Store);
+  const { userInfo } = state;
+
+  
   return (
     <div className={style.navbar_container}>
         <div className={style.search}>
@@ -24,7 +30,7 @@ const AdminNavbar = () => {
                 <li><Link to='#'><BsMoon className={style.icon}/></Link></li>
                 <li className={style.counter_wrapper}><Link to='#'><BsBell className={style.icon}/><span className={style.counter}>1</span></Link></li>
                 <li className={style.counter_wrapper}><Link to='#'><BsChatLeft className={style.icon}/><span className={style.counter}>2</span></Link></li>
-                <li className={style.avator}><img src="/images/art_5.jpg" alt="Avator" /></li>
+                <li className={style.avator}>Admin {userInfo.firstName}<img src="/images/art_5.jpg" alt="Avator" /></li>
             </ul>
         </div>
     </div>

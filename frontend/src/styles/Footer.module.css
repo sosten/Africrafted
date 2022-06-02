@@ -1,15 +1,19 @@
 .container {
-    /* background-color: #555; */
     border-top: 1px solid #5555;
     margin-top: 50px;
 }
 
 .link_container {
-    /* background-color: #5555; */
     background-color: #914e17;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+.links h4, .links_icons h4, .links_form h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
 }
 
 .links a {
@@ -18,7 +22,7 @@
     justify-content: space-between;
     text-decoration: none;
     font-size: 15px;
-    color: #111;
+    color: #222;
     font-weight: 500;
     margin-bottom: 20px;
 }
@@ -36,9 +40,9 @@
 }
 
 .links_form input[type=text] {
-    padding: 12px 10px;
+    padding: 8px 10px;
     border: 1px solid #888;
-    border-radius: 8px;
+    border-radius: 3px;
     font-size: 15px;
     width: 50%;
 }
@@ -48,18 +52,17 @@
     color: #fff;
     font-size: 15px;
     font-weight: 500;
-    padding: 11px 20px;
+    padding: 8px 20px;
     text-align:  center;
     margin-left: 14px;
     margin-bottom: 20px;
     width: 40%;
     border: 1px solid #000;
-    border-radius: 8px;
+    border-radius: 3px;
 }
 
 .payment_logo {
     display: flex;
-    /* justify-content: center; */
     flex: 0.39;
 }
 .payment_logo img {

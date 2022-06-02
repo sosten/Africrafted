@@ -11,8 +11,11 @@ import { BsTruck } from 'react-icons/bs';
 import { BiUserCircle } from 'react-icons/bi';
 import style from '../styles/SideBar.module.css';
 
-
 const SideBar = () => {
+
+    const handleSignOut = () => {
+    window.location.href='/login';
+  }
   return (
         <div className={style.side_bar_container}>
           <div className={style.logo}>
@@ -24,15 +27,15 @@ const SideBar = () => {
                 <li><RiDashboardFill className={style.icon} /> <Link to='/admin/dashboard'>Dashboard</Link></li>
                 <p className={style.title}>LISTS</p>
                 <li><BsPeople className={style.icon} /> <Link to='/admin/list'>Users</Link></li>
-                <li><BsShop className={style.icon} /> <Link to='#'>Products</Link></li>
-                <li><BsCreditCard className={style.icon} /> <Link to='#'>Orders</Link></li>
+                <li><BsShop className={style.icon} /> <Link to='/admin/products'>Products</Link></li>
+                <li><BsCreditCard className={style.icon} /> <Link to='/admin/orders'>Orders</Link></li>
                 <li><BsTruck className={style.icon} /> <Link to='#'>Delivery</Link></li>
                 <p className={style.title}>USEFUL</p>
                 <li><BsBarChartLineFill className={style.icon} /> <Link to='#'>Stats</Link></li>
                 <li><AiOutlineBell className={style.icon} /> <Link to='#'>Notefication</Link></li>
                 <p className={style.title}>USER</p>
-                <li><BiUserCircle className={style.icon}/><Link to='#'>Profile</Link></li>
-                <li><BsBoxArrowInRight className={style.icon}/><Link to='#'>Logout</Link></li>
+                <li><BiUserCircle className={style.icon}/><Link to='/profile'>Profile</Link></li>
+                <li onClick={handleSignOut}><BsBoxArrowInRight className={style.icon}/><Link to='#'>Logout</Link></li>
             </ul>
         </div>
   )

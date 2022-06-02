@@ -23,8 +23,10 @@ import DashboardScreen from './screens/DashboardScreen';
 import List from './screens/List';
 import AdminRoute from './components/AdminRoute';
 import AdminSingleScreen from './screens/AdminSingleScreen';
+import AdminOrders from './screens/AdminOrders';
 import AdminAddUser from './screens/AdminAddUser';
 import AdminAddProduct from './screens/AdminAddProduct';
+import AdminProductsTable from './screens/AdminProductsTable';
 
 function App() {
   return (
@@ -65,6 +67,8 @@ function App() {
               <Route path='/admin/:adminId' element={<AdminSingleScreen />}/>
               <Route path='/admin/add_user' element={<AdminAddUser />}/>
               <Route path='/admin/add_product' element={<AdminAddProduct />}/>
+              <Route path='/admin/products' element={<AdminProductsTable />}/>
+              <Route path='/admin/orders' element={<AdminOrders />}/>
         </Routes>
       </Router>
     </>

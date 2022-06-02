@@ -7,6 +7,12 @@ import { generateToken, isAuth } from "../utils.js";
 
 const userRouter = express.Router();
 
+// GET ALL USERS
+userRouter.get('/users', async (req, res) => {
+  const users = await User.find();
+    res.send(users);
+});
+
 // CREATE USER
 userRouter.post('/user', expressAsyncHandler(async(req, res)=>{
     const saltPasword = await bcrypt.genSalt(10)
@@ -41,18 +47,7 @@ userRouter.post('/user', expressAsyncHandler(async(req, res)=>{
     // })
 }));
 
-// GET ALL USERS
-userRouter.get('/all_users', (req, res) => {
-    User.find()
-    .then(data => {
-        res.json(data)
-    })
 
-    .catch(() => {
-        res.status(404);
-        res.json({message: "You carrently have no users"})
-    })
-})
 
 // GET SINGLE USER
 userRouter.get('/user/:id',expressAsyncHandler(async(req, res) => {

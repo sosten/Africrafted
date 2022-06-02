@@ -19,6 +19,8 @@
 .user_image {
     display: flex;
     align-items: center;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .user_image img {

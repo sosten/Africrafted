@@ -1,15 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
 
 .add_btn {
     padding: 20px 0px
 }
 
 .add_btn a {
-    background-color: rgb(88, 211, 228);
+    background-color: #e77e22;
     padding: 8px 15px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     color: white;
-    border: 1px solid rgba(19, 19, 206, 0.349);
+    border: 1px solid #e77e29;
     border-radius: 5px;
     text-align: center;
 }

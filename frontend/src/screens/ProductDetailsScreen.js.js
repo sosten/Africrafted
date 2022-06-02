@@ -98,10 +98,8 @@ const ProductDetailsScreen = () => {
                 product.countInStock > 0 ?  (<span>
                 <BsCheck2 />
                 <small>In stock</small>
-              </span>) : (<div>Unavailable</div>)
-              
-              
-                }
+              </span>) : (<div>Unavailable</div>)              
+              }
             </p>
             <p className={style.tax}>Local taxes included (where applicable)</p>
             <p className={style.size}>Size: 29” X 11” X 3”</p>
