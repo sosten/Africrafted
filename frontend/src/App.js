@@ -62,7 +62,7 @@ function App() {
               </ProtectedRoute>} />
 
               {/* Admin Routes */}
-              <Route  path='/admin/dashboard' element={<DashboardScreen />} />
+              <Route path='/admin/dashboard' element={<DashboardScreen />} />
               <Route path='/admin/list' element={<List />}/>
               <Route path='/admin/:adminId' element={<AdminSingleScreen />}/>
               <Route path='/admin/add_user' element={<AdminAddUser />}/>
