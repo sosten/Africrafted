@@ -63,9 +63,9 @@ const Navbar = () => {
             {userInfo && userInfo.isAdmin && (
               <ul className={style.user_profile}>
                 <li><Link to={'/admin/dashboard'}>Dashboard</Link></li>
-                <li><Link to={'/admin/productList'}>Products</Link></li>
-                <li><Link to={'/admin/orderList'}>Orders</Link></li>
-                <li><Link to={'/admin/userList'}>User</Link></li>
+                <li><Link to={'/admin/products'}>Products</Link></li>
+                <li><Link to={'/admin/orders'}>Orders</Link></li>
+                <li><Link to={'/admin/list'}>Users</Link></li>
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/order_history">Order History</Link></li>
                 <li onClick={handleSignOut}><Link to="#">Sign Out</Link></li>

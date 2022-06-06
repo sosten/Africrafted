@@ -1,10 +1,11 @@
 import React from 'react';
 import { useReducer, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { DataGrid } from '@mui/x-data-grid';
-import { rows, columns } from '../data/userData';
+import LoadingSpinner from '../components/LoadingSpinner';
 import style from '../styles/DataTable.module.css';
 import axios from 'axios';
+import { TiPencil } from 'react-icons/ti';
+import { FiTrash2 } from 'react-icons/fi';
 
 const reducer = (state, action) => {
   switch(action.type){
@@ -41,35 +42,47 @@ const DataTable = () => {
     fetchUsers();
   }, []);
 
-  const actionColumn = [{field: 'action', headerName: 'Action', width: 300, renderCell: () =>{
-    return(
-      <div className={style.cell_action}>
-        <div className={style.view_btn}>View</div>
-        <div className={style.delete_btn}>Delete</div>
-      </div>
-    )
-  }}]
   return (
-    <div style={{ height: 500, width: '100%' }}>
-      {users.map((user) =>(
-        <div key={user._id}>
-          {user.firstName}
-        </div>
-      ))}
-      <div className={style.header}>
-        <h1>Customers</h1>
-        <div className={style.add_btn}>
-          <Link to={'/admin/add_user'}>Add New</Link>
-        </div>
-      </div>
+    
+    <div>
       
-      <DataGrid
-        rows={rows}
-        columns={columns.concat(actionColumn)}
-        pageSize={7}
-        rowsPerPageOptions={[7]}
-        checkboxSelection
-      />
+      {
+        loading ? (<div><LoadingSpinner /></div>) : error ? (<div>{error}</div>) : (
+          <div>
+              <div className={style.header}>
+              <h1>Customers</h1>
+              <div className={style.add_btn}>
+                <Link to={'/admin/add_user'}>Add New</Link>
+              </div>
+            </div>
+            <table className='table table-sm table-hover table-light table-striped'>
+                  <thead className='table-light'>
+                      <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Last Name</th>
+                          <th scope="col">Email Address</th>
+                          <th scope="col">Full Name</th>
+                          <th scope="col">Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user)=> (
+                      <tr key={user._id}>
+                        <td>{user._id}</td>
+                        <td>{user.firstName}</td>
+                        <td>{user.lastName}</td>
+                        <td>{user.email}</td>
+                        <td>{user.firstName} {user.lastName}</td>
+                        <td><span><TiPencil/> Edit</span> <span><FiTrash2 /> Delete</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+            </table>
+          </div>
+        )
+      }
+      
   </div>
   )
 }

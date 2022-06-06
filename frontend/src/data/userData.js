@@ -1,7 +1,7 @@
 import style from '../styles/List.module.css';
 
 export const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    { field: '_id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
     { field: 'email', headerName: 'Email', width: 200 },

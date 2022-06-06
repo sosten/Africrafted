@@ -5,6 +5,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import { rows, columns } from "../data/productData";
 import EllipsisText from "react-ellipsis-text";
 import axios from "axios";
+import { FiTrash2 } from "react-icons/fi";
+import { TiPencil } from "react-icons/ti";
 import AdminNavbar from "../components/AdminNavbar";
 import SideBar from "../components/SideBar";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -82,47 +84,51 @@ const AdminProductsTable = () => {
             <div className={style.table}>
               <div style={{ width: "100%" }}>
                 <div className={style.header}>
-                  <div className={style.card_wrapper}>
-                    {products.map((product) => (
-                      <div key={product._id} className={style.card_container}>
-                        <div className={style.card}>
-                          {
-                            <img
-                              src={product.image}
-                              alt={product.productName}
-                            />
-                          }
-                          <div className={style.card_details}>
-                            <p className="pname">
-                              Product Name: {product.productName}
-                            </p>
-                            <p className="price">Price: ${product.price}</p>
-                            <p className="category">
-                              Category: {product.category}
-                            </p>
-                            {/* <p>Description: <EllipsisText text={product.description} length={"50"} className="description"/></p> */}
-                            <p className="count">
-                              Count In Stock:{" "}
-                              {product.countInstock === 0 ? (
-                                <span>Out of stock</span>
-                              ) : (
-                                <span>In stock</span>
-                              )}
-                            </p>
-                            <p>
-                              <span>Delete</span> <span>Edit</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                   <h1>Products</h1>
                   <div className={style.add_btn}>
                     <Link to={"/admin/add_product"}>Add New</Link>
                   </div>
                 </div>
-
+                <div className={style.card_wrapper}>
+                  {products.map((product) => (
+                    <div key={product._id} className={style.card_container}>
+                      <div className={style.card}>
+                        {<img src={product.image} alt={product.productName} />}
+                        <div className={style.card_details}>
+                          <p className="pname">
+                            <b>Name:</b> {product.productName}
+                          </p>
+                          <p className="price">
+                            <b> Price: ${product.price}</b>
+                          </p>
+                          <p className="category">
+                            <b>Category:</b> {product.category}
+                          </p>
+                          {/* <p>Description: <EllipsisText text={product.description} length={"50"} className="description"/></p> */}
+                          <p className="count">
+                            <b>Count In Stock:</b>
+                            {product.countInstock === 0 ? (
+                              <span className={style.out_of_stock}>
+                                {" "}
+                                Out of stock
+                              </span>
+                            ) : (
+                              <span className={style.in_stock}> In stock</span>
+                            )}
+                          </p>
+                          <div className={style.action}>
+                            <p>
+                              <FiTrash2 className={style.icon} />
+                            </p>
+                            <p>
+                              <TiPencil className={style.icon} />
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
                 <DataGrid
                   rows={rows}
                   columns={columns.concat(actionColumn)}
