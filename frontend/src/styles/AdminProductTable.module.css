@@ -65,7 +65,7 @@
 
 .card_details {
     background-color: #fff;
-    padding: 5px;
+    padding: 10px;
 }
 
 .card_details p {
@@ -73,6 +73,10 @@
     font-weight: 400;
     color: #333;
     line-height: 2.8px;
+}
+
+.card_details b {
+    color: #555;
 }
 
 .in_stock {
@@ -96,10 +100,17 @@
     cursor: pointer;
     border: 1px solid #5555;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 10px;
 }
 
-.icon {
+.delete_icon, .edit_icon {
     font-size: 20px;
-    color: #444;
+}
+
+.delete_icon {
+    color: red;
+}
+
+.edit_icon {
+    color: #00a2ff;
 }

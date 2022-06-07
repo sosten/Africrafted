@@ -117,11 +117,11 @@ const AdminProductsTable = () => {
                             )}
                           </p>
                           <div className={style.action}>
-                            <p>
-                              <FiTrash2 className={style.icon} />
+                            <p title="Delete Product">
+                              <FiTrash2 className={style.delete_icon} />
                             </p>
-                            <p>
-                              <TiPencil className={style.icon} />
+                            <p title="Edit Product">
+                              <TiPencil className={style.edit_icon} />
                             </p>
                           </div>
                         </div>

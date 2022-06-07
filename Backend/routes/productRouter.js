@@ -110,6 +110,38 @@ productRouter.get('/products/categories', expressAsyncHandler(async(req, res)=>{
     res.send(categories);
 }));
 
+productRouter.put('/update_product/', async(req, res)=> {
+    const product = await Product.findById(req.product._id);
+    if(product){
+        product.slug = req.body.slug || product.slug; 
+        product.artistName = req.body.artistName || product.artistName;
+        product.productName = req.body.productName || product.productName;
+        product.category = req.body.category || product.category;
+        product.image = req.body.image || product.image;
+        product.description = req.body.description || product.description;
+        product.price = req.body.price || product.price;
+        product.rating = req.body.rating || product.rating;
+        product.numReviews = req.body.numReviews || product.numReviews;
+        product.countInStock = req.body.countInStock || product.countInStock;
+
+        const updateProduct = await product.save();
+        res.send({
+            _id: updateProduct._id,
+            slug: updateProduct.slug,
+            artistName: updateProduct.artistName,
+            category: updateProduct.category,
+            image: updateProduct.image,
+            description: updateProduct.description,
+            price: updateProduct.price,
+            rating: updateProduct.rating,
+            numReviews: updateProduct.numReviews,
+            countInStock: updateProduct.countInStock
+        });
+    } else{
+        res.status(404).send({message: 'Product Not Found'})
+    }
+});
+
 // productRouter.get('/products/:id', (req, res)=>{
 //     const product = data.products.find((x)=>x._id === req.params.id);
 //     if(product){

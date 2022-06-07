@@ -1,11 +1,25 @@
-.header{
-    padding: 20px;
+.container {
+    display:flex;
+    background-color: #fff;
+    width: 100%;
+}
+
+.left {
+    flex: 2;
+}
+
+.top {
+    flex: 10;
+}
+
+.header {
+    padding: 0px 10px;
 }
 
 .header h1 {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 24px;
     color: #333;
+    font-weight: 700;
 }
 
 .table_container {
@@ -14,13 +28,12 @@
 }
 
 .table_container table {
-    background-color: #fff;
     width: 100%;
     border-collapse: collapse;
 }
 
 .table_container th, .table_container td {
-    padding: 8px;
+    padding: 12px 10px;
     text-align: left;
     border: 1px solid #ddd;
 }
@@ -29,29 +42,18 @@
     background-color: #ddd;
 }
 
-.btn_container {
-    display: flex;
-    gap: 20px;
-    border: none;
-}
-
-.delete, .view {
+.delete {
     border: 1px solid#ddd;
-    padding: 6px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.delete:hover, .view:hover {
+.delete:hover {
     background-color: #fff;
 }
 
 .delete_icon {
     font-size: 20px;
     color: red;
-}
-
-.view_icon {
-    font-size: 20px;
-    color: #00a2ff;
 }

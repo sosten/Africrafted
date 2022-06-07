@@ -12,8 +12,8 @@
 }
 
 .logo img {
-    width: 80px;
-    object-fit: contain;
+    width: 130px;
+    object-fit: cover;
 }
 
 .side_bar_container ul {

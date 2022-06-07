@@ -21,7 +21,6 @@ const SideBar = () => {
           <div className={style.logo}>
             <img src="/images/afri_logo.png" alt="Africrafted" />
           </div>
-
             <ul>
                 <p className={style.title}>MAIN</p>
                 <li><RiDashboardFill className={style.icon} /> <Link to='/admin/dashboard'>Dashboard</Link></li>
