@@ -20,6 +20,12 @@ const reducer = (state, action) => {
       return { ...state, loading: false, products: action.payload };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
+    case "DELETE_REQUEST":
+      return { ...state, loading: false }
+    case "DELETE_SUCCESS":
+      return { ...state, loading: false }
+    case "DELETE_FAIL":
+      return { ...state, loading: false }
     default:
       return state;
   }
@@ -68,6 +74,14 @@ const AdminProductsTable = () => {
       },
     },
   ];
+
+  const deleteHandler = (id) => {
+    dispatch({type: 'DELETE_REQUEST', loading: true});
+    window.confirm("Are you sure you want to delete this product?");
+    axios.delete(`/api/${id}`);
+    dispatch({type: 'DELETE_SUCCESS', loading: false})
+  } 
+
   return (
     <div>
       {loading ? (
@@ -117,7 +131,7 @@ const AdminProductsTable = () => {
                             )}
                           </p>
                           <div className={style.action}>
-                            <p title="Delete Product">
+                            <p title="Delete Product" onClick={()=>deleteHandler(product._id)}>
                               <FiTrash2 className={style.delete_icon} />
                             </p>
                             <p title="Edit Product">

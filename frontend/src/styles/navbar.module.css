@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
 .navbar_wrapper {
     background-color: #fff;
     border-bottom: 1px solid #e2e2e2;
@@ -38,10 +42,11 @@
 }
 
 .sign_in a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     text-decoration: none;
     font-size: 16px;
-    font-weight: 500;
-    color: #000;
+    font-weight: 800;
+    color: #52442d;
     display: inline-block;
     width: 100%;
     padding: 10px;
@@ -50,6 +55,7 @@
 .sign_in p {
     font-size: 16px;
     font-weight: 500;
+    color: #52442d;
 }
 
 .user_name {
@@ -108,10 +114,11 @@
 }
 
 .categories_navbar a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: #444;
+    font-size: 15px;
+    font-weight: 800;
+    color: #52442d;
 }
 
 .svg_shopping_cart_icon_container {

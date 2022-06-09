@@ -27,6 +27,8 @@ import AdminOrders from './screens/AdminOrders';
 import AdminAddUser from './screens/AdminAddUser';
 import AdminAddProduct from './screens/AdminAddProduct';
 import AdminProductsTable from './screens/AdminProductsTable';
+import AddminCategories from './screens/AdminCategories';
+import AdminAddCategory from './screens/AdminAddCategory';
 
 function App() {
   return (
@@ -69,6 +71,8 @@ function App() {
               <Route path='/admin/add_product' element={<AdminAddProduct />}/>
               <Route path='/admin/products' element={<AdminProductsTable />}/>
               <Route path='/admin/orders' element={<AdminOrders />}/>
+              <Route path='/admin/categories' element={<AddminCategories />}/>
+              <Route path='/admin/add_category' element={<AdminAddCategory />}/>
         </Routes>
       </Router>
     </>

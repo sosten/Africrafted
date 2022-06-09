@@ -29,6 +29,7 @@ const SideBar = () => {
                 <li><BsShop className={style.icon} /> <Link to='/admin/products'>Products</Link></li>
                 <li><BsCreditCard className={style.icon} /> <Link to='/admin/orders'>Orders</Link></li>
                 <li><BsTruck className={style.icon} /> <Link to='#'>Delivery</Link></li>
+                <li><RiDashboardFill className={style.icon} /> <Link to='/admin/categories'>Categories</Link></li>
                 <p className={style.title}>USEFUL</p>
                 <li><BsBarChartLineFill className={style.icon} /> <Link to='#'>Stats</Link></li>
                 <li><AiOutlineBell className={style.icon} /> <Link to='#'>Notefication</Link></li>

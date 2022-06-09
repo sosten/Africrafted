@@ -1,0 +1,13 @@
+.container {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+}
+
+.top {
+    flex: 10;
+}
+
+.left {
+    flex: 2;
+}

@@ -49,11 +49,12 @@
 }
 
 .card a {
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 .card p {
     font-size: 15px;
-    font-weight: 500;
-    color: #444;
+    font-weight: 800;
+    color: #52442d;
+    margin-top: 10px;
 }

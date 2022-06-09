@@ -142,6 +142,15 @@ productRouter.put('/update_product/', async(req, res)=> {
     }
 });
 
+productRouter.delete('/:id', expressAsyncHandler(async(req, res)=> {
+    const product = await Product.findById(req.params.id);
+    if(product) {
+        product.remove()
+    }else {
+        res.status(404).send({message: 'Product Not Found'});
+    }
+}));
+
 // productRouter.get('/products/:id', (req, res)=>{
 //     const product = data.products.find((x)=>x._id === req.params.id);
 //     if(product){

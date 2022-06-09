@@ -7,23 +7,23 @@
 
 .header a {
     text-decoration: none;
-    color: #333;
+    color: #52442d;
 }
 
 .header h1 {
     font-size: 25px;
     font-weight: 500;
     margin: auto;
+    color: #52442d;
 }
 
 .header p {
     font-size: 15px;
-    color: #555;
     margin: auto;
+    color: #52442d;
 }
 
 .card_container {
-    /* background-color: #fff; */
     display: flex;
     justify-content: space-between;
 }
@@ -33,9 +33,10 @@
 }
 
 .card_container h3 {
-    color: #444;
+    color: #52442d;
     font-weight: 500;
     font-size: 15px;
+    margin-top: 10px;
 }
 
 .card {

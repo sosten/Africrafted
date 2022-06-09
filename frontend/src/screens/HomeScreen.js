@@ -50,7 +50,7 @@ const HomeScreen = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: "center", margin: 60 }}>
+      <h1 style={{ textAlign: "center", margin: 60, color: '#52442d' }}>
         Shop Art and Cravings here
       </h1>
       {loading ? (

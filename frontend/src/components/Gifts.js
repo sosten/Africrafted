@@ -25,7 +25,7 @@ const Gifts = () => {
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
-                        <p>k50</p>
+                        <p>$50</p>
                     </Link>
                 </div>
                 <div className={style.card}>
@@ -37,7 +37,7 @@ const Gifts = () => {
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
-                        <p>k150.99</p>
+                        <p>$150.99</p>
                     </Link>
                 </div>
                 <div className={style.card}>
@@ -49,7 +49,7 @@ const Gifts = () => {
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
-                        <p>k50</p>
+                        <p>$50</p>
                     </Link>
                 </div>
                 <div className={style.card}>
@@ -61,7 +61,7 @@ const Gifts = () => {
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
-                        <p>k50</p>
+                        <p>$50</p>
                     </Link>
                 </div>
                 <div className={style.card}>
@@ -73,7 +73,7 @@ const Gifts = () => {
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
                         <AiFillStar color='#444'/>
-                        <p>k50</p>
+                        <p>$540</p>
                     </Link>
                 </div>
             </div>

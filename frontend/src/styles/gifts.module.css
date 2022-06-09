@@ -1,5 +1,4 @@
 .container {
-    /* padding-top: 150px; */
     border-bottom: 1px solid #e2e2e2;
 }
 
@@ -25,16 +24,17 @@
 
 .card h3 {
     font-size: 15px;
-    color: #444;
+    color: #52442d;
     font-weight: 500;
     margin: auto;
+    padding-top: 10px;
 }
 
 .card p {
-    font-size: 15px;
-    color: #444;
+    font-size: 20px;
+    color: #52442d;
     margin: auto;
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .img {

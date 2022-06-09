@@ -36,19 +36,19 @@ const Footer = () => {
         <div className={style.links_icons}>
           <h4>CONNECT WITH US</h4>
           <Link to={"#"}>
-            <AiFillFacebook size={30} />
+            <AiFillFacebook className={style.f_icon} />
           </Link>
           <Link to={"#"}>
-            <FaTwitter size={28} />
+            <FaTwitter className={style.t_icon} />
           </Link>
           <Link to={"#"}>
-            <BsPinterest size={28} />
+            <BsPinterest className={style.p_icon}/>
           </Link>
           <Link to={"#"}>
-            <BsInstagram size={28} />
+            <BsInstagram className={style.i_icon} />
           </Link>
           <Link to={"#"}>
-            <BsYoutube size={30} />
+            <BsYoutube className={style.y_icon} />
           </Link>
         </div>
         <div className={style.links_form}>
