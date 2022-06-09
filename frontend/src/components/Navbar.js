@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className={style.sign_in}>
             {userInfo ? (
               <div>
-               <Link to={'/profile'} className={style.user_name}>Hi, {userInfo.firstName} <span><GrDown color='#000' size={15}/></span></Link>
+               <Link to={'/profile'} className={style.user_name}>Hi, {userInfo.firstName} <span><GrDown className={style.angle_down}/></span></Link>
                 <ul className={style.user_profile}>
                   <li><Link to="/profile">Profile</Link></li>
                   <li><Link to="/order_history">Order History</Link></li>
@@ -73,11 +73,11 @@ const Navbar = () => {
             )}
           </div>
           <div className={style.svg_heart_icon_container}>
-            <FiHeart color='#222' size={20}/>
+            <FiHeart className={style.heart}/>
           </div>
           <div className={style.svg_shopping_cart_icon_container}>
             <Link to='/shopping_cart'>
-                  <GiShoppingCart size={25} color={'#222'}/>
+                  <GiShoppingCart className={style.shopping_cart}/>
                   {cart.cartItems.length > 0 && (
                     <p>{cart.cartItems.reduce((a, c)=> a + c.quantity, 0)}</p>
                   )}

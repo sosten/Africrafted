@@ -1,10 +1,15 @@
 import React from 'react';
-import { BsFileEarmark } from 'react-icons/bs';
+import { useState } from 'react';
 import AdminNavbar from '../components/AdminNavbar';
 import SideBar from '../components/SideBar';
 import style from '../styles/AdminAddUser.module.css';
 
 const AdminAddUser = () => {
+    const[file, setFile] = useState();
+    const handleFile = (e) => {
+        setFile(e.target.files[0])
+    }
+
   return (
     <div className={style.container}>
         <div className={style.left}>
@@ -15,9 +20,9 @@ const AdminAddUser = () => {
             <div className={style.form_container}>
                 <form>
                     <div className={style.file}>
-                        <img src="/images/placeholder.png" alt="No" />
-                        <label htmlFor="img"><BsFileEarmark className={style.icon}/><div className={style.upload_btn}>Upload Image</div></label>
-                        <input type="file" id="img" style={{display: 'none'}}/>
+                        <img src={ file ? URL.createObjectURL(file) : "/images/placeholder.png"} alt="No" />
+                        <label htmlFor="img"><div className={style.upload_btn}>Upload Image</div></label>
+                        <input type="file" id="img" style={{display: 'none'}} onChange={handleFile}/>
                     </div>
                     <label htmlFor="fname">First Name</label>
                     <input type="text" id="fname" />

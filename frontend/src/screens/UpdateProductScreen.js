@@ -6,4 +6,4 @@ const UpdateProductScreen = () => {
   )
 }
 
-export default UpdateProductScreen
+export default UpdateProductScreen;

@@ -88,10 +88,10 @@ const DataTable = () => {
                       {user.firstName} {user.lastName}
                     </td>
                     <td>
-                      <span className={style.edit}>
+                      <span className={style.edit} title="Edit customer info">
                         <TiPencil className={style.edit_icon} />
                       </span>{" "}
-                      <span className={style.delete}>
+                      <span className={style.delete} title="Delete customer">
                         <FiTrash2 className={style.delete_icon} />
                       </span>
                     </td>

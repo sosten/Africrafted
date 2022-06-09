@@ -24,9 +24,11 @@
     max-width: 500px;
     width: 100%;
     margin: auto;
-    border: 1px solid #5555;
     border-radius: 5px;
     padding: 20px;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
 }
 
 .file img {
@@ -34,30 +36,31 @@
     height: 150px;
     object-fit: contain;
     background-color: #5555;
-}
-
-.icon {
-    font-size: 25px;
-    color: #444;
-    cursor: pointer;
+    border-radius: 5px;
 }
 
 .upload_btn {
     cursor: pointer;
     background-color: #5555;
-    padding: 10px;
+    padding: 12px;
     display: inline-block;
-    border-radius: 10px;
-    color: #333;
+    border-radius: 5px;
+    color: #52442d;
+    width: 130px;
+    text-align: center;
+}
+
+.upload_btn:hover {
+    opacity: 0.8;
 }
 
 .form_container label {
     font-size: 15px;
-    color:#333;
-    font-weight: 500;
+    color:#52442d;
+    font-weight: 600;
     display: block;
     margin-top: 20px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 .form_container input[type=text], .form_container input[type=number], .form_container textarea {

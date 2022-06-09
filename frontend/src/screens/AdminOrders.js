@@ -3,10 +3,12 @@ import React from "react";
 import { useEffect } from "react";
 import { useReducer } from "react";
 import { FiTrash2 } from "react-icons/fi";
+import {  BsEyeFill } from 'react-icons/bs';
 import SideBar from "../components/SideBar";
 import AdminNavbar from "../components/AdminNavbar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import style from "../styles/AdminOrders.module.css";
+import { useNavigate } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -48,6 +50,8 @@ const AdminOrders = () => {
     };
     fetchOrders();
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className={style.order_container}>
@@ -91,10 +95,10 @@ const AdminOrders = () => {
                           ? order.deliveredAt.substring(0, 10)
                           : "No"}
                       </td>
-                      <td>
-                       <span className={style.delete}><FiTrash2 className={style.delete_icon}/></span> 
+                      <td className={style.action}>
+                       <span onClick={()=> navigate(`/order/${order._id}`)} className={style.view} title="View Order detail"><BsEyeFill className={style.view_icon}/></span> 
+                       <span className={style.delete} title="Delete Order"><FiTrash2 className={style.delete_icon}/></span> 
                       </td>
-                      {/* <button onClick={()=> navigate(`/order/${order._id}`)} className={style.order_btn}>View Detail</button> */}
                     </tr>
                   ))}
                 </tbody>

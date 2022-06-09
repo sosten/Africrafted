@@ -76,6 +76,11 @@
     text-align: center;
 }
 
+.counter_cont {
+    display: inline-block;
+    padding-top: 2px;
+}
+
 .avator img {
     width: 35px;
     height: 35px;
