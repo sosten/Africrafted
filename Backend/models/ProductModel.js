@@ -31,7 +31,7 @@ const productShema = mongoose.Schema(
         artistName: { type: String, required: true },
         productName: { type: String,required: true },
         category: { type: String, required: true },
-        image: { type: String, required: true },
+        image: { type: String, required: false },
         description: { type: String, required: true},
         price: { type: Number, required: true, default: 0 },
         rating: { type: Number, default: 0 },

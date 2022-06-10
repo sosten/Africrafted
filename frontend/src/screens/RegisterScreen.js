@@ -114,7 +114,7 @@ const RegisterScreen = () => {
             </div>
             <div className={style.comment}>
               <p>
-                By Registering you agree to Africraft{" "}
+                By Registering you agree to Africrafted{" "}
                 <Link to={"#"}>Terms of Use</Link> and{" "}
                 <Link to={"#"}>Privacy policy</Link>
               </p>

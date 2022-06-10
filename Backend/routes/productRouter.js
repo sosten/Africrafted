@@ -169,8 +169,8 @@ productRouter.get('/products/:id', async(req, res)=>{
     }
 });
 
-productRouter.post('/product', (req, res) => {
-    const product = new Product({
+productRouter.post('/product', expressAsyncHandler(async(req, res) => {
+    const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,
         productName: req.body.productName,
@@ -182,16 +182,30 @@ productRouter.post('/product', (req, res) => {
         numReviews: req.body.numReviews,
         countInStock: req.body.countInStock
    
-    })
-    product.save()
-    .then(data => {
-        res.json(data)
-    })
-    .catch(error => {
-        console.log(error)
-        res.json({message: 'Sorry Product Not added, try again'})
-    })
+    });
 
-})
+    const product = await newProduct.save();
+    res.send({
+        _id: product._id,
+        slug: product.slug,
+        artistName: product.artistName,
+        productName: product.productName,
+        description: product.description,
+        image: product.image,
+        price: product.price,
+        category: product.category,
+        rating: product.rating,
+        numReviews: product.numReviews,
+        countInStock: product.countInStock
+    })
+    // .then(data => {
+    //     res.json(data)
+    // })
+    // .catch(error => {
+    //     console.log(error)
+    //     res.json({message: 'Sorry Product Not added, try again'})
+    // })
+
+}));
 
 export default productRouter;
