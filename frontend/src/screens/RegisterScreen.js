@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Axios from "axios";
+import { toast } from "react-toastify";
 import { Store } from "../Store";
 import style from "../styles/Register.module.css";
 
@@ -23,7 +24,7 @@ const RegisterScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("Password did not match");
+      toast.error("Password did not match");
       return;
     }
 

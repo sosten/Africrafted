@@ -9,6 +9,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductDetailsScreen from './screens/ProductDetailsScreen.js';
 import CartScreen from './screens/CartScreen';
@@ -34,6 +36,7 @@ function App() {
   return (
     <>
       <Router>
+        <ToastContainer position='bottom-center' limit={1} />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

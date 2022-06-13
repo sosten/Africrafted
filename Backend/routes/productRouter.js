@@ -3,6 +3,7 @@ import express, { query } from "express";
 // import data from '../data/data.js'
 import Product from "../models/ProductModel.js";
 import expressAsyncHandler from 'express-async-handler';
+import multer from 'multer';
 
 const productRouter = express.Router();
 
@@ -169,13 +170,33 @@ productRouter.get('/products/:id', async(req, res)=>{
     }
 });
 
+const storage = multer.diskStorage({
+    storage: function(req, file, cb) {
+        cb(null, 'uploads')
+    },
+    filename: function(req, file, cb){
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+});
+
+const upload = multer({storage: storage}).single('myFile');
+
 productRouter.post('/product', expressAsyncHandler(async(req, res) => {
+    upload(req, res, (err) => {
+        if(err) {
+            console.logo(err)
+        }
+    })
     const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,
         productName: req.body.productName,
         description: req.body.description,
-        image: req.body.image,
+        image: {
+            data: req.file.filename,
+            contentType: 'image/jpg'
+        },
         price: req.body.price,
         category: req.body.category,
         rating: req.body.rating,
@@ -197,7 +218,9 @@ productRouter.post('/product', expressAsyncHandler(async(req, res) => {
         rating: product.rating,
         numReviews: product.numReviews,
         countInStock: product.countInStock
-    })
+    });
+
+    
     // .then(data => {
     //     res.json(data)
     // })
