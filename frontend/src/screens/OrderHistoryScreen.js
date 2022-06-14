@@ -6,6 +6,7 @@ import { BsEyeFill } from "react-icons/bs";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { Store } from "../Store";
 import style from "../styles/OrderHistoryScreen.module.css";
+import Navbar from "../components/Navbar";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -48,6 +49,8 @@ const OrderHistoryScreen = () => {
   }, [userInfo]);
 
   return (
+    <div>
+      <Navbar />
     <div className={style.order_container}>
       {loading ? (
         <LoadingSpinner />
@@ -105,6 +108,7 @@ const OrderHistoryScreen = () => {
         </div>
       )}
     </div>
+  </div>
   );
 };
 

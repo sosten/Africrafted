@@ -37,7 +37,7 @@ function App() {
     <>
       <Router>
         <ToastContainer position='bottom-center' limit={1} />
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path= '/home_screen' element={<HomeScreen />} />

@@ -25,13 +25,13 @@ import mongoose from "mongoose";
 //     }
 // })
 
-const productShema = mongoose.Schema(
+const productSchema = mongoose.Schema(
     {
         slug: { type: String, required: true },
         artistName: { type: String, required: true },
         productName: { type: String,required: true },
         category: { type: String, required: true },
-        image: { data: Buffer, contentType: String },
+        image: { type: String, required: false },
         description: { type: String, required: true},
         price: { type: Number, required: true, default: 0 },
         rating: { type: Number, default: 0 },
@@ -43,6 +43,6 @@ const productShema = mongoose.Schema(
     }
 );
 
-const Product = mongoose.model("Product", productShema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;

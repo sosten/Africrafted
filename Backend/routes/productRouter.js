@@ -170,9 +170,10 @@ productRouter.get('/products/:id', async(req, res)=>{
     }
 });
 
-const storage = multer.diskStorage({
-    storage: function(req, file, cb) {
-        cb(null, 'uploads')
+const multerStorage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        console.log(req.file)
+        cb(null, './frontend/public/uploads/')
     },
     filename: function(req, file, cb){
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -180,32 +181,33 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({storage: storage}).single('myFile');
+const multerFilter = (req, file, cb) => {
+    if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+        cb(null, true);
+    } else {
+        cb(null, false);
+        return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+    }
+}
 
+const upload = multer({storage: multerStorage, fileFilter: multerFilter});
+upload.single("myFile")
 productRouter.post('/product', expressAsyncHandler(async(req, res) => {
-    upload(req, res, (err) => {
-        if(err) {
-            console.logo(err)
-        }
-    })
-    const newProduct = new Product({
+        console.log(req.file)
+        const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,
         productName: req.body.productName,
         description: req.body.description,
-        image: {
-            data: req.file.filename,
-            contentType: 'image/jpg'
-        },
+        image: req.body.image,
         price: req.body.price,
         category: req.body.category,
         rating: req.body.rating,
         numReviews: req.body.numReviews,
         countInStock: req.body.countInStock
-   
     });
 
-    const product = await newProduct.save();
+    const product = newProduct.save();
     res.send({
         _id: product._id,
         slug: product.slug,
@@ -219,8 +221,7 @@ productRouter.post('/product', expressAsyncHandler(async(req, res) => {
         numReviews: product.numReviews,
         countInStock: product.countInStock
     });
-
-    
+        
     // .then(data => {
     //     res.json(data)
     // })

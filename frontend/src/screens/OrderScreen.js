@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { Store } from "../Store";
 import LoadingSpinner from "../components/LoadingSpinner";
+import Navbar from "../components/Navbar";
 import style from "../styles/OrderScreen.module.css";
 
 const reducer = (state, action) => {
@@ -116,6 +117,8 @@ const OrderScreen = () => {
   }, [order, userInfo, orderId, navigate, payPalDispatch, successPay]);
 
   return (
+    <div>
+      <Navbar />
     <div className="container">
       {loading ? (
         <LoadingSpinner />
@@ -241,6 +244,7 @@ const OrderScreen = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };

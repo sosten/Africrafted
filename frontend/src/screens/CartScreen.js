@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 import { AiFillTag, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCopyrightLine } from "react-icons/ri";
 import style from "../styles/CartScreen.module.css";
@@ -38,6 +39,7 @@ const CartScreen = () => {
 
   return (
     <>
+      <Navbar />
       <div className={style.container}>
         {cartItems.length === 0 ? (
           <div className={style.header}>

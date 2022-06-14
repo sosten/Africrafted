@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
+import Navbar from "../components/Navbar";
 import Product from "../components/Product";
 import LoadingSpinner from "../components/LoadingSpinner";
 // import data from '../data/data';
@@ -50,6 +51,7 @@ const HomeScreen = () => {
 
   return (
     <div>
+      <Navbar />
       <h1 style={{ textAlign: "center", margin: 60, color: '#52442d' }}>
         Shop Art and Cravings here
       </h1>

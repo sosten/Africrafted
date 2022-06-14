@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../Store";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import style from "../styles/Shipping.module.css";
 
 const ShippingScreen = () => {
@@ -61,6 +62,7 @@ const ShippingScreen = () => {
   };
 
   return (
+    <div><Navbar />
     <div className={style.container}>
       <div className={style.form_container}>
         <form onSubmit={handleSubmit}>
@@ -144,6 +146,7 @@ const ShippingScreen = () => {
           <input type="submit" value={"Continue"} />
         </form>
       </div>
+    </div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const SideBar = () => {
   return (
         <div className={style.side_bar_container}>
           <div className={style.logo}>
-            <img src="/images/afri_logo.png" alt="Africrafted" />
+            <Link to="/home_screen"><img src="/images/afri_logo.png" alt="Africrafted" /></Link>
           </div>
             <ul>
                 <p className={style.title}>MAIN</p>
