@@ -123,7 +123,6 @@ const AdminProductsTable = () => {
                             <b>Count In Stock:</b>
                             {product.countInstock === 0 ? (
                               <span className={style.out_of_stock}>
-                                {" "}
                                 Out of stock
                               </span>
                             ) : (
@@ -135,7 +134,7 @@ const AdminProductsTable = () => {
                               <FiTrash2 className={style.delete_icon} />
                             </p>
                             <p title="Edit Product">
-                              <TiPencil className={style.edit_icon} />
+                              <Link to ={`/admin/edit_product/${product._id}`} ><TiPencil className={style.edit_icon} /></Link>
                             </p>
                           </div>
                         </div>

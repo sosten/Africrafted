@@ -16,9 +16,7 @@ mongoose.connect(
 
 const app = express();
 
-
 app.use(express.json());
-// app.use(express.static('/Backend/uploads'));
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 app.get('/api/keys/paypal', (req, res) => {

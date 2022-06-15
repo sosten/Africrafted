@@ -119,132 +119,136 @@ const OrderScreen = () => {
   return (
     <div>
       <Navbar />
-    <div className="container">
-      {loading ? (
-        <LoadingSpinner />
-      ) : error ? (
-        <div>{error}</div>
-      ) : (
-        <div className="row">
-          <div className={style.order_header}>
-            <h1>Order ID: {orderId}</h1>
-          </div>
-          <div className="col-8">
-            <div className={style.order_details}>
-              <h3>Shipping</h3>
-              <p>
-                <strong>Name:</strong> {order.shippingAddress.fullName}
-              </p>
-              <p>
-                <strong>Address:</strong> {order.shippingAddress.address},
-                {order.shippingAddress.city}, {order.shippingAddress.country},
-                {order.shippingAddress.zipCode}
-              </p>
-              {order.isDelivered ? (
-                <div>
-                  <p>
-                    <strong>Status:</strong> Delivered at: {order.deliveredAt}
-                  </p>
-                  <hr />
-                </div>
-              ) : (
-                <div>
-                  <p>
-                    <strong>Status:</strong> Not delivered
-                  </p>
-                  <hr />
-                </div>
-              )}
-              <h3>Payment</h3>
-              <p>
-                <strong>Method:</strong> {order.paymentMethod}
-              </p>
-              <div>
-                {order.isPaid ? (
+      <div className="container">
+        {loading ? (
+          <LoadingSpinner />
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <div className="row">
+            <div className={style.order_header}>
+              <h1>Order ID: {orderId}</h1>
+            </div>
+            <div className="col-8">
+              <div className={style.order_details}>
+                <h3>Shipping</h3>
+                <p>
+                  <strong>Name:</strong> {order.shippingAddress.fullName}
+                </p>
+                <p>
+                  <strong>Address:</strong> {order.shippingAddress.address},
+                  {order.shippingAddress.city}, {order.shippingAddress.country},
+                  {order.shippingAddress.zipCode}
+                </p>
+                {order.isDelivered ? (
                   <div>
                     <p>
-                      <strong>Paid At:</strong> {order.paidAt}
+                      <strong>Status:</strong> Delivered at: {order.deliveredAt}
                     </p>
                     <hr />
                   </div>
                 ) : (
                   <div>
                     <p>
-                      <strong>Status:</strong> Not Paid
+                      <strong>Status:</strong> Not delivered
                     </p>
                     <hr />
                   </div>
                 )}
-
+                <h3>Payment</h3>
+                <p>
+                  <strong>Method:</strong> {order.paymentMethod}
+                </p>
                 <div>
-                  <h3>items</h3>
-                  {order.orderItems.map((item) => (
-                    <div key={item._id}>
-                      <div className="row">
-                        <div className="col-2">
-                          <div className={style.item_img}>
-                            <img src={item.image} alt={item.productName} />
-                          </div>
-                        </div>
-                        <div className="col-10">
-                          <p>Name: {item.productName}</p>
-                          <p>Qty: {item.quantity}</p>
-                          <p>Price: ${item.price}</p>
-                          <Link to={`/product/${item.slug}`}>Edit</Link>
-                        </div>
-                      </div>
+                  {order.isPaid ? (
+                    <div>
+                      <p>
+                        <strong>Paid At:</strong> {order.paidAt}
+                      </p>
                       <hr />
                     </div>
-                  ))}
+                  ) : (
+                    <div>
+                      <p>
+                        <strong>Status:</strong> Not Paid
+                      </p>
+                      <hr />
+                    </div>
+                  )}
+
+                  <div>
+                    <h3>items</h3>
+                    {order.orderItems.map((item) => (
+                      <div key={item._id}>
+                        <div className="row">
+                          <div className="col-2">
+                            <div className={style.item_img}>
+                              <img src={item.image} alt={item.productName} />
+                            </div>
+                          </div>
+                          <div className="col-10">
+                            <p>Name: {item.productName}</p>
+                            <p>Qty: {item.quantity}</p>
+                            <p>Price: ${item.price}</p>
+                            <Link to={`/product/${item.slug}`}>Edit</Link>
+                          </div>
+                        </div>
+                        <hr />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-4">
-            {
-              <div className={style.order_summary}>
-                <div className={style.order_summary_header}>
-                 <h3>Order Summary</h3>
-              </div>
-              <div className={style.order_summary_row}>
-                <p>Item(s) Price</p>
-                <p>${order.itemsPrice.toFixed(2)}</p>
-              </div>
-              <div className={style.order_summary_row}>
-                <p>Shipping</p>
-                <p>${order.shippingPrice.toFixed(2)}</p>
-              </div>
-              <div className={style.order_summary_row}>
-                <p>Tax</p>
-                <p>${order.taxPrice.toFixed(2)}</p>
-              </div>
-              <div className={style.order_summary_total}>
-                <p><b>Total</b></p>
-                <p><b>${order.totalPrice.toFixed(2)}</b></p>
-              </div>
-              </div>
-            }
-
-            {!order.isPaid && (
-              <div>
-                {isPending ? (
-                  <LoadingSpinner />
-                ) : (
-                  <div>
-                    <PayPalButtons
-                      createOrder={createOrder}
-                      onApprove={onApprove}
-                      onError={onError}
-                    ></PayPalButtons>
+            <div className="col-4">
+              {
+                <div className={style.order_summary}>
+                  <div className={style.order_summary_header}>
+                    <h3>Order Summary</h3>
                   </div>
-                )}
-                {loadingPay && <LoadingSpinner />}
-              </div>
-            )}
+                  <div className={style.order_summary_row}>
+                    <p>Item(s) Price</p>
+                    <p>${order.itemsPrice.toFixed(2)}</p>
+                  </div>
+                  <div className={style.order_summary_row}>
+                    <p>Shipping</p>
+                    <p>${order.shippingPrice.toFixed(2)}</p>
+                  </div>
+                  <div className={style.order_summary_row}>
+                    <p>Tax</p>
+                    <p>${order.taxPrice.toFixed(2)}</p>
+                  </div>
+                  <div className={style.order_summary_total}>
+                    <p>
+                      <b>Total</b>
+                    </p>
+                    <p>
+                      <b>${order.totalPrice.toFixed(2)}</b>
+                    </p>
+                  </div>
+                </div>
+              }
+
+              {!order.isPaid && (
+                <div>
+                  {isPending ? (
+                    <LoadingSpinner />
+                  ) : (
+                    <div>
+                      <PayPalButtons
+                        createOrder={createOrder}
+                        onApprove={onApprove}
+                        onError={onError}
+                      ></PayPalButtons>
+                    </div>
+                  )}
+                  {loadingPay && <LoadingSpinner />}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 };

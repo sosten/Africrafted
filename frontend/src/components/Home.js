@@ -1,5 +1,5 @@
 import React from 'react';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 import BunnerForCategories from './BunnerForCategories';
 import style from '../styles/home.module.css';
 import Gifts from './Gifts';
@@ -10,7 +10,7 @@ import Footer from './Footer';
 const Home = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <BunnerForCategories />
       <div className={style.container}>
         <Gifts />

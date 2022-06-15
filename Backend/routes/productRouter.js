@@ -97,6 +97,8 @@ const countProducts = await Product.countDocuments({
 //     }
 // })
 
+// GET SINGLE PRODUCT
+
 productRouter.get('/product/:slug', async(req, res)=>{
     const product = await Product.findOne({slug:req.params.slug});
     if(product){
@@ -106,10 +108,14 @@ productRouter.get('/product/:slug', async(req, res)=>{
     }
 });
 
+//GET CATEGORIES OF PRODUCTS
+
 productRouter.get('/products/categories', expressAsyncHandler(async(req, res)=>{
     const categories = await Product.find().distinct('category');
     res.send(categories);
 }));
+
+//UPDATE PRODUCT
 
 productRouter.put('/update_product/', async(req, res)=> {
     const product = await Product.findById(req.product._id);
@@ -143,6 +149,8 @@ productRouter.put('/update_product/', async(req, res)=> {
     }
 });
 
+//DELETE PRODUCT
+
 productRouter.delete('/:id', expressAsyncHandler(async(req, res)=> {
     const product = await Product.findById(req.params.id);
     if(product) {
@@ -161,6 +169,8 @@ productRouter.delete('/:id', expressAsyncHandler(async(req, res)=> {
 //     }
 // })
 
+//PRODUCT TO BE ADDED TO CART
+
 productRouter.get('/products/:id', async(req, res)=>{
     const product = await Product.findById(req.params.id);
     if(product){
@@ -173,7 +183,7 @@ productRouter.get('/products/:id', async(req, res)=>{
 const multerStorage = multer.diskStorage({
     destination: function(req, file, cb) {
         console.log(req.file)
-        cb(null, './frontend/public/uploads/')
+        cb(null, './frontend/public/uploads')
     },
     filename: function(req, file, cb){
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -191,15 +201,16 @@ const multerFilter = (req, file, cb) => {
 }
 
 const upload = multer({storage: multerStorage, fileFilter: multerFilter});
-upload.single("myFile")
-productRouter.post('/product', expressAsyncHandler(async(req, res) => {
+
+// CREATE PRODUCT
+productRouter.post('/product', upload.single("myFile"), expressAsyncHandler(async(req, res) => {
         console.log(req.file)
         const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,
         productName: req.body.productName,
         description: req.body.description,
-        image: req.body.image,
+        image: req.file.filename,
         price: req.body.price,
         category: req.body.category,
         rating: req.body.rating,
@@ -214,7 +225,7 @@ productRouter.post('/product', expressAsyncHandler(async(req, res) => {
         artistName: product.artistName,
         productName: product.productName,
         description: product.description,
-        image: product.image,
+        image: product.filename,
         price: product.price,
         category: product.category,
         rating: product.rating,

@@ -1,4 +1,4 @@
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AllProducts from './components/AllProducts';
 import LoginScreen from './screens/LoginScreen';
@@ -31,6 +31,7 @@ import AdminAddProduct from './screens/AdminAddProduct';
 import AdminProductsTable from './screens/AdminProductsTable';
 import AddminCategories from './screens/AdminCategories';
 import AdminAddCategory from './screens/AdminAddCategory';
+import AdminEditProduct from './screens/AdminEditProduct';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
               <Route path='/admin/:adminId' element={<AdminSingleScreen />}/>
               <Route path='/admin/add_user' element={<AdminAddUser />}/>
               <Route path='/admin/add_product' element={<AdminAddProduct />}/>
+              <Route path='/admin/edit_product/:id' element={<AdminEditProduct />}/>
               <Route path='/admin/products' element={<AdminProductsTable />}/>
               <Route path='/admin/orders' element={<AdminOrders />}/>
               <Route path='/admin/categories' element={<AddminCategories />}/>

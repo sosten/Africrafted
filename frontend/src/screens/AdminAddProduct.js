@@ -11,13 +11,13 @@ import style from "../styles/AdminAddProduct.module.css";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "PRODUCT_CREATE_REQUEST":
+    case "PRODUCT_EDIT_REQUEST":
       return { ...state, loading: true };
-    case "PRODUCT_CREATE_SUCCESS":
+    case "PRODUCT_EDIT_SUCCESS":
       return { ...state, loading: false, product: action.payload };
-    case "PRODUCT_CREATE_FAIL":
+    case "PRODUCT_EDIT_FAIL":
       return { ...state, loading: false, error: action.payload };
-    case "PRODUCT_CREATE_RESET":
+    case "PRODUCT_EDIT_RESET":
       return { ...state };
     default:
       return state;
@@ -47,7 +47,7 @@ const AdminAddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch({ type: "PRODUCT_CREATE_REQUEST", loading: true });
+    dispatch({ type: "PRODUCT_EDIT_REQUEST", loading: true });
     try {
       const { data } = await axios.post("/api/product", {
         slug,
@@ -61,18 +61,18 @@ const AdminAddProduct = () => {
       });
       console.log(data);
       dispatch({
-        type: "PRODUCT_CREATE_SUCCESS",
+        type: "PRODUCT_EDIT_SUCCESS",
         loading: false,
         payload: data,
       });
     } catch (error) {
-      dispatch({ type: "PRODUCT_CREATE_FAIL" });
+      dispatch({ type: "PRODUCT_EDIT_FAIL" });
       console.log(error);
     }
   };
 
   useEffect(() => {
-    dispatch({ type: "PRODUCT_CREATE_RESET" });
+    dispatch({ type: "PRODUCT_EDIT_RESET" });
     setProductName("");
     setSlug("");
     setCategory("");
@@ -119,9 +119,9 @@ const AdminAddProduct = () => {
                   />
                 </div>
                 <input
-                  type="text"
-                  onChange={(e) => setImage(e.target.value)}
-                  value={image}
+                  type="file"
+                  onChange={(e) => setImage(e.target.files[0])}
+                  name="myFile"
                 />
                 <label htmlFor="pname">Product Name</label>
                 <input

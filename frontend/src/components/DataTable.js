@@ -83,14 +83,16 @@ const DataTable = () => {
                     <td>{user._id}</td>
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
-                    <td>{user.email}</td>
+                    <td>
+                      <a href={`mailto:${user.email}`}>{user.email}</a>
+                    </td>
                     <td>
                       {user.firstName} {user.lastName}
                     </td>
                     <td>
                       <span className={style.edit} title="Edit customer info">
                         <TiPencil className={style.edit_icon} />
-                      </span>{" "}
+                      </span>
                       <span className={style.delete} title="Delete customer">
                         <FiTrash2 className={style.delete_icon} />
                       </span>
