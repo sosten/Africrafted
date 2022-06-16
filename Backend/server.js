@@ -6,6 +6,7 @@ import userRouter from './routes/usersRouter.js';
 import productRouter from './routes/productRouter.js';
 import seedRouter from './routes/seedRouter.js';
 import orderRouter from './routes/orderRouter.js';
+import categoryRouter from './routes/categoryRouter.js'
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use('/api', seedRouter);
 app.use('/api', userRouter);
 app.use('/api', productRouter);
 app.use('/api', orderRouter);
+app.use('/api', categoryRouter);
 app.use((err, res, req, next)=>{
     res.status(500).send({message: err.message})
 })

@@ -30,7 +30,11 @@ const productSchema = mongoose.Schema(
         slug: { type: String, required: true },
         artistName: { type: String, required: true },
         productName: { type: String,required: true },
-        category: { type: String, required: true },
+        category: {
+            type: mongoose.Schema.Types.ObjectId,
+            require: true,
+            ref: "Category"
+        },
         image: { type: String, required: false },
         description: { type: String, required: true},
         price: { type: Number, required: true, default: 0 },

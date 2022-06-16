@@ -85,19 +85,19 @@ const Navbar = () => {
             </div>
           </div>
           <div className={style.categories_navbar}>
-            {/* {categories.map((category)=>(
+            {categories.map((category)=>(
               <div key={category}>
                 <Link to={`search?category=${category}`}>{category}</Link>
               </div>
-            ))} */}
-            <Link to={'#'}>Jewerly & Accessories</Link>
+            ))}
+            {/* <Link to={'#'}>Jewerly & Accessories</Link>
             <Link to={'#'}>Clothing & Shoes</Link>
             <Link to={'#'}>Home & Living</Link>
             <Link to={'#'}>Wedding & Party</Link>
             <Link to={'#'}>Toys & Entertainment</Link>
             <Link to={'#'}>Art & Collectibles</Link>
             <Link to={'#'}>Craft Supplies & Tools</Link>
-            <Link to={'#'}>Vintage</Link>
+            <Link to={'#'}>Vintage</Link> */}
           </div>
         </div>
     </div>
