@@ -24,15 +24,15 @@ const AddminCategories = () => {
     const [{loading, error, category}, dispatch] = useReducer(reducer, {
         loading: false,
         error: '',
-        category: ''
+        category: []
     })
 
     useEffect(()=>{
         const fetchCategory = async() => {
             dispatch({type: 'CATEGORY_FETCH_REQUEST', loading: true})
             try {
-                const { data } = await axios.get('/api/categories')
-                dispatch({type: 'CATEGORY_FETCH_SUCCESS', loading: false, payload: data})
+                const result = await axios.get('/api/categories')
+                dispatch({type: 'CATEGORY_FETCH_SUCCESS', loading: false, payload: result.data})
             } catch (error) {
                 dispatch({type: 'CATEGORY_FETCH_FAIL'})
                 console.log(error)

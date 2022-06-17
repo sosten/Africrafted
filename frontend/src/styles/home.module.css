@@ -9,3 +9,71 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.contact_form {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #7777;
+    background-color: #fff;
+}
+
+.contact_header {
+    color: #52442d;
+}
+
+.contact_header h2 {
+    font-size: 22px;
+    margin: auto;
+}
+
+.contact_header p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.contact_header a {
+    color: #7e3701;
+}
+
+.contact_form label {
+    display: block;
+    font-size: 15px;
+    color: #52442d;
+    margin-top: 20px;
+}
+
+.contact_form input[type=text], .contact_form input[type=email] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #52442d;
+    width: 100%;
+    outline: none;
+}
+
+.contact_form textarea {
+    background: transparent;
+    outline: none;
+    width: 100%;
+    border: 1px solid #52442d;
+    border-radius: 5px;
+}
+
+.contact_form input[type=submit] {
+    background-color: #111;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.supplier {
+    /* background-image: url('./assets/images/girl.jpg'); */
+    background-position: cover;
+    height: 100px;
+}
