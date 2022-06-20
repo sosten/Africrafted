@@ -73,7 +73,51 @@
 }
 
 .supplier {
-    /* background-image: url('./assets/images/girl.jpg'); */
-    background-position: cover;
-    height: 100px;
+    background-image: url('../assets/images/girl.jpg');
+    background-position: left;
+    background-size: 50%;
+    height: 450px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.supplier_cont {
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 60px;
+}
+
+.supplier_cont h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #52442d;
+}
+
+.supplier_cont strong {
+    font-weight: 800;
+}
+
+.supplier_cont p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444;
+    margin-top: 50px;
+}
+
+.supplier_images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 26px;
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+}
+
+.supplier_images img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }

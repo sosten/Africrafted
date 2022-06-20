@@ -1,0 +1,48 @@
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+.container h1 {
+    padding: 20px 0px;
+    font-size: 42px;
+    text-decoration: underline;
+    color: #998166;
+    font-weight: bold;
+}
+
+.header_bg {
+    background-image: url('../assets/images/carved_6.jpg');
+    background-size: 100%;
+    background-position: cover;
+    border-radius: 5px;
+    height: 200px;
+}
+
+.header {
+    padding: 20px 0px;
+}
+
+.header h2 {
+    color: #555;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.container p {
+    font-size: 16px;
+    color: #52442d;
+}
+
+.container li {
+    list-style-type: square;
+    color: #444;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.content {
+    max-width: 600px;
+    width: 100%;
+}

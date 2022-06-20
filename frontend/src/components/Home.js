@@ -7,6 +7,9 @@ import Gifts from './Gifts';
 import { ShopSelection } from './ShopSelection';
 import Sculputures from './Sculputures';
 import Footer from './Footer';
+import decor from '../assets/images/art_5.jpg';
+import people from '../assets/images/mask.jpg';
+import dance from '../assets/images/carved_3.jpg';
 
 const Home = () => {
   return (
@@ -17,6 +20,21 @@ const Home = () => {
         <Gifts />
         <ShopSelection />
         <Sculputures />
+        <div className={style.supplier}>
+          <div className={style.supplier_bg}>
+            <div className={style.supplier_cont}>
+              <h3><strong>AFRICRAFTED</strong> FROM AFRICA TO THE WORLD, HERE WE HAVE AFRICAN CRAFTS, PAINTINGS AND HAND CARVED ARTS</h3>
+              <p>If you are a supplier of any African arts and Crafts products, anything African <Link to={'/suppliers'}>click here</Link> </p>
+            </div>
+            <div className={style.supplier_images}>
+              <img src={decor} alt="Wall Decor" />
+              <img src={people} alt="people" />
+              <img src={dance} alt="dance" />
+            </div>
+          </div>
+        </div>                       
+      </div>
+      {/*
         <div className={style.contact_form}>
           <div className={style.contact_header}>
             <h2>Contact Us</h2>
@@ -32,15 +50,7 @@ const Home = () => {
             <input type="submit" value="Send" />
           </form>
         </div>
-        <div className={style.supplier}>
-          <div className={style.supplier_bg}>
-            <div className={style.supplier_cont}>
-              <h3>AFRICRAFTED FROM AFRICA TO THE WORLD, HERE WE HAVE AFRICAN CRAFTS, PAINTINGS AND HAND CARVED ARTS</h3>
-              <p>If you are a supplier of any African arts, Crafts, game skins and horn products, anything African <Link to={'/'}>click here</Link> </p>
-            </div>
-          </div>
-        </div>                       
-      </div>
+         */}
        <Footer />
     </>
   )

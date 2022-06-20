@@ -32,6 +32,7 @@ import AdminProductsTable from './screens/AdminProductsTable';
 import AddminCategories from './screens/AdminCategories';
 import AdminAddCategory from './screens/AdminAddCategory';
 import AdminEditProduct from './screens/AdminEditProduct';
+import Suppliers from './screens/Suppliers';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='/all_products' element={<AllProducts />}/>
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />
+          <Route path='/suppliers' element={<Suppliers />} />
           <Route path='/profile' 
             element={
               <ProtectedRoute>
