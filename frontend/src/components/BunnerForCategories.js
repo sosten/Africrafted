@@ -41,7 +41,7 @@ const BunnerForCategories = () => {
             </Link>
           </div>
           <div className={style.card}>
-            <Link to={"#"}>
+            <Link to={"/carvings"}>
               <img src={oil_art_1} alt="category" />
               <p>Carvings & Paintings</p>
             </Link>

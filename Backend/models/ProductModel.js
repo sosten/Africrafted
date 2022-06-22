@@ -31,9 +31,10 @@ const productSchema = mongoose.Schema(
         artistName: { type: String, required: true },
         productName: { type: String,required: true },
         category: {
-            type: mongoose.Schema.Types.ObjectId,
-            require: true,
-            ref: "Category"
+            // type: mongoose.Schema.Types.ObjectId,
+            // require: true,
+            // ref: "Category",
+            type: String, required: true,
         },
         image: { type: String, required: false },
         description: { type: String, required: true},

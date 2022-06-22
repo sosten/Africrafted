@@ -33,6 +33,7 @@ import AddminCategories from './screens/AdminCategories';
 import AdminAddCategory from './screens/AdminAddCategory';
 import AdminEditProduct from './screens/AdminEditProduct';
 import Suppliers from './screens/Suppliers';
+import CarvingsAndPaintings from './screens/CarvingsAndPaintings';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path= '/home_screen' element={<HomeScreen />} />
           <Route path="/product/:slug" element={<ProductDetailsScreen/>}/>
+          <Route path="/carvings" element={<CarvingsAndPaintings/>}/>
           <Route path='/shopping_cart' element={<CartScreen />} />
           <Route path='/search' element={<SearchScreen />} />
           <Route path='/all_products' element={<AllProducts />}/>

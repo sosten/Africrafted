@@ -11,10 +11,18 @@ const productRouter = express.Router();
 //     res.send(data.products);
 // })
 
+//GET ALL THE PRODUCTS
 productRouter.get('/products', async(req, res)=>{
     const products = await Product.find();
     res.send(products);
 });
+
+//GET ALL THE PRODUCTS FOR THE HOME
+
+productRouter.get('/products/home', async(req, res) => {
+    const products = await Product.find().limit(5)
+    res.send(products)
+})
 
 const PAGE_SIZE = 3;
 productRouter.get('/search', expressAsyncHandler(async(req, res) => {
@@ -115,6 +123,14 @@ productRouter.get('/products/categories', expressAsyncHandler(async(req, res)=>{
     res.send(categories);
 }));
 
+//GET PRODUCTS BASED ON CATEGORY
+
+productRouter.get('/carving', expressAsyncHandler(async( res, req, next)=>{
+    const carvings = await Product.find({category:{ $elemMatch: 'Carvings & Sculptures'}});
+    res.send(carvings);
+    
+}));
+
 //UPDATE PRODUCT
 
 productRouter.put('/update_product/', async(req, res)=> {
@@ -180,30 +196,31 @@ productRouter.get('/products/:id', async(req, res)=>{
     }
 });
 
-const multerStorage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        console.log(req.file)
-        cb(null, './frontend/public/uploads')
-    },
-    filename: function(req, file, cb){
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, file.fieldname + '-' + uniqueSuffix)
-    }
-});
+// const multerStorage = multer.diskStorage({
+//     destination: function(req, file, cb) {
+//         console.log(req.file)
+//         cb(null, './frontend/public/uploads')
+//     },
+//     filename: function(req, file, cb){
+//         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+//         cb(null, file.fieldname + '-' + uniqueSuffix)
+//     }
+// });
 
-const multerFilter = (req, file, cb) => {
-    if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-        cb(null, true);
-    } else {
-        cb(null, false);
-        return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-    }
-}
+// const multerFilter = (req, file, cb) => {
+//     if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+//         cb(null, true);
+//     } else {
+//         cb(null, false);
+//         return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+//     }
+// }
 
-const upload = multer({storage: multerStorage, fileFilter: multerFilter});
+// const upload = multer({storage: multerStorage, fileFilter: multerFilter});
+// upload.single("myFile"),
 
 // CREATE PRODUCT
-productRouter.post('/product', upload.single("myFile"), expressAsyncHandler(async(req, res) => {
+productRouter.post('/product',  expressAsyncHandler(async(req, res) => {
         console.log(req.file)
         const newProduct = new Product({
         slug: req.body.slug,
