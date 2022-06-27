@@ -36,7 +36,6 @@ const AddminCategories = () => {
             } catch (error) {
                 dispatch({type: 'CATEGORY_FETCH_FAIL'})
                 console.log(error)
-            
             }
         }
 

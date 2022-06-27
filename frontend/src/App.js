@@ -23,6 +23,7 @@ import SearchScreen from './screens/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
 import List from './screens/List';
+import About from './screens/About';
 import AdminRoute from './components/AdminRoute';
 import AdminSingleScreen from './screens/AdminSingleScreen';
 import AdminOrders from './screens/AdminOrders';
@@ -31,9 +32,11 @@ import AdminAddProduct from './screens/AdminAddProduct';
 import AdminProductsTable from './screens/AdminProductsTable';
 import AddminCategories from './screens/AdminCategories';
 import AdminAddCategory from './screens/AdminAddCategory';
+import Shipping from './screens/Shipping';
 import AdminEditProduct from './screens/AdminEditProduct';
 import Suppliers from './screens/Suppliers';
 import CarvingsAndPaintings from './screens/CarvingsAndPaintings';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -52,6 +55,9 @@ function App() {
           <Route path='/login' element={<LoginScreen />} />
           <Route path='/register' element={<RegisterScreen />} />
           <Route path='/suppliers' element={<Suppliers />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/shipping' element={<Shipping />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/profile' 
             element={
               <ProtectedRoute>

@@ -8,7 +8,7 @@ import { ShopSelection } from './ShopSelection';
 import Sculputures from './Sculputures';
 import Footer from './Footer';
 import decor from '../assets/images/art_5.jpg';
-import people from '../assets/images/mask.jpg';
+import people from '../assets/images/decor_9.jpg';
 import dance from '../assets/images/carved_3.jpg';
 
 const Home = () => {
@@ -20,16 +20,17 @@ const Home = () => {
         <Gifts />
         <ShopSelection />
         <Sculputures />
+        <hr />
         <div className={style.supplier}>
           <div className={style.supplier_bg}>
             <div className={style.supplier_cont}>
-              <h3><strong>AFRICRAFTED</strong> FROM AFRICA TO THE WORLD, HERE WE HAVE AFRICAN CRAFTS, PAINTINGS AND HAND CARVED ARTS</h3>
+              <h3><strong>Africrafted</strong> from africa to the world, here we have <b>African Craft, Painting</b> and <b>Hand Carved Arts.</b> </h3>
               <p>If you are a supplier of any African arts and Crafts products, anything African <Link to={'/suppliers'}>click here</Link> </p>
             </div>
             <div className={style.supplier_images}>
               <img src={decor} alt="Wall Decor" />
-              <img src={people} alt="people" />
               <img src={dance} alt="dance" />
+              <img src={people} alt="people" />
             </div>
           </div>
         </div>                       
@@ -38,7 +39,7 @@ const Home = () => {
         <div className={style.contact_form}>
           <div className={style.contact_header}>
             <h2>Contact Us</h2>
-            <p>Email 'AFRICRAFTED' for questions, queries or comments at <a href="mailto:africrated@gmail.com">africrated@gmail</a></p>
+            <p>Email <b>Africrafted</b> for questions, queries or comments at <a href="mailto:africrated@gmail.com">africrated@gmail</a></p>
           </div>
           <form>
             <label htmlFor="name">Name</label>

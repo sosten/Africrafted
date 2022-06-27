@@ -25,7 +25,7 @@
     font-size: 15px;
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: 500;
-    color: #cec3b6;
+    color: #222;
 }
 
 .links_icons a {
@@ -62,7 +62,7 @@
 
 .links_form p {
     font-size: 15px;
-    color: #ddd;
+    color: #222;
     font-family: 'Trebuchet MS', sans-serif;
 }
 
@@ -109,7 +109,8 @@
 .copyright_container p, .copyright_container a {
     font-size: 13px;
     font-family: 'Trebuchet MS', sans-serif;
-    color: #000;
+    color: #222;
+    margin-top: 15px;
 }
 
 .copyright_container a {

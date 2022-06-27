@@ -34,7 +34,7 @@ productRouter.get('/search', expressAsyncHandler(async(req, res) => {
     const brand = query.brand || '';
     const rating = query.rating || '';
     const order = query.order || '';
-    const searchQuery = query.query
+    const searchQuery = query.query || '';
 
     const queryFilter = 
     searchQuery && searchQuery !== 'all' ? {

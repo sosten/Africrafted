@@ -13,9 +13,9 @@ const Footer = () => {
       <div className={style.link_container}>
         <div className={style.links}>
           <h4>NAVIGATE</h4>
-          <Link to={"#"}>About Us</Link>
-          <Link to={"#"}>Shipping & Returns</Link>
-          <Link to={"#"}>Contact Us</Link>
+          <Link to={"/about"}>About Us</Link>
+          <Link to={"/shipping"}>Shipping & Returns</Link>
+          <Link to={"/contact"}>Contact Us</Link>
         </div>
         <div className={style.links}>
           <h4>CATEGORIES</h4>

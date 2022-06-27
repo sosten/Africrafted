@@ -35,7 +35,7 @@ const Gifts = () => {
 
     useEffect(() => {
         const fetchData = async() => {
-            dispatch({type: 'FETCH_REQUEST', loading: true})
+            dispatch({type: 'FETCH_REQUEST', loading: false})
             try {
                 const result = await axios.get('/api/products/home')
                 dispatch({type: 'FETCH_SUCCESS', loading: false, payload: result.data})

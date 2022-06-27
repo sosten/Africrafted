@@ -38,3 +38,8 @@
     padding-bottom: 6px;
     cursor: pointer;
 }
+
+.search_icon {
+    font-size: 20px;
+    color: #111;
+}
