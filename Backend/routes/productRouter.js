@@ -140,7 +140,7 @@ productRouter.put('/update_product/', async(req, res)=> {
         product.artistName = req.body.artistName || product.artistName;
         product.productName = req.body.productName || product.productName;
         product.category = req.body.category || product.category;
-        product.image = req.body.image || product.image;
+        
         product.description = req.body.description || product.description;
         product.price = req.body.price || product.price;
         product.rating = req.body.rating || product.rating;
@@ -221,7 +221,7 @@ productRouter.get('/products/:id', async(req, res)=>{
 
 // CREATE PRODUCT
 productRouter.post('/product',  expressAsyncHandler(async(req, res) => {
-        console.log(req.file)
+        // console.log(req.file)
         const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,

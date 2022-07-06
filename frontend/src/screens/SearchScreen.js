@@ -89,7 +89,7 @@ const SearchScreen = () => {
       }
     };
     fetchData();
-  }, [error, page, query, category, price, rating, order]);
+  }, [page, query, category, price, rating, order]);
 
   const [categories, setCategories] = useState([]);
   useEffect(() => {

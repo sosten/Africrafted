@@ -76,7 +76,7 @@ const AdminProductsTable = () => {
   ];
 
   const deleteHandler = (id) => {
-    dispatch({type: 'DELETE_REQUEST', loading: true});
+    dispatch({type: 'DELETE_REQUEST', loading: false});
     window.confirm("Are you sure you want to delete this product?");
     axios.delete(`/api/${id}`);
     dispatch({type: 'DELETE_SUCCESS', loading: false})

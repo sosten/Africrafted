@@ -18,9 +18,9 @@ const Footer = () => {
           <Link to={"/contact"}>Contact Us</Link>
         </div>
         <div className={style.links}>
-          <h4>CATEGORIES</h4>
-          <Link to={"#"}>Clothing</Link>
-          <Link to={"#"}>Shoes</Link>
+          <h4>SHOP</h4>
+          <Link to={"/home_screen"}>All Products</Link>
+          <Link to={"#"}>Art & Carvings</Link>
           <Link to={"#"}>Jewelry</Link>
           <Link to={"#"}>Home & Living</Link>
         </div>

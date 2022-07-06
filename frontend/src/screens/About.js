@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import jewelry_4 from '../assets/images/jewelry_4.jpg'
@@ -21,7 +22,7 @@ const About = () => {
                 <div className={style.who_cont}>
                     <h2>Who we are.</h2>
                     <p>Africrafted is a hub of African Crafts and Arts, operating both online and offline. We are open to all suppliers of African Craft and Art.</p>
-                    <p>The Store was established in 2019 </p>
+                    <p>Most of our goods are handmade so the pieces that you do order are unique and made by genuine African men and women who use this as their source of income.</p>
                 </div>
                 <div className={style.image}>
                     <img src={jewelry_4} alt="jewelry" />
@@ -36,10 +37,10 @@ const About = () => {
                     <p>We are here to support the growth of African Crafts and Art to world.</p>
                 </div>
             </div>
-            {/* <div className={style.contact}>
-                <h2>Contact us</h2>
-                
-            </div> */}
+            <div className={style.contact}>
+                <p>For more information and other questions or queries, feel free to <Link to ="/contact">contact us</Link></p>
+                <p><b>Note:</b>We are located in Zambia, central part of Africa. Hence time may differ with your location. We are open from 08am to 5pm.</p>
+            </div>
         </div>
         <Footer />
     </div>

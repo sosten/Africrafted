@@ -16,7 +16,7 @@ import LoadingSpinner from './LoadingSpinner';
 const reducer = (state, action) => {
     switch(action.type){
         case 'FETCH_REQUEST':
-            return { ...state, loading: true }
+            return { ...state, loading: false }
         case 'FETCH_SUCCESS':
             return { ...state, loading: false, products: action.payload }
         case 'FETCH_FAIL':

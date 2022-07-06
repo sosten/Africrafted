@@ -29,9 +29,9 @@ const AddminCategories = () => {
 
     useEffect(()=>{
         const fetchCategory = async() => {
-            dispatch({type: 'CATEGORY_FETCH_REQUEST', loading: true})
+            dispatch({type: 'CATEGORY_FETCH_REQUEST', loading: false})
             try {
-                const result = await axios.get('/api/categories')
+                const result = await axios.get('/api/products/categories')
                 dispatch({type: 'CATEGORY_FETCH_SUCCESS', loading: false, payload: result.data})
             } catch (error) {
                 dispatch({type: 'CATEGORY_FETCH_FAIL'})
