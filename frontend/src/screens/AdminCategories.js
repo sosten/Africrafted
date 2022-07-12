@@ -38,9 +38,8 @@ const AddminCategories = () => {
                 console.log(error)
             }
         }
-
         fetchCategory() 
-    }, [])
+    }, []);
     return(
         <div className={style.container}>
             <div className={style.left}>

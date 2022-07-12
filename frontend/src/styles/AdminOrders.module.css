@@ -14,6 +14,8 @@
 
 .header {
     padding: 0px 10px;
+    display: flex;
+    gap: 20px;
 }
 
 .header h1 {

@@ -61,6 +61,7 @@ const DataTable = () => {
         <div>
           <div className={style.header}>
             <h1>Customers</h1>
+            <p>Total: {users.length}</p>
             <div className={style.add_btn}>
               <Link to={"/admin/add_user"}>Add New</Link>
             </div>

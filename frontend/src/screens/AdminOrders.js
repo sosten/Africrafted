@@ -68,6 +68,7 @@ const AdminOrders = () => {
             <AdminNavbar />
             <div className={style.header}>
               <h1>Orders</h1>
+              <p>{orders.length}</p>
             </div>
             <div className={style.table_container}>
               <table className="table table-sm table-hover table-light">
