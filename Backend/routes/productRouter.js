@@ -196,32 +196,32 @@ productRouter.get('/products/:id', async(req, res)=>{
     }
 });
 
-// const multerStorage = multer.diskStorage({
-//     destination: function(req, file, cb) {
-//         console.log(req.file)
-//         cb(null, './frontend/public/uploads')
-//     },
-//     filename: function(req, file, cb){
-//         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-//         cb(null, file.fieldname + '-' + uniqueSuffix)
-//     }
-// });
+const multerStorage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        console.log(req.file)
+        cb(null, './frontend/public/uploads')
+    },
+    filename: function(req, file, cb){
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+});
 
-// const multerFilter = (req, file, cb) => {
-//     if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-//         cb(null, true);
-//     } else {
-//         cb(null, false);
-//         return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-//     }
-// }
+const multerFilter = (req, file, cb) => {
+    if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+        cb(null, true);
+    } else {
+        cb(null, false);
+        return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+    }
+}
 
-// const upload = multer({storage: multerStorage, fileFilter: multerFilter});
-// upload.single("myFile"),
+const upload = multer({storage: multerStorage, fileFilter: multerFilter});
+upload.single("myFile"),
 
 // CREATE PRODUCT
 productRouter.post('/product',  expressAsyncHandler(async(req, res) => {
-        // console.log(req.file)
+        console.log(req.file)
         const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,

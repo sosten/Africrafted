@@ -99,6 +99,7 @@ const AdminProductsTable = () => {
               <div style={{ width: "100%" }}>
                 <div className={style.header}>
                   <h1>Products</h1>
+                  <p>Total: {products.length}</p>
                   <div className={style.add_btn}>
                     <Link to={"/admin/add_product"}>Add New</Link>
                   </div>
