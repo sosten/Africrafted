@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       return { ...state, loading: false, error: action.payload };
     case "PRODUCT_EDIT_RESET":
       return { ...state };
+    case "FETCH_CATEGORY":
+      return { ...state, loading: true, category: action.payload };
     default:
       return state;
   }
@@ -29,6 +31,7 @@ const AdminAddProduct = () => {
     loading: false,
     error: "",
     product: {},
+    category: []
   });
 
   const [file, setFile] = useState();
@@ -72,6 +75,18 @@ const AdminAddProduct = () => {
   };
 
   useEffect(() => {
+    const fetchCategory = async () => {
+      try{
+        const result = await axios.get('/api/product_categories')
+        dispatch({type: 'FETCH_CATEGORY', payload: result});
+
+      } catch(error) {
+          console.log(error)
+      }
+      
+    }
+    fetchCategory();
+    
     dispatch({ type: "PRODUCT_EDIT_RESET" });
     setProductName("");
     setSlug("");
@@ -146,12 +161,23 @@ const AdminAddProduct = () => {
                   value={artistName}
                 />
                 <label htmlFor="category">Category</label>
-                <input
+                <select name="" id="category">
+                  {category.map((category) => (
+                    <option
+                      value={category}
+                      key={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                    >
+                      {category}
+                    </option>
+                  ))}
+                </select>
+                {/* <input
                   type="text"
                   id="category"
                   onChange={(e) => setCategory(e.target.value)}
                   value={category}
-                />
+                /> */}
                 <label htmlFor="price">Price</label>
                 <input
                   type="number"

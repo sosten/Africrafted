@@ -221,13 +221,19 @@ upload.single("myFile"),
 
 // CREATE PRODUCT
 productRouter.post('/product',  expressAsyncHandler(async(req, res) => {
-        console.log(req.file)
+        let productPicture = [];
+        if(req.files.length > 0) {
+            productPicture = req.files.map((file) => {
+                return{ img: file.filename };
+            });
+        }
+
         const newProduct = new Product({
         slug: req.body.slug,
         artistName: req.body.artistName,
         productName: req.body.productName,
         description: req.body.description,
-        image: req.file.filename,
+        image: productPicture,
         price: req.body.price,
         category: req.body.category,
         rating: req.body.rating,

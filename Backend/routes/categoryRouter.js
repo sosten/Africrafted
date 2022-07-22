@@ -20,7 +20,7 @@ categoryRouter.post('/category', expressAsyncHandler(async(req, res) => {
 //GET ALL CATEGORIES
 
 categoryRouter.get('/product_categories', expressAsyncHandler(async(req, res) => {
-    const category = Category.find();
+    const category = await Category.find();
     res.send(category);
 }));
 
