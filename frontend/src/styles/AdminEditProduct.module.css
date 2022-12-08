@@ -1,0 +1,120 @@
+.container {
+    background-color: #fff;
+    color: #52442d;
+    display: flex;
+    width: 100%;
+}
+
+.top {
+    flex: 8;
+}
+
+.left {
+    flex: 2;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.header h1 {
+    font-size: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #52442d;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: #55555536;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.header a:hover {
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 20px;
+    color: #52442d;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form_container form {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+}
+
+
+.upload_btn {
+    cursor: pointer;
+    background-color: #5555;
+    padding: 12px;
+    display: inline-block;
+    border-radius: 5px;
+    color: #52442d;
+    width: 130px;
+    text-align: center;
+}
+
+.upload_btn:hover {
+    opacity: 0.8;
+}
+
+.form_container label {
+    font-size: 15px;
+    color:#52442d;
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form_container input[type=text], .form_container input[type=number], .form_container textarea {
+    width: 94%;
+    border-radius: 3px;
+    border: 1px solid #8888;
+    padding: 14px 15px;
+}
+
+.form_container input[type=submit] {
+    background-color: #ee7732;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form_container input[type=submit]:hover {
+    opacity: 0.8;
+}

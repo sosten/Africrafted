@@ -1,0 +1,20 @@
+POST    http://localhost:5000/api/category
+content-type: application/json
+
+{
+    "category" : "Necklaces"
+}
+
+#   
+#     "artistName" : "Ghost Printers" ,
+#     "slug": "product_7",
+#     "productName" : "Wild life",
+#     "description" : "Another Final Test for count in stock for the product 2",
+#     "image" : "/images/oil_art_1.jpg",
+#     "category" : "home and living",
+#     "rating" : "1.5",
+#     "numReviews" : "30",
+#     "price": "120",
+#     "countInStock" : "0"
+
+# 

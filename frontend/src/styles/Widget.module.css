@@ -1,0 +1,63 @@
+.widget_container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    margin-top: 20px;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+}
+
+.widget_container a {
+    color: #555;
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.users {
+    font-size: 16px;
+    font-weight: 500;
+    color: grey;
+}
+
+.counter {
+    font-size: 28px;
+    color: #333;
+    font-weight: 500;
+}
+
+.percent {
+    font-size: 16px;
+    color: #333;
+}
+
+.see_all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-self: flex-end;
+    background-color: rgba(255, 0, 0, 0.267);
+    padding: 10px;
+    border-radius: 5px;
+    color: #555;
+    font-size: 24px;
+}
+
+.positive {
+    color: green;
+    font-size: 18px;
+}
+
+.negative {
+    color: red;
+    font-size: 18px;
+}

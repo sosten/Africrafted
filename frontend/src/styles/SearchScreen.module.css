@@ -1,0 +1,194 @@
+.container { 
+    width: calc(97.333% - 20px);
+    margin: 0px auto;
+  }
+
+.top_nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+.top_nav a {
+    text-decoration: none;
+    color: #3f1414;
+    font-size: 17px;
+}
+
+.top_nav li {
+    list-style-type: none;
+    color: #555;
+    font-size: 17px;
+}
+
+.header_cont {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('../assets//images/old_paper.jpg');
+    background-blend-mode: color-burn;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: rgba(85, 85, 85, 0.533);
+    height: 200px;
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+
+.header_cont h1 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #e0f7d8;
+}
+
+.header_cont p {
+    font-size: 15px;
+    color: #e0f7d8;
+}
+
+.title {
+    padding: 50px 20px;
+}
+
+.image img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+    color: #333;
+}
+
+.content {
+    flex: 8;
+}
+
+.wrapper {
+    display: flex !important;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.side_bar {
+    flex: 2;
+    padding: 10px;
+    border-right: 2px solid #eee;
+}
+
+.side_bar h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    margin: 10px 0px;
+}
+
+.side_bar li {
+    list-style-type: none;
+}
+
+.side_bar a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.side_bar a:hover {
+    color: #3f1414;
+}
+
+.products {
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.sort h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    padding-right: 10px;
+}
+
+.sort select {
+    padding: 5px;
+    border: 1px solid #444;
+    border-radius: 2px;
+}
+
+.btn button {
+    border: 1px solid #5555;
+    color: #222;
+    background-color: peru;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+.result_cont {
+    margin: 0px 20px;
+}
+
+.result_cont button {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 2px 8px;
+    background-color: #4e3217;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+}
+
+@media(max-width: 600px) {
+    .top_nav a {
+        font-size: 15px;
+    }
+
+    .top_nav li {
+        font-size: 15px;
+    }
+
+    .header_cont {
+        display: flex;
+        justify-content: space-between;
+        background-image: url('../assets//images/old_paper.jpg');
+        background-blend-mode: color-burn;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-color: rgba(85, 85, 85, 0.533);
+        height: 200px;
+        margin-bottom: 40px;
+        border-radius: 2px;
+    }
+    
+    .header_cont h1 {
+        font-size: 20px;
+    }
+
+    .side_bar {
+        display: none !important;
+    }
+
+    .sort {
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+}

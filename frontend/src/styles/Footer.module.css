@@ -1,0 +1,137 @@
+.container {
+    border-top: 1px solid #5555;
+    margin-top: 50px;
+}
+
+.link_container {
+    background-color: #914e17;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.links h4, .links_icons h4, .links_form h4 {
+    font-size: 15px;
+    font-family: 'Lucida Sans', sans-serif;
+    font-weight: 900;
+    color: #000;
+}
+
+.links a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    color: #111;
+}
+
+.links_icons a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    color: #000;
+}
+
+.f_icon {
+    color: blue;
+    font-size: 30px;
+}
+
+.t_icon {
+    color: #00c3ff;
+    font-size: 28px;
+}
+
+.p_icon {
+    color: #ff3300;
+    font-size: 28px;
+}
+
+.i_icon {
+    color: #ff0077;
+    font-size: 28px;
+}
+
+.y_icon {
+    color: #ff0800;
+    font-size: 30px;
+}
+
+.links_form p {
+    font-size: 15px;
+    color: #111;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.links_form input[type=text] {
+    padding: 8px 10px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 15px;
+    width: 50%;
+}
+
+.links_form input[type=submit] {
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 20px;
+    text-align:  center;
+    margin-left: 14px;
+    margin-bottom: 20px;
+    width: 40%;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.payment_logo {
+    display: flex;
+    flex: 0.39;
+}
+.payment_logo img {
+    width: 70%;
+}
+
+.copyright_container {
+    background-color: #4e3217;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright_container p, .copyright_container a {
+    font-size: 13px;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #ccc;
+    margin-top: 15px;
+}
+
+.copyright_container a {
+    margin-left: 20px;
+}
+
+@media(max-width: 600px) {
+    .links_icons h4 {
+        padding: 10px 0px;
+    }
+
+    .links_form h4 {
+        padding: 10px 0px;
+    }
+
+    .payment_logo {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+    .payment_logo img {
+        width: 100%;
+    }
+}

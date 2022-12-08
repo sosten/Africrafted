@@ -1,0 +1,203 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.product_wrapper {
+    /* background-color: orange; */
+    margin-top: 50px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.img_cover {
+    /* flex: 0.5; */
+    /* height: 500px; */
+    width: 500px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    /* background-color: #ddd; */
+}
+
+/* .img_cover img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #555;
+    
+} */
+
+.zoom_image {
+    width: 400px;
+    height: 400px;
+}
+
+.thumbnails {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.thumbnails button {
+    outline: none;
+}
+
+/* .product_description {
+    flex: 0.4;
+} */
+
+.product_description button {
+    background-color: #000;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 100px;
+    padding: 14px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.heart {
+    display: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #595959;
+    margin-right: 30px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.heart svg {
+    fill: #555;
+    margin-top: 10px;
+}
+
+.artist {
+    margin: auto;
+}
+
+.artist h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    margin: auto;
+}
+
+.artist p {
+    font-size: 14px;
+    color: #444;
+    margin: auto;
+}
+
+.description {
+    font-size: 22px;
+    color: #444;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price b {
+    font-size: 24px;
+    color: #000;
+}
+
+.price span {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price small {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.tax {
+    font-size: 14px;
+    color: #595959;
+}
+
+.size {
+    font-size: 15px;
+    color: #333;
+}
+
+.row {
+    padding: 20px 0px;
+    margin-top: 150px;
+}
+
+.similar_header {
+    padding: 10px 0px;
+}
+
+.similar_header h2 {
+    font-weight: 400;
+    color: #333;
+    font-size: 24px;
+}
+
+.reviews {
+    padding: 40px 0px;
+}
+
+.reviews h2 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.reviews label {
+    display: block;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.reviews select {
+    border: 1px solid #444;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reviews textarea {
+    border: 1px solid #444;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+}
+.reviews button {
+    background-color: brown;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 20px;
+}

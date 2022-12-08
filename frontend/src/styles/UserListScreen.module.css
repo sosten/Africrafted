@@ -1,0 +1,67 @@
+.user_container {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+}
+
+.side_bar {
+    flex: 2;
+}
+
+.user_table {
+    flex: 10;
+}
+
+.user_table h1 {
+    padding: 0px 30px;
+    font-size: 25px;
+    color: #333;
+}
+
+.user_container table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+}
+
+.user_container th, .user_container td {
+    padding: 8px 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.user_container tr:hover {
+    background-color: #ddd;
+}
+
+.table_container {
+    padding: 30px;
+}
+
+.edit, .delete {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.delete {
+    display: inline-block;
+    margin-left: 20px;
+    background-color: brown;
+    border: none;
+    color: #fff;
+}
+
+.edit {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: rgb(0, 47, 255);
+    color: #fff;
+    border: none;
+}
+
+.edit:hover, .delete:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,45 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+}
+
+.header {
+    /* background-color: #5555; */
+    padding-bottom: 15px;
+    margin: 20px 0px;
+}
+
+.header h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter button {
+    padding: 8px 12px;
+    border-radius: 50px;
+    border: 2px solid #333;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.filter span {
+    margin-left: 5px;
+}
+
+.filter b {
+    margin-right: 5px;
+}

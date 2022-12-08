@@ -1,0 +1,70 @@
+.edit_container {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+}
+
+.side_bar {
+    flex: 4;
+}
+
+.top_navbar {
+    flex: 8;
+}
+
+.form_container {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    border-radius: 5px;
+    border-collapse: collapse;
+    box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 2px 10px 33px 0px rgba(0,0,0,0.12);
+}
+
+.form_container h1 {
+    font-size: 20px;
+    color: #222;
+    margin: auto;
+}
+
+.form_container form {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.form_container label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.form_container input[type=text], .form_container input[type=number], .form_container textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #4444;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+.form_container input[type=file] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form_container button {
+    display: block;
+    margin-top: 15px;
+    background-color: brown;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid #4444;
+    border-radius: 3px;
+    cursor: pointer;
+}

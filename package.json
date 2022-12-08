@@ -1,0 +1,21 @@
+{
+  "name": "africrafted",
+  "version": "1.0.0",
+  "description": "Africrafted is an Ecommerce website for selling African Arts and Crafts. All the products we have are uniquckly hand made by our pationate Afrcan artist.",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd Backend && npm install  && cd ../frontend && npm install && npm run build",
+    "start": "node Backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosten/Africrafted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosten/Africrafted/issues"
+  },
+  "homepage": "https://github.com/sosten/Africrafted#readme"
+}

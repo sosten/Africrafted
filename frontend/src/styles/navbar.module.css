@@ -1,0 +1,197 @@
+.navbar_wrapper {
+    background-color: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+/* .container {
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+} */
+
+.container { 
+    width: calc(97.333% - 20px); /* subtracts margin from column width */
+    margin: 0px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    width: 170px;
+    object-fit: contain;
+    height: 80px;
+}
+
+.form_container {
+    background-color: #e2e2e263;
+    display: flex;
+    flex: 0.9;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #555;
+    border-radius: 50px;
+    padding: 6px 2px;
+}
+
+.sign_in {
+    position: relative;
+}
+
+.sign_in a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    color: #52442d;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.sign_in p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #52442d;
+}
+
+.user_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user_name span {
+    display: inline-block;
+    padding-top: 0px;
+    margin-left: 10px;
+}
+
+.user_profile {
+    display: none;
+    position: absolute;
+    width: 200px;
+    left: -40px;
+    top: 35px;
+}
+
+.sign_in:hover .user_profile {
+    display: block;
+    z-index: 1;
+    
+}
+
+.sign_in:hover span {
+    transform: rotateX(180deg);
+    transition: all 0.4s ease-out;
+}
+
+.user_profile a {
+    color: #eee !important;
+}
+
+.user_profile li {
+    list-style-type: none;
+    background-color: #ee7e22;
+    border-bottom: 1px solid #9f3131;
+}
+
+.user_profile li:hover {
+    background-color: #e7c5a8;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.angle_down {
+    font-size: 15px;
+    color: #52442d;
+}
+
+.heart {
+    font-size: 20px;
+    color: #52442d;
+}
+
+.shopping_cart {
+    font-size: 25px;
+    color: #52442d;
+}
+
+.categories_navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.categories_navbar a {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    color: #52442d;
+}
+
+.svg_shopping_cart_icon_container {
+    position: relative;
+}
+
+.svg_shopping_cart_icon_container a {
+    text-decoration: none !important;
+}
+
+.svg_shopping_cart_icon_container p {
+    background-color: #9f3131;
+    display: inline;
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    left: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+@media(max-width: 745px) {
+    /* .container {
+        max-width: 680px;
+        width: 100%;
+        margin: auto;
+    } */
+
+    .categories_navbar {
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 10px;
+    }
+
+    .categories_navbar a {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .afri_logo {
+        flex: auto;
+    }
+
+    .img {
+        width: 130px;
+    }
+    
+    .form_container {
+        flex: 100%;
+        order: 1;
+        padding: 2px;
+    }
+}

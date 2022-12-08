@@ -1,0 +1,57 @@
+.header{
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+.table_container {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.table_container table {
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table_container th, .table_container td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table_container tr:hover {
+    background-color: #ddd;
+}
+
+.btn_container {
+    display: flex;
+    gap: 20px;
+    border: none;
+}
+
+.delete, .view {
+    border: 1px solid#ddd;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete:hover, .view:hover {
+    background-color: #fff;
+}
+
+.delete_icon {
+    font-size: 20px;
+    color: red;
+}
+
+.view_icon {
+    font-size: 20px;
+    color: #00a2ff;
+}

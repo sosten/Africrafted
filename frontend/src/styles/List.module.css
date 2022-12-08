@@ -1,0 +1,31 @@
+.list_container {
+    background-color: #fff;
+    display: flex;
+}
+
+.list_left {
+    flex: 2;
+}
+
+.list_right {
+    flex: 10;
+    width: 100%;
+}
+
+.data_table {
+    padding: 20px;
+}
+
+.user_image {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.user_image img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}

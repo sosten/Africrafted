@@ -1,0 +1,138 @@
+.containter {
+    background-image: url('../assets/images/decor_1.webp');
+    background-size: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.form_container {
+    background-color: rgba(0,0,0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0; 
+}
+
+.form_cont {
+    background-color: #fff;
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form_header {
+    text-align: center;
+}
+
+.user_icon {
+    background-color: #ee7e22;
+    padding: 20px;
+    max-width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.form_header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin: auto;
+}
+
+.form_cont label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.form_cont input[type=email], .form_cont input[type=password] {
+    width: 100%;
+    border: 1px solid #b1a5a5;
+    border-radius: 5px;
+    padding: 12px 12px;
+    color: #444;
+}
+
+.stay_signed label {
+    display: inline !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 5px;
+    font-weight: 400;
+    color: #444;
+    font-size: 15px;
+}
+
+.stay_signed {
+    display: flex;
+    align-items: center;
+    margin: 14px 0px;
+}
+
+
+.form_cont input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+.form_cont input[type=submit] {
+    width: 100%;
+    background-color: #ee7e22;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #ee7e22;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_cont input[type=submit]:hover {
+    opacity: 0.8;
+    transition: all 0.4s ease-in-out;
+}
+
+.account {
+    margin-top: 20px;
+}
+
+.account a {
+    font-size: 15px;
+    margin-right: 10px;
+    color: rgb(34, 86, 199);
+}
+
+.comment p {
+    font-size: 13px;
+    color: #777;
+}
+
+.comment a {
+    font-size: 13px;
+    color: #888;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+}

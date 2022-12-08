@@ -1,0 +1,129 @@
+.container {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-top: 0.1px solid #52442d20;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #52442d;
+}
+
+.header a {
+  text-decoration: none;
+  background-color: brown;
+  color: #fff;
+  font-size: 15px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 3px;
+}
+
+.header a:hover {
+  opacity: 0.8;
+}
+
+.card_container {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  border-bottom: 1px solid #52442d20;
+}
+
+.card {
+  width: 240px;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #211;
+  font-weight: 900;
+  margin: auto;
+}
+
+.card p {
+  font-size: 16px;
+  color: #52442d;
+  margin: auto;
+}
+
+.img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  object-fit: cover;
+}
+
+.card_details {
+  margin-top: 10px;
+}
+
+.card_details p {
+  font-size: 17px;
+}
+
+p.artist {
+  font-size: 16px;
+  color: #70634d;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price h3 {
+  flex: 1;
+}
+
+.price p {
+  padding-right: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .card_container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 50px;
+  }
+}
+
+@media(max-width: 700px) {
+  .card {
+    width: 100%;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .img {
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+}
