@@ -153,9 +153,10 @@ orderRouter.put(
   "/order/:id/pay",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id).populate(
+    const order = await Order.findById(req.params.id)
+    .populate(
       'user',
-      'email name'
+      'email firstName'
     );
     if (order) {
       order.isPaid = true;
@@ -171,8 +172,8 @@ orderRouter.put(
         .messages()
         .send(
           {
-            from: 'Africrafted <sostennyirenda@mg.sandboxeca3d4c61e8a42f3a715a97982eb2bc2.mailgun.org',
-            to: `${order.user.name} <${order.user.email}>`,
+            from: 'Africrafted <sostennyirenda@gmail.sandboxeca3d4c61e8a42f3a715a97982eb2bc2.mailgun.org',
+            to: `${order.user.firstName} <${order.user.email}>`,
             subject: `New order ${order._id}`,
             html: payOrderEmailTemplate(order),
           },

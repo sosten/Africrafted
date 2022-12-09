@@ -6,7 +6,7 @@ import Rating from "../components/Rating";
 // import data from '../data/data';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import logger from "use-reducer-logger";
+// import logger from "use-reducer-logger";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useReducer, useRef, useState } from "react";
 import axios from "axios";
@@ -46,7 +46,7 @@ const ProductDetailsScreen = () => {
   const params = useParams();
   const { slug } = params;
   const [{ loading, error, product, loadingCreateReview }, dispatch] =
-    useReducer(logger(reducer), {
+    useReducer(reducer, {
       product: [],
       loading: true,
       error: "",

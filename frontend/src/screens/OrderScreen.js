@@ -85,7 +85,7 @@ const OrderScreen = () => {
   };
 
   const onApprove = (data, actions) => {
-    return actions.order.capture.then(async function (details) {
+    return actions.order.capture().then(async function (details) {
       try {
         dispatch({ type: "PAY_REQUEST" });
         const { data } = await axios.put(
@@ -94,15 +94,16 @@ const OrderScreen = () => {
           { headers: { authorization: `Bearer ${userInfo.token}` } }
         );
         dispatch({ type: "PAY_SUCCESS", payload: data });
+        toast.success('Order is paid');
       } catch (err) {
-        dispatch({ type: "PAY_FAILS", payload: data.err });
-        console.log(err);
+        dispatch({ type: 'PAY_FAIL', payload: getError(err) });
+        toast.error(getError(err));
       }
     });
   };
 
   const onError = (err) => {
-    console.log(err);
+    toast.error(getError(err));
   };
 
   useEffect(() => {

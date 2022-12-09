@@ -2,7 +2,7 @@ import Axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useReducer } from "react";
-import logger from "use-reducer-logger";
+// import logger from "use-reducer-logger";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Navbar from "../components/Navbar";
 import Product from "../components/Product";
@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 };
 
 const CarvingsAndPaintings = () => {
-  const [{ error, loading, carvings }, dispatch] = useReducer(logger(reducer), {
+  const [{ error, loading, carvings }, dispatch] = useReducer(reducer, {
     error: "",
     loading: true,
     carvings: [],

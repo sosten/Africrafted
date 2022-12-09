@@ -8,7 +8,7 @@ import style from '../styles/gifts.module.css';
 import { Link } from 'react-router-dom';
 // import { FaShoppingCart } from 'react-icons/fa';
 import { useReducer } from 'react';
-import logger from 'use-reducer-logger';
+// import logger from 'use-reducer-logger';
 import { useEffect } from 'react';
 import axios from 'axios';
 import LoadingSpinner from './LoadingSpinner';
@@ -27,7 +27,7 @@ const reducer = (state, action) => {
 }
 
 const Gifts = () => {
-    const [ { loading, error, products }, dispatch ] = useReducer(logger(reducer), {
+    const [ { loading, error, products }, dispatch ] = useReducer(reducer, {
         error: '',
         loading: false,
         products: []
