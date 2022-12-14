@@ -58,7 +58,7 @@ const ShippingScreen = () => {
       })
     );
 
-    navigate("/placeorder");
+    navigate("/payment");
   };
 
   return (

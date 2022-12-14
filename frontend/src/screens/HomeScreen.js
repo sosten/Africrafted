@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import axios from "axios";
-import logger from "use-reducer-logger";
+// import logger from "use-reducer-logger";
 import Navbar from "../components/Navbar";
 import Product from "../components/Product";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 };
 
 const HomeScreen = () => {
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
     error: "",

@@ -45,13 +45,14 @@ const PaymentScreen = () => {
             <label htmlFor="Paypal">Paypal</label>
             <br />
             <input
+              style={{display: "none"}}
               type="radio"
               id="Stripe"
               value={"Stripe"}
               checked={paymentMethodName === "Stripe"}
               onChange={(e) => setPaymentMethodName(e.target.value)}
             />
-            <label htmlFor="Stripe">Stripe</label>
+            <label htmlFor="Stripe" style={{display: "none"}}>Stripe</label>
             <br />
             <input type="submit" value="Continue" />
           </form>

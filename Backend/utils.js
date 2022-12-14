@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import mg from 'mailgun-js';
 
 export const generateToken = (user) => {
   return jwt.sign(
@@ -50,7 +51,7 @@ export const mailgun = () =>
 export const payOrderEmailTemplate = (order) => {
   return `<h1>Thanks for shopping with us</h1>
   <p>
-  Hi ${order.user.name},</p>
+  Hi ${order.user.firstName},</p>
   <p>We have finished processing your order.</p>
   <h2>[Order ${order._id}] (${order.createdAt.toString().substring(0, 10)})</h2>
   <table>

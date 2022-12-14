@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { Store } from "../Store";
 import axios from "axios";
@@ -9,6 +9,7 @@ import style from "../styles/Product.module.css";
 import { AiOutlineShopping } from "react-icons/ai";
 
 const Product = (props) => {
+  const navigate = useNavigate();
   const { product } = props;
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
@@ -24,6 +25,7 @@ const Product = (props) => {
       return;
     }
     ctxDispatch({ type: "CART_ADD_ITEM", payload: { ...item, quantity } });
+    navigate("/cart");
   };
   return (
     <div className={style.container}>

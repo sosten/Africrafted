@@ -1,7 +1,6 @@
 .container {
-    max-width: 800px;
-    width: 100%;
-    margin: auto;
+    width: calc(53.333% - 20px);
+    margin: 20px auto;
 }
 
 .container h1 {
@@ -45,4 +44,15 @@
 .content {
     max-width: 600px;
     width: 100%;
+}
+
+@media (max-width: 820px) {
+    .container {
+        width: calc(97.333% - 20px);
+        margin: 20px auto;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
 }

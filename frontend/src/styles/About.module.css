@@ -29,10 +29,8 @@
 }
 
 .container {
-    padding: 30px;
-    max-width: 980px;
-    width: 100%;
-    margin: auto;
+    width: calc(60.333% - 20px);
+    margin: 0px auto;
 }
 
 .who, .mission {
@@ -91,4 +89,54 @@
     width: 100%;
     margin: auto;
     padding-top: 60px;
+}
+
+@media (max-width: 820px) {
+    .header {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .header_cont {
+        margin-top: 20px;
+    }
+    
+    .header_cont h1 {
+        font-size: 35px;
+    }
+
+    .header_color {
+        height: calc(100% + 50px);
+        padding: 50px;
+    }
+
+    .container {
+        width: calc(97.333% - 20px);
+        margin: 0px auto;
+    }
+
+    .who, .mission {
+        flex-direction: column;
+    }
+
+    .who_cont, .mission_cont {
+        width: 100%;
+    }
+
+    .mission {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .mission_cont {
+        margin-top: 10px;
+    }
+
+    .image img {
+        background-color: transparent;
+        border-radius: 5px;
+        width: 100%;
+        height: 500px;
+    }
 }

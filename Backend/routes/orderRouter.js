@@ -12,7 +12,7 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find().populate("user", "name");
+    const orders = await Order.find().populate("user", "firstName");
     res.send(orders);
   })
 );
@@ -126,13 +126,13 @@ orderRouter.get(
 // =================================================================
 
 //ADMIN ORDERS
-orderRouter.get(
-  "/orders",
-  expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find();
-    res.send(orders);
-  })
-);
+// orderRouter.get(
+//   "/orders",
+//   expressAsyncHandler(async (req, res) => {
+//     const orders = await Order.find();
+//     res.send(orders);
+//   })
+// );
 
 // GET SINGLE ORDER
 
@@ -153,9 +153,10 @@ orderRouter.put(
   "/order/:id/pay",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id).populate(
+    const order = await Order.findById(req.params.id)
+    .populate(
       'user',
-      'email name'
+      'email firstName'
     );
     if (order) {
       order.isPaid = true;
@@ -167,12 +168,13 @@ orderRouter.put(
         update_time: req.body.update_time,
       };
       const updatedOrder = await order.save();
+      var test_email = 'sostennyirenda@gmail.com';
       mailgun()
         .messages()
         .send(
           {
             from: 'Africrafted <sostennyirenda@mg.sandboxeca3d4c61e8a42f3a715a97982eb2bc2.mailgun.org',
-            to: `${order.user.name} <${order.user.email}>`,
+            to: `${order.user.firstName} <${order.user.email=test_email}>`,
             subject: `New order ${order._id}`,
             html: payOrderEmailTemplate(order),
           },

@@ -81,10 +81,10 @@ const OrderHistoryScreen = () => {
                       <td>{order.createdAt.substring(0, 10)}</td>
                       <td>{order.totalPrice.toFixed(2)}</td>
                       <td>
-                        {order.isPaid ? order.isPaid.substring(0, 10) : "No"}
+                        {order.isPaid ? order.paidAt.substring(0, 10) : "No"}
                       </td>
                       <td>
-                        {order.deliveredAt
+                        {order.isDelivered
                           ? order.deliveredAt.substring(0, 10)
                           : "No"}
                       </td>
