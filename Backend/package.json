@@ -12,6 +12,7 @@
   "author": "Africrafted",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.16.1",
     "aws-sdk": "^2.1175.0",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.31.0",

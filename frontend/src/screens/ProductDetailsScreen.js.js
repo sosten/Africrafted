@@ -179,18 +179,6 @@ const ProductDetailsScreen = () => {
                         <label htmlFor="textarea">Review</label>
                         <textarea id="textarea" placeholder="Leave a comment here" rows={4} cols={60} onChange={(e) => setComment(e.target.value)}></textarea>
                       </div>
-                      {/* <FloatingLabel
-                        controlId="floatingTextarea"
-                        label="Comments"
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          placeholder="Leave a comment here"
-                          value={comment}
-                          onChange={(e) => setComment(e.target.value)}
-                        />
-                      </FloatingLabel> */}
                       <div>
                         <button disabled={loadingCreateReview} type="submit">
                           Submit
@@ -215,14 +203,6 @@ const ProductDetailsScreen = () => {
               <div className={style.product_description}>
                 <div className={style.artist}>
                   <h2>{product.productName}</h2>
-                {/* <p>
-                  {
-                    <Rating
-                      rating={product.rating}
-                      numReviews={product.numReviews}
-                    />
-                  }
-                </p> */}
                 <div className="my-3">
                   <h2 ref={reviewsRef}>Reviews</h2>
                   <div className="mb-3">
@@ -255,7 +235,7 @@ const ProductDetailsScreen = () => {
               <p className={style.tax}>
                 Local taxes included (where applicable)
               </p>
-              <p className={style.size}>Size: 29” X 11” X 3”</p>
+              {/* <p className={style.size}>Size: 29” X 11” X 3”</p> */}
               {product.countInStock > 0 && (
                 <button onClick={addToCartHandler}>Add to Cart</button>
               )}

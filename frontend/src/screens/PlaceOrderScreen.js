@@ -96,7 +96,7 @@ const PlaceOrderScreen = () => {
               <p>
                 <b>Method:</b> {cart.paymentMethod}
               </p>
-              {/* <Link to="/payment">Edit</Link> */}
+              <Link to="/payment">Edit</Link>
               <hr />
             </div>
 
