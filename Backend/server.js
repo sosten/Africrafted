@@ -8,7 +8,6 @@ import userRouter from "./routes/usersRouter.js";
 import productRouter from "./routes/productRouter.js";
 import seedRouter from "./routes/seedRouter.js";
 import orderRouter from "./routes/orderRouter.js";
-import categoryRouter from "./routes/categoryRouter.js";
 
 dotenv.config();
 
@@ -30,7 +29,6 @@ app.use("/api/upload", uploadRouter);
 app.use("/api", userRouter);
 app.use("/api", productRouter);
 app.use("/api", orderRouter);
-app.use("/api", categoryRouter);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/frontend/build")));

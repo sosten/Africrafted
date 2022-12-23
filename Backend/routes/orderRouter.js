@@ -4,6 +4,9 @@ import Order from "../models/OrderModel.js";
 import User from "../models/UserModel.js";
 import Product from "../models/ProductModel.js";
 import { isAuth, isAdmin, mailgun, payOrderEmailTemplate } from "../utils.js";
+import Stripe from "stripe";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const orderRouter = express.Router();
 
@@ -159,6 +162,15 @@ orderRouter.put(
       'email firstName'
     );
     if (order) {
+      const token = req.body.token;
+      const totalAmount = req.body.totalAmount;
+      const charge = await stripe.charges.create({
+        amount: order.totalPrice * 100,
+        currency: 'usd',
+        description: 'Payment for product',
+        source: token.id
+      }) 
+      
       order.isPaid = true;
       order.paidAt = Date.now();
       order.paymentResult = {

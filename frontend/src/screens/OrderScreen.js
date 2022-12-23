@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       return { ...state, loading: false, error: false, order: action.payload };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
+    case "CHECKOUT":
+      return { ...state, loadingCheck: false, };
     case "PAY_REQUEST":
       return { ...state, loadingPay: true };
     case "PAY_SUCCESS":
@@ -66,6 +68,7 @@ const OrderScreen = () => {
     dispatch,
   ] = useReducer(reducer, {
     loading: true,
+    loadingCheck: false,
     order: {},
     error: "",
     successPay: false,
