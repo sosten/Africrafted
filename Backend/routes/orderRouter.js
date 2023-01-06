@@ -152,6 +152,25 @@ orderRouter.get(
   })
 );
 
+// ======= TEST PAYPAL ============
+orderRouter.post(
+  "/order/pay",
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const newOrder = new Order({
+      orderItems: req.body.orderItems.map((x) => ({ ...x, product: x._id })),
+      shippingAddress: req.body.shippingAddress,
+      paymentMethod: req.body.paymentMethod,
+      itemsPrice: req.body.itemsPrice,
+      shippingPrice: req.body.shippingPrice,
+      taxPrice: req.body.taxPrice,
+      totalPrice: req.body.totalPrice,
+    });
+    const order = await newOrder.save();
+    res.status(201).send({ message: "New Order Created", order });
+  }))
+// ================================
+
 orderRouter.put(
   "/order/:id/pay",
   isAuth,
@@ -161,16 +180,7 @@ orderRouter.put(
       'user',
       'email firstName'
     );
-    if (order) {
-      const token = req.body.token;
-      const totalAmount = req.body.totalAmount;
-      const charge = await stripe.charges.create({
-        amount: order.totalPrice * 100,
-        currency: 'usd',
-        description: 'Payment for product',
-        source: token.id
-      }) 
-      
+    if (order) { 
       order.isPaid = true;
       order.paidAt = Date.now();
       order.paymentResult = {

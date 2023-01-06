@@ -67,7 +67,7 @@ const ShippingScreen = () => {
       <div className={style.form_container}>
         <form onSubmit={handleSubmit}>
           <div className={style.header}>
-            <h1>Shipping Details</h1>
+            <h1>SHIPPING</h1>
           </div>
           <label htmlFor="fullname">Full Name</label>
           <input
@@ -143,7 +143,7 @@ const ShippingScreen = () => {
               />
             </div>
           </div>
-          <input type="submit" value={"Continue"} />
+          <input type="submit" value={"CONTINUE PAYMENT"} />
         </form>
       </div>
     </div>

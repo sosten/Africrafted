@@ -122,7 +122,7 @@ const CartScreen = () => {
                     <div className={style.description_container}>
                       <div className={style.description}>
                         <p>{item.description}</p>
-                        <span>Size: 10 x 14 in / 25 x 35 cm</span>
+                        {/* <span>Size: 10 x 14 in / 25 x 35 cm</span> */}
                         <div className={style.remove_or_save}>
                           <button onClick={() => removeCartItemHandler(item)}>
                             Remove
