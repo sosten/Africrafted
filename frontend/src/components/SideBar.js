@@ -32,7 +32,7 @@ const SideBar = () => {
                 <li><RiDashboardFill className={style.icon} /> <Link to='/admin/categories'>Categories</Link></li>
                 <p className={style.title}>USEFUL</p>
                 <li><BsBarChartLineFill className={style.icon} /> <Link to='#'>Stats</Link></li>
-                <li><AiOutlineBell className={style.icon} /> <Link to='#'>Notefication</Link></li>
+                <li><AiOutlineBell className={style.icon} /> <Link to='#'>Notification</Link></li>
                 <p className={style.title}>USER</p>
                 <li><BiUserCircle className={style.icon}/><Link to='/profile'>Profile</Link></li>
                 <li onClick={handleSignOut}><BsBoxArrowInRight className={style.icon}/><Link to='#'>Logout</Link></li>

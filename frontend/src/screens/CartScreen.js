@@ -6,8 +6,6 @@ import { AiFillTag, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCopyrightLine } from "react-icons/ri";
 import style from "../styles/CartScreen.module.css";
 // import artist from "../assets/images/img.jfif";
-import airtel from "../assets/images/airtel-mobile-money.png";
-import mtn from "../assets/images/mtn.png";
 import mastercard from "../assets/images/mastercard.png";
 import visa from "../assets/images/Visa-Logo.png";
 import paypal from "../assets/images/paypal.png";
@@ -61,8 +59,6 @@ const CartScreen = () => {
                   <h2>How you'll pay</h2>
                 </div>
                 <div className={style.payment_methods}>
-                  <img src={airtel} alt="Airtel Mobile Money" />
-                  <img src={mtn} alt="MTN Mobile Money" />
                   <img src={visa} alt="Visa card" />
                   <img src={mastercard} alt="Visa card" />
                   <img src={paypal} alt="Paypal" />

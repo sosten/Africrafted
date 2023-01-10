@@ -76,7 +76,7 @@ const Navbar = () => {
             {userInfo && userInfo.isAdmin && (
               <ul className={style.user_profile}>
                 <li>
-                  <Link to={"/admin/dashboard"}>Dashboard</Link>
+                  <a href={"/admin/dashboard"}>Dashboard</a>
                 </li>
                 <li>
                   <Link to={"/admin/products"}>Products</Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
         <div className={style.categories_navbar}>
           {categories.map((category) => (
             <div key={category} className={style.category_navbar}>
-              <Link to={`/search?category=${category}`}>{category}</Link>
+              <Link to={`/search?category=${category}`}><span  className={style.link_separator}><span>{category}</span> <span>|</span></span></Link>
             </div>
           ))}
           {/* <Link to={'#'}>Jewerly & Accessories</Link>

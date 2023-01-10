@@ -107,6 +107,16 @@ p.artist {
     justify-content: flex-start;
     gap: 50px;
   }
+  .card {
+    width: 46%;
+    height: 300px;
+  }
+  .img {
+    height: 240px;
+    border-radius: 5px;
+    background-color: transparent;
+    object-fit: cover;
+  }
 }
 
 @media(max-width: 700px) {
@@ -120,10 +130,22 @@ p.artist {
 
   .img {
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .header h1 {
     font-size: 20px;
+  }
+}
+
+@media(max-width: 600px) {
+  .card {
+    width: 46%;
+    margin-bottom: 20px;
+  }
+  .card_container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
   }
 }

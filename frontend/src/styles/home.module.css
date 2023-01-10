@@ -99,6 +99,13 @@
   color:#7e3701;
 }
 
+@media(max-width: 1300px) {
+  .advert_card_cont{
+    width: 285px;
+    height: 315px;
+  }
+}
+
 @media (max-width: 1030px) {
   .supplier_cont {
     width: 52%;
@@ -109,6 +116,16 @@
     width: 52%;
     gap: 10px;
     padding-top: 0;
+  }
+}
+
+@media(max-width: 1024px){
+  .supplier_cont {
+    width: 50%;
+  }
+  .advert_card_cont {
+    width: 234px;
+    height: 355px;
   }
 }
 
