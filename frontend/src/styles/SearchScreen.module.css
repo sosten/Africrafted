@@ -156,6 +156,20 @@
     border: none;
 }
 
+@media(max-width: 766px) {
+    .wrapper {
+        justify-content: space-between;
+        gap: 0px;
+        padding: 0px;
+    }
+
+    .products {
+        margin-top: 0px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
 @media(max-width: 600px) {
     .top_nav a {
         font-size: 15px;

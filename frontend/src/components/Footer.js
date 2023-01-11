@@ -8,6 +8,8 @@ import { BsYoutube } from "react-icons/bs";
 import payment from "../assets/images/payment-icon_1.png";
 import style from "../styles/Footer.module.css";
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   return (
     <div className={style.container}>
       <div className={style.link_container}>
@@ -64,7 +66,7 @@ const Footer = () => {
 
       <div className={style.copyright_container}>
         <div>
-          <p>{"\u00a9"}2022 Africrafted</p>
+          <p>{"\u00a9"}{year} Africrafted</p>
         </div>
         <div>
           <Link to={"#"}>Terms Of Use</Link>

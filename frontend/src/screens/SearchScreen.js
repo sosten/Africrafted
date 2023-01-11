@@ -210,7 +210,7 @@ const SearchScreen = () => {
               </div>
             </div>
             <div className={style.products}>
-              <div>{products.length === 0 && <div>Products Not Found</div>}</div>
+              {/* <div>{products.length === 0 && <div>Products Not Found</div>}</div> */}
                 {products.map((product) => (
                   <div key={product._id}>
                     <Product product={product}></Product>

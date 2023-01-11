@@ -37,19 +37,20 @@ const Product = (props) => {
           <div className={style.card_content}>
             <div className={style.left_cont}>
               <Link to={`/product/${product.slug}`} title="Click to view details">
-                <p className={style.description}>{product.name}</p>
+                <p className={style.description}>{product.productName}</p>  
                 <p className={style.rating}>
                   <Rating
                     rating={product.rating}
                     numReviews={product.numReviews}
                   />
                 </p>
-                <p>{product.productName}</p>
+                {/* <p>{product.productName}</p> */}
+                
+                <p className={style.price}>
+                  <b>USD {product.price}</b>
+                </p>
                 <p className={style.artist}>
                   <b>Artist:</b> {product.artistName}
-                </p>
-                <p className={style.price}>
-                  <b>${product.price}</b>
                 </p>
               </Link>
             </div>
