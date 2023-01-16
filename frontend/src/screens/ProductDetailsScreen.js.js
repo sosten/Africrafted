@@ -1,6 +1,6 @@
 import style from "../styles/ProductDetail.module.css";
 import { BsCheck2 } from "react-icons/bs";
-import { BsHeart } from "react-icons/bs";
+// import { BsHeart } from "react-icons/bs";
 import Rating from "../components/Rating";
 // import Product from '../components/Product';
 // import data from '../data/data';
@@ -12,7 +12,7 @@ import { useContext, useEffect, useReducer, useRef, useState } from "react";
 import axios from "axios";
 import { Store } from "../Store";
 import LoadingSpinner from "../components/LoadingSpinner";
-import Zoom from 'react-img-zoom';
+// import Zoom from 'react-img-zoom';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -126,21 +126,20 @@ const ProductDetailsScreen = () => {
         ) : (
           <div className={style.product_wrapper}>
             <div className={style.img_cover}>
-            <div className={style.zoom_image}>
-            
-            <Zoom
-              img={selectedImage || product.image}
-              zoomScale={3}
-              width={400}
-              height={400}
+                {/* <div className={style.zoom_image}>
               
-            />
-            </div>
-               <img
-                src={selectedImage || product.image}
-                alt={product.productName}
-                style={{display: "none"}}
-              /> 
+                <Zoom
+                  img={selectedImage || product.image}
+                  zoomScale={3}
+                  width={400}
+                  height={400}
+                  
+                />
+              </div> */}
+                <img
+                  src={selectedImage || product.image}
+                  alt={product.productName}
+                /> 
               
               <div className={style.thumbnails}>
                 {[product.image, ...product.images].map((x) => (
@@ -155,7 +154,21 @@ const ProductDetailsScreen = () => {
                 ))}
                 
               </div>
+
               <div className={style.reviews}>
+                <div>
+                <h2 ref={reviewsRef}>Reviews</h2>
+                  {product.reviews.map((review) => (
+                    <div key={review._id}>
+                      {/* <strong>{review.name}</strong> */}
+                      {product.reviews.length === 0 && <p>There is no review</p>}
+                      <Rating rating={review.rating} caption=" "></Rating>
+                      <p>{review.comment}</p>
+                      <p className={style.review_name}>{review.name} {review.createdAt.substring(0, 10)}</p>
+                      <br />
+                    </div>
+                  ))}
+                </div>
                   {userInfo ? (
                     <form onSubmit={submitHandler}>
                       <h2>Write a customer review</h2>
@@ -177,7 +190,7 @@ const ProductDetailsScreen = () => {
                       </div>
                       <div>
                         <label htmlFor="textarea">Review</label>
-                        <textarea id="textarea" placeholder="Leave a comment here" rows={4} cols={60} onChange={(e) => setComment(e.target.value)}></textarea>
+                        <textarea id="textarea" placeholder="Leave a comment here" rows={4} onChange={(e) => setComment(e.target.value)}></textarea>
                       </div>
                       <div>
                         <button disabled={loadingCreateReview} type="submit">
@@ -197,28 +210,19 @@ const ProductDetailsScreen = () => {
                   )}
                 </div>
               </div>
-              <div className={style.heart}>
+              {/* <div className={style.heart}>
                 <BsHeart size={24} />
-              </div>
+              </div>  */}
               <div className={style.product_description}>
                 <div className={style.artist}>
                   <h2>{product.productName}</h2>
-                <div className="my-3">
+                {/* <div className="my-3">
                   <h2 ref={reviewsRef}>Reviews</h2>
                   <div className="mb-3">
                     {product.reviews.length === 0 && <p>There is no review</p>}
                   </div>
-                </div>
-                <div>
-                  {product.reviews.map((review) => (
-                    <div key={review._id}>
-                      <strong>{review.name}</strong>
-                      <Rating rating={review.rating} caption=" "></Rating>
-                      <p>{review.createdAt.substring(0, 10)}</p>
-                      <p>{review.comment}</p>
-                    </div>
-                  ))}
-                </div>
+                </div> */}
+                
               </div>
               <p className={style.description}>{product.description}</p>
               <p className={style.price}>

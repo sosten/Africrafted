@@ -6,9 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(230 228 179);
-  /* background-image: url('./assets/images/paper.jpg');
-  background-size: 100%; */
-  /* background-repeat: repeat; */
+  background-image: url('./assets/images/parchment_paper.jpg');
+  background-size: 100%;
+  background-repeat: repeat;
   overflow-x: hidden;
 }
 

@@ -1,18 +1,16 @@
-.container {
-    max-width: 1300px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
+.container { 
+    width: calc(97.333% - 20px);
+    margin: 0px auto;
+  }
 
 .product_wrapper {
     /* background-color: orange; */
     margin-top: 50px;
     margin-bottom: 60px;
     display: flex;
-    flex-direction: row;
     gap: 10px;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
 }
 
 .img_cover {
@@ -21,17 +19,17 @@
     width: 500px;
     margin-right: 30px;
     margin-bottom: 30px;
-    /* background-color: #ddd; */
+    /* background-color: #fff; */
 }
 
-/* .img_cover img {
+.img_cover img {
     width: 100%;
     height: 500px;
     object-fit: contain;
     border-radius: 8px;
-    background-color: #555;
+    background-color: #fff;
     
-} */
+}
 
 .zoom_image {
     width: 400px;
@@ -41,14 +39,13 @@
 .thumbnails {
     margin-top: 60px;
     display: flex;
-    flex-direction: row;
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 3px;
 }
 
 .thumbnails img {
     width: 100px;
     height: 100px;
-    object-fit: contain;
 }
 
 .thumbnails button {
@@ -72,7 +69,7 @@
     margin-top: 30px;
 }
 
-.heart {
+/* .heart {
     display: none;
     background-color: #fff;
     box-shadow: 2px 2px 10px #595959;
@@ -82,12 +79,12 @@
     border-radius: 100px;
     text-align: center;
     cursor: pointer;
-}
+} */
 
-.heart svg {
+/* .heart svg {
     fill: #555;
     margin-top: 10px;
-}
+} */
 
 .artist {
     margin: auto;
@@ -159,6 +156,11 @@
     font-size: 24px;
 }
 
+.review_name {
+    font-size: 15px;
+    color: #777;
+}
+
 .reviews {
     padding: 40px 0px;
 }
@@ -167,6 +169,12 @@
     font-size: 20px;
     color: #333;
     font-weight: 600;
+}
+
+.reviews p {
+    margin: auto;
+    padding-bottom: 1px;
+    padding-top: 1px;
 }
 
 .reviews label {
@@ -190,6 +198,7 @@
     border-radius: 2px;
     padding: 10px;
     font-size: 16px;
+    width: 100%;
 }
 .reviews button {
     background-color: brown;
@@ -200,4 +209,52 @@
     border-radius: 3px;
     cursor: pointer;
     margin-top: 20px;
+}
+
+@media(max-width: 820px) {
+    .product_description {
+        order: 1;
+        width: 100%;
+    }
+
+    .zoom_image {
+        width: 100%;
+        height: auto;
+    }
+
+    .img_cover  {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .img_cover img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        border-radius: 2px;
+        background-color:#fff;
+    }
+
+    .thumbnails {
+        margin-top: 42px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .thumbnails img {
+        width: 85px !important;
+        height: 12vh !important;
+        object-fit: contain;
+    }
+
+    .product_wrapper {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .reviews textarea {
+        width: 90%;
+    }
 }
